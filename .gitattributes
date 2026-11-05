@@ -1,0 +1,25 @@
+* text=auto
+*.md text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.sh text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.cjs text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+VERSION text eol=lf
+*.wav binary
+*.graph binary
+# Manifest-pinned payloads must retain their exact bytes on every checkout.
+/content/files/** -text
+/content/files/cstrike/maps/*.res whitespace=cr-at-eol,-blank-at-eof
+# Preserve the exact installed templates, including upstream spacing/line endings.
+/content/files/cstrike/motd.txt whitespace=cr-at-eol,-blank-at-eof,-blank-at-eol
+/content/files/cstrike/addons/yapb/conf/lang/en_chat.cfg whitespace=cr-at-eol,-blank-at-eof,-blank-at-eol
+
+# Publishing requests belong to the repository, not the downloadable server package.
+/.github export-ignore

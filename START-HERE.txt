@@ -1,0 +1,16 @@
+COUNTER-STRIKE 1.6 STEAM SERVER / LINUX MINT 22.x
+
+Read README.md for the one-time prerequisite commands.
+Open a terminal in this extracted directory, then run as your regular user:
+
+  bash Setup-Linux.sh
+  bash Start-Server.sh
+
+For the local English/German control panel:
+
+  bash Start-Panel.sh
+
+Your server is installed into CS16Server-Linux.
+Keep ADMIN.local.txt and generated server data private.
+Read docs/INTERNET.md to configure router forwarding and test outside access.
+Preview status and unverified checks are listed in docs/TESTING.md.

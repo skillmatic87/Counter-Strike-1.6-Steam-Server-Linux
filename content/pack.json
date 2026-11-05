@@ -1,0 +1,2563 @@
+{
+  "schemaVersion": 1,
+  "id": "cs16-steam-nostalgia-2026-11",
+  "packages": [
+    {
+      "file": "de_rats_2001.zip",
+      "url": "https://www.half-life.fr/cs/maps/de_/de_rats_2001.zip",
+      "sha256": "80aa9ba74cae582eaecad8832176bfdfe5e398c2d17058d29dfe245e8ee6341a",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "www.zvdk.nl.txt",
+          "target": "_content/notices/de_rats_2001/www.zvdk.nl.txt",
+          "sha256": "c672aea4afbc5e407d2da699b96ac918b581493fde1e0271ab2d34d905209d38"
+        },
+        {
+          "source": "maps/de_rats_2001.bsp",
+          "target": "cstrike/maps/de_rats_2001.bsp",
+          "sha256": "afaed8f8af85336be4abcc6b850c2c74362ff0035f83c915cd2ffcec9725cc6c"
+        },
+        {
+          "source": "maps/de_rats_2001.txt",
+          "target": "cstrike/maps/de_rats_2001.txt",
+          "sha256": "707eeb44f54292fdccf86d6523cdfb7ca84275dc0edfa81730207290e556cdd9"
+        }
+      ]
+    },
+    {
+      "file": "awp_map.zip",
+      "url": "https://www.half-life.fr/cs/maps/awp_/awp_map.zip",
+      "sha256": "e60490156b31357b40bd81b8794c9266fe5b322ec269abbdc55e79161febc88a",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "awp_map.bsp",
+          "target": "cstrike/maps/awp_map.bsp",
+          "sha256": "a85b6b02cee04e309e6dab6957dea88e2c8f38f2eeb877eb0e18a387e7df031d"
+        },
+        {
+          "source": "awp_map.txt",
+          "target": "cstrike/maps/awp_map.txt",
+          "sha256": "2824b855a27df7df47d2170ac12473b151734406cbdecd03f77b69efdaf08d6d"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/awp_map/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "awp_gaio_b1.txt",
+          "target": "_content/notices/awp_map/awp_gaio_b1.txt",
+          "sha256": "651120523758e6e00e164cc723393d0a7cbcb74eb986f6fd61426be2ec351541"
+        },
+        {
+          "source": "awp_map.res",
+          "target": "_content/notices/awp_map/awp_map.res",
+          "sha256": "d34f4bae64b43937f73da950c64c744f3843d6c8f6971072b95a59b097ed2b3c"
+        }
+      ]
+    },
+    {
+      "file": "fy_iceworld.zip",
+      "url": "https://www.half-life.fr/cs/maps/fy_/fy_iceworld.zip",
+      "sha256": "163bbc558277b55d8bcea76c8ed9fa239d3ba118c3e69ce2cf216fec1a323824",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "fy_iceworld.bsp",
+          "target": "cstrike/maps/fy_iceworld.bsp",
+          "sha256": "d36fe2c8cb774a08c0ab25af403204162596d5729a74d22dd68946d382a69481"
+        },
+        {
+          "source": "fy_iceworld.txt",
+          "target": "cstrike/maps/fy_iceworld.txt",
+          "sha256": "b085ab981908dad967978584d91dfdcc2a00a211afee5bedcf497cd1cf01a634"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/fy_iceworld/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "fy_iceworld.res",
+          "target": "_content/notices/fy_iceworld/fy_iceworld.res",
+          "sha256": "4b04cc8fa80515174acabaad9f6e54797b4b07fbf7a96e140a1490a0783723d1"
+        }
+      ]
+    },
+    {
+      "file": "fy_pool_day.zip",
+      "url": "https://www.half-life.fr/cs/maps/fy_/fy_pool_day.zip",
+      "sha256": "7f7dc107f8be651a53455ba8b589d3c1c80b11fd3d33312420651953f999ea6c",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "maps/fy_pool_day.bsp",
+          "target": "cstrike/maps/fy_pool_day.bsp",
+          "sha256": "fb22ba78a20d762a7114bdd56d62ec01794695ac48c6777f1bbd676ab769d208"
+        },
+        {
+          "source": "maps/fy_pool_day.txt",
+          "target": "cstrike/maps/fy_pool_day.txt",
+          "sha256": "206fcd075d11b98509965357870b4a5d151b7e38306ef66bee561985f1699ecc"
+        },
+        {
+          "source": "sound/ambience/sprayer.wav",
+          "target": "cstrike/sound/ambience/sprayer.wav",
+          "sha256": "fc623c75ae7436ce435c7c51b8b73f7f0fcd8a9c391c7d05bafbf41c29cb2d6f",
+          "preserveExisting": true
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/fy_pool_day/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "fy_pool_day.res",
+          "target": "_content/notices/fy_pool_day/fy_pool_day.res",
+          "sha256": "5fec9a3c7238990074cdaddc5d48e156f8aaf919bcf2b4f7f2b40d09034f0432"
+        }
+      ]
+    },
+    {
+      "file": "fy_snow.zip",
+      "url": "https://www.half-life.fr/cs/maps/fy_/fy_snow.zip",
+      "sha256": "543aea73a631f26351affeae4f7d95e660879fc12ecb36927d13ee8de82b93f7",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/fy_snow/www.17buddies.net.txt",
+          "sha256": "1580fd7498bab3bd5f08c3b60582fb8646569c2e3ef34c6cfb1be5f5939c34d3"
+        },
+        {
+          "source": "maps/fy_snow.bsp",
+          "target": "cstrike/maps/fy_snow.bsp",
+          "sha256": "f4f6d78ff1ddd669230dbb27df2fefb25d8f7d114925184ded0770300eb51303"
+        },
+        {
+          "source": "maps/fy_snow.txt",
+          "target": "cstrike/maps/fy_snow.txt",
+          "sha256": "c1b4b2eee5ba8619c0dc9f5d64c9d688b64962be1f80f6352caa1c341406b9da"
+        },
+        {
+          "source": "gfx/env/snowup.tga",
+          "target": "cstrike/gfx/env/snowup.tga",
+          "sha256": "2b3707d73e7656df46dfe0dcfed8f88ff9be17c17ea97791e753cb4ae7554972",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/snowdn.tga",
+          "target": "cstrike/gfx/env/snowdn.tga",
+          "sha256": "4788139489da1640ef18c317a57b8d69a28bae6b372d233a85c5018d46b3e958",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/snowlf.tga",
+          "target": "cstrike/gfx/env/snowlf.tga",
+          "sha256": "bc17e23dd1f490782030da54113815a3ab043cb5a37263754f40fddf4d336a3c",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/snowrt.tga",
+          "target": "cstrike/gfx/env/snowrt.tga",
+          "sha256": "62a6190ee6356829960b84838845fec7445c4166da4f5275720b099a88b3e5c2",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/snowft.tga",
+          "target": "cstrike/gfx/env/snowft.tga",
+          "sha256": "7bb8519a6beacc32ede2ddbcb18a100d5bb43a37041df6f67862212e7a99c655",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/snowbk.tga",
+          "target": "cstrike/gfx/env/snowbk.tga",
+          "sha256": "ed2ccb7f7d5bd7e2dee1bd6aca58d117c12473b94fd226f3c1e0c0e90a143127",
+          "preserveExisting": true
+        },
+        {
+          "source": "sound/de_torn/tk_windstreet.wav",
+          "target": "cstrike/sound/de_torn/tk_windstreet.wav",
+          "sha256": "ca3cd097bd20e6a24ed33d19a462d6ce729633f05098e18228442a68214fca0f",
+          "preserveExisting": true
+        },
+        {
+          "source": "fy_snow.res",
+          "target": "_content/notices/fy_snow/fy_snow.res",
+          "sha256": "6562720703caeba1edb0196b1d235f2723aaf4cbdaeb9184cf281d968c30e513"
+        },
+        {
+          "source": "sound/wwind.wav",
+          "target": "cstrike/sound/wwind.wav",
+          "sha256": "ac59bb5b779d9dd07e2f60cdb444c6e6c8fa3f5370dccea80c4f92ce632594e7",
+          "preserveExisting": true
+        }
+      ]
+    },
+    {
+      "file": "fy_iceworld2k.zip",
+      "url": "https://www.half-life.fr/cs/maps/fy_/fy_iceworld2k.zip",
+      "sha256": "b8c1e95c1fe4bb8a81070be811ed0704be7aed8ea8c6328a2c33b0435a23a29c",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/fy_iceworld2k/www.17buddies.net.txt",
+          "sha256": "1580fd7498bab3bd5f08c3b60582fb8646569c2e3ef34c6cfb1be5f5939c34d3"
+        },
+        {
+          "source": "maps/fy_iceworld2k.bsp",
+          "target": "cstrike/maps/fy_iceworld2k.bsp",
+          "sha256": "abd5c4faeaab22e300d6fd42a8fe3c03655fdcd2f793dbf68b27c0e366adc2dc"
+        },
+        {
+          "source": "gfx/env/officeup.tga",
+          "target": "cstrike/gfx/env/officeup.tga",
+          "sha256": "667293d38aae61cdb5addfd7eeb54e61afc6cd08f639d3c308cf93cda4bd77b1",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/officedn.tga",
+          "target": "cstrike/gfx/env/officedn.tga",
+          "sha256": "ac14b1e79754ce9a7e7bff7e4eca543ef6493a59ef06c8095c94b01dd90357d3",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/officelf.tga",
+          "target": "cstrike/gfx/env/officelf.tga",
+          "sha256": "c50568692007c1264639dc1a129efc2a8527a27af9a6fcce90250735b2694757",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/officert.tga",
+          "target": "cstrike/gfx/env/officert.tga",
+          "sha256": "ec65b70a19c523cf42a5f204c0625c62aa0f8a812467ca21df028c7a18db821c",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/officeft.tga",
+          "target": "cstrike/gfx/env/officeft.tga",
+          "sha256": "7724ffb9771f068bb2a849fb1a3ca640f025bdeb26356b935b6b2a0b5cccb8d8",
+          "preserveExisting": true
+        },
+        {
+          "source": "gfx/env/officebk.tga",
+          "target": "cstrike/gfx/env/officebk.tga",
+          "sha256": "9af173bfc52776d7b0ceafd939830ec3291859a67191bdc379a25c3741751d9f",
+          "preserveExisting": true
+        },
+        {
+          "source": "fy_iceworld2k.res",
+          "target": "_content/notices/fy_iceworld2k/fy_iceworld2k.res",
+          "sha256": "2e0749279c522504cce40b041f9c61d23cc184061aab1328ac584bb3dc318f3f"
+        }
+      ]
+    },
+    {
+      "file": "aim_ak-colt.zip",
+      "url": "https://www.half-life.fr/cs/maps/aim_/aim_ak-colt.zip",
+      "sha256": "45887f61a3b903c37e516519ab2c652278d081cc62b8db892565357d1c624e91",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "aim_ak-colt.bsp",
+          "target": "cstrike/maps/aim_ak-colt.bsp",
+          "sha256": "17b445d1f4ec64e306b8cd1d1b90e44bfe1b57ebc6815e17198ce0a3d9da3866"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/aim_ak-colt/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "aim_ak-colt.res",
+          "target": "_content/notices/aim_ak-colt/aim_ak-colt.res",
+          "sha256": "946cca7aa039f76cd005d1bff6eebe819ee79efb8ff7213ae205331e20831ba9"
+        }
+      ]
+    },
+    {
+      "file": "aim_map.zip",
+      "url": "https://www.half-life.fr/cs/maps/aim_/aim_map.zip",
+      "sha256": "94c5883b751aa0a9f1f624b3d29dff98e645c7f650f7bad76c3b63651dd03f7e",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/aim_map/www.17buddies.net.txt",
+          "sha256": "1580fd7498bab3bd5f08c3b60582fb8646569c2e3ef34c6cfb1be5f5939c34d3"
+        },
+        {
+          "source": "maps/aim_map.bsp",
+          "target": "cstrike/maps/aim_map.bsp",
+          "sha256": "bf0a879d11c2b73a0b58b7832ea8f91d7979ba0b90071c14d40a712a2e1a5b3c"
+        },
+        {
+          "source": "maps/aim_map.txt",
+          "target": "cstrike/maps/aim_map.txt",
+          "sha256": "6cd79ddd7439336d085ab30fee06c21bf5e8bbeaf16e46129130651384052911"
+        },
+        {
+          "source": "overviews/aim_map.tga",
+          "target": "cstrike/overviews/aim_map.tga",
+          "sha256": "04ef0074d89a400b7d1b4863ec0ab5df6abe87c806730f459520f036e3ea9b0d",
+          "preserveExisting": true
+        },
+        {
+          "source": "aim_halls text.txt",
+          "target": "_content/notices/aim_map/aim_halls_text.txt",
+          "sha256": "0606dd09944516a8eddf0d485c70c4ac34e4d84db159f63f8fd10c3de49c5574"
+        },
+        {
+          "source": "aim_map.res",
+          "target": "_content/notices/aim_map/aim_map.res",
+          "sha256": "e31f6811a496988f9c19e0a4fd35034772bd030eba2ce07ff5afe691349be5ab"
+        }
+      ]
+    },
+    {
+      "file": "awp_india.zip",
+      "url": "https://www.half-life.fr/cs/maps/awp_/awp_india.zip",
+      "sha256": "f1849223b587b8348bc1ce2b8269b84cff5d92c7da21979ff3282fc6c4e0299f",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "awp_india.bsp",
+          "target": "cstrike/maps/awp_india.bsp",
+          "sha256": "c3d2311d633ab68aaf3708c49778e923f5a43e2dc2631abf5d602c56f2f2156f"
+        },
+        {
+          "source": "awp_india.txt",
+          "target": "cstrike/maps/awp_india.txt",
+          "sha256": "9bb4103be60b4fbe3217e1b84678735cb14c8a07a00caf515d2bcaa1dff3c650"
+        },
+        {
+          "source": "Readme.txt",
+          "target": "_content/notices/awp_india/Readme.txt",
+          "sha256": "34a159124aec00df0736d89bf3c487d65943ac0261173c7c27336de6c45d450a"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/awp_india/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "awp_india.res",
+          "target": "_content/notices/awp_india/awp_india.res",
+          "sha256": "3057cc311b96a1ad28cd71088517a1276ada8827c550165f7841e442158d261c"
+        }
+      ]
+    },
+    {
+      "file": "35hp.zip",
+      "url": "https://www.half-life.fr/cs/maps/various/35hp.zip",
+      "sha256": "69d37eb43b83bb3170302003fb604205d5a4ab879949ad8e8e0509b2523c119d",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/35hp/www.17buddies.net.txt",
+          "sha256": "6ccd48d2a74043bf06e8752b2212f3629133309016185f6e4d7a72673e890e60"
+        },
+        {
+          "source": "maps/35hp.bsp",
+          "target": "cstrike/maps/35hp.bsp",
+          "sha256": "f666a492606be02a3d8ed92456e7d6aabba782a9ef2b3641a075b5bbda3473a9"
+        },
+        {
+          "source": "maps/35hp.res",
+          "target": "_content/notices/35hp/35hp.res",
+          "sha256": "c0fde687dd7b113d73d39b09db86c2b2bd18c33baba84986cc8cb077882f4292"
+        }
+      ]
+    },
+    {
+      "file": "he_tennis.zip",
+      "url": "https://www.half-life.fr/cs/maps/he_/he_tennis.zip",
+      "sha256": "f66192f0fc10a657c4e2d2f6df6d9737575a6d81214ef442ba0e3b05073bb75d",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "he_tennis.bsp",
+          "target": "cstrike/maps/he_tennis.bsp",
+          "sha256": "0a7db6fb4d3ad15fce081c50b5fa453d7449881ab480c992a6b8f52a61f7e9b5"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/he_tennis/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "he_tennis.res",
+          "target": "_content/notices/he_tennis/he_tennis.res",
+          "sha256": "0512e40a54a475e568fdcf18760c28418e3dd3a967f4fd7d0fee42575ad72b77"
+        }
+      ]
+    },
+    {
+      "file": "he_glass.zip",
+      "url": "https://www.half-life.fr/cs/maps/he_/he_glass.zip",
+      "sha256": "571b51c7ba41f220af598e41a915d97f995547accdb0e3c61f213e4dacd9838e",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "he_glass.bsp",
+          "target": "cstrike/maps/he_glass.bsp",
+          "sha256": "408719323abf046b5e147abc4a152c204b7011444a7c4304967f652ac50067eb"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/he_glass/www.17buddies.net.txt",
+          "sha256": "2ec4cfe86e8b6215446a4643b4058e26fa7eb1210f2191f66945bde16729fc77"
+        },
+        {
+          "source": "he_glass.res",
+          "target": "_content/notices/he_glass/he_glass.res",
+          "sha256": "eea29bd23183045b0c26c0de2ec52a1c2ac00773bf0a62ad3973026037c1d1b6"
+        }
+      ]
+    },
+    {
+      "file": "de_rats.zip",
+      "url": "https://www.half-life.fr/cs/maps/de_/de_rats.zip",
+      "sha256": "19e884d0b31e100140c1d735c8e09dd76abbc594cb0bfad27efea13eaf793651",
+      "kind": "zip",
+      "files": [
+        {
+          "source": "de_rats.bsp",
+          "target": "cstrike/maps/de_rats.bsp",
+          "sha256": "dec835f85983a866a9afb9dc656c7104ffcbaee683961cca82ffd2ac9c5bc3f8"
+        },
+        {
+          "source": "www.17buddies.net.txt",
+          "target": "_content/notices/de_rats/www.17buddies.net.txt",
+          "sha256": "240d0f51e0c2c773d37a90ad365b3babaeaf3a850821a8c25a08b66ee11f8180"
+        }
+      ]
+    },
+    {
+      "file": "awp_map.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/awp_map.graph",
+      "sha256": "c74d280f3fcc42ee31b596ed95a61f8fab33abdf8938f15f76e334d02294a5c8",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/awp_map.graph",
+          "sha256": "c74d280f3fcc42ee31b596ed95a61f8fab33abdf8938f15f76e334d02294a5c8"
+        }
+      ]
+    },
+    {
+      "file": "fy_iceworld.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/fy_iceworld.graph",
+      "sha256": "57e27397575955abbfbf337633b38cf5a62d695c189fb5f05e9b8c3b175323cd",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/fy_iceworld.graph",
+          "sha256": "57e27397575955abbfbf337633b38cf5a62d695c189fb5f05e9b8c3b175323cd"
+        }
+      ]
+    },
+    {
+      "file": "fy_pool_day.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/fy_pool_day.graph",
+      "sha256": "a9764ca985bc6a014271e8ed4d8b847b2259e7552a6c9d367c820164575d3311",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/fy_pool_day.graph",
+          "sha256": "a9764ca985bc6a014271e8ed4d8b847b2259e7552a6c9d367c820164575d3311"
+        }
+      ]
+    },
+    {
+      "file": "fy_snow.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/fy_snow.graph",
+      "sha256": "fa97f555e85e3d17196141a2777423ff5e64b3871ac8993d5c071aa1c88a6993",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/fy_snow.graph",
+          "sha256": "fa97f555e85e3d17196141a2777423ff5e64b3871ac8993d5c071aa1c88a6993"
+        }
+      ]
+    },
+    {
+      "file": "fy_iceworld2k.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/fy_iceworld2k.graph",
+      "sha256": "bb7dc1a629e061cec8d29595e0b5bf9deec0e649577faf7d4fd241889b6671e3",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/fy_iceworld2k.graph",
+          "sha256": "bb7dc1a629e061cec8d29595e0b5bf9deec0e649577faf7d4fd241889b6671e3"
+        }
+      ]
+    },
+    {
+      "file": "aim_ak-colt.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/aim_ak-colt.graph",
+      "sha256": "30ab099d25a36e2c9929afb0a5c3c69349fab11faf48a2ecb3981edf9132d201",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/aim_ak-colt.graph",
+          "sha256": "30ab099d25a36e2c9929afb0a5c3c69349fab11faf48a2ecb3981edf9132d201"
+        }
+      ]
+    },
+    {
+      "file": "aim_map.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/aim_map.graph",
+      "sha256": "c326e954d2e6013d53f4537d68b01ff70a9b8dbd61f52de9f5eb84728b4b064d",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/aim_map.graph",
+          "sha256": "c326e954d2e6013d53f4537d68b01ff70a9b8dbd61f52de9f5eb84728b4b064d"
+        }
+      ]
+    },
+    {
+      "file": "awp_india.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/awp_india.graph",
+      "sha256": "87e2f525bac6af7fb4a4ae701397dd12f0ae443dd752018533c79b8108629120",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/awp_india.graph",
+          "sha256": "87e2f525bac6af7fb4a4ae701397dd12f0ae443dd752018533c79b8108629120"
+        }
+      ]
+    },
+    {
+      "file": "35hp.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/35hp.graph",
+      "sha256": "6a4b1c155d81586aec68c688a38c4ecf31199bbd537a5dcc973a6f7b5d5a306f",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/35hp.graph",
+          "sha256": "6a4b1c155d81586aec68c688a38c4ecf31199bbd537a5dcc973a6f7b5d5a306f"
+        }
+      ]
+    },
+    {
+      "file": "he_tennis.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/he_tennis.graph",
+      "sha256": "1b5a42ab5907ffd6fda0f458f967e7108a90f0c4a48534e8d66d6a64e3c50323",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/he_tennis.graph",
+          "sha256": "1b5a42ab5907ffd6fda0f458f967e7108a90f0c4a48534e8d66d6a64e3c50323"
+        }
+      ]
+    },
+    {
+      "file": "he_glass.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/he_glass.graph",
+      "sha256": "c0797357755cf718dfcc69878900d2cf740ee93ad30f398530fc3df75f615297",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/he_glass.graph",
+          "sha256": "c0797357755cf718dfcc69878900d2cf740ee93ad30f398530fc3df75f615297"
+        }
+      ]
+    },
+    {
+      "file": "de_rats.graph",
+      "url": "https://raw.githubusercontent.com/yapb/graph/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214/graph/de_rats.graph",
+      "sha256": "5f24ff568d95238dd9da3065ce75afb2ce25627164d9964da1a257a08af830d0",
+      "kind": "raw",
+      "files": [
+        {
+          "source": "",
+          "target": "cstrike/addons/yapb/data/graph/de_rats.graph",
+          "sha256": "5f24ff568d95238dd9da3065ce75afb2ce25627164d9964da1a257a08af830d0"
+        }
+      ]
+    }
+  ],
+  "localFiles": [
+    {
+      "source": "files/cstrike/maps/de_rats_2001.res",
+      "target": "cstrike/maps/de_rats_2001.res",
+      "sha256": "b97ad18ff6488eede7b43daed3fe7084deb7484b1313fedc5ca21ab93e2d02b2"
+    },
+    {
+      "source": "files/cstrike/maps/awp_map.res",
+      "target": "cstrike/maps/awp_map.res",
+      "sha256": "c5c8092db5404c048bafd9bc39c10e12cd3cba06df6847a31496a87f0935ea8a"
+    },
+    {
+      "source": "files/cstrike/maps/fy_iceworld.res",
+      "target": "cstrike/maps/fy_iceworld.res",
+      "sha256": "217f4a30784137ff010e550633a5c577bf2383e533e4c7c76607cd0a2d21018c"
+    },
+    {
+      "source": "files/cstrike/maps/fy_pool_day.res",
+      "target": "cstrike/maps/fy_pool_day.res",
+      "sha256": "5280343bf4647dc0cbc4f9d6e7813438da7fc5cecb58d89f7ee5867d188bf80e"
+    },
+    {
+      "source": "files/cstrike/maps/fy_snow.res",
+      "target": "cstrike/maps/fy_snow.res",
+      "sha256": "a10e998f487a7ad112d0b254d103a24d9bf4da485a34edeebd99e45ec601b08f"
+    },
+    {
+      "source": "files/cstrike/maps/fy_iceworld2k.res",
+      "target": "cstrike/maps/fy_iceworld2k.res",
+      "sha256": "78baf71d8e12cb4c93dc7f07784730360a5761990e08e6e47ce7067a605e5338"
+    },
+    {
+      "source": "files/cstrike/maps/aim_ak-colt.res",
+      "target": "cstrike/maps/aim_ak-colt.res",
+      "sha256": "3c007fc4adcac20919468d57aa0edd2e16e2b380d204be3bd7c17e08d712b608"
+    },
+    {
+      "source": "files/cstrike/maps/aim_map.res",
+      "target": "cstrike/maps/aim_map.res",
+      "sha256": "334382a4aaa87bc155dad63951cf7ff04376b3f548d7ef255b6a93bfe34fa173"
+    },
+    {
+      "source": "files/cstrike/maps/awp_india.res",
+      "target": "cstrike/maps/awp_india.res",
+      "sha256": "8bcef46f435854073c16d48b16efde3692fe9fb5f2ac7bb21632b7e108e70b7d"
+    },
+    {
+      "source": "files/cstrike/maps/35hp.res",
+      "target": "cstrike/maps/35hp.res",
+      "sha256": "ac85930eb59d2db752932a049450ec431efa1a86c7cf75ab6ab635516e0699b0"
+    },
+    {
+      "source": "files/cstrike/maps/he_tennis.res",
+      "target": "cstrike/maps/he_tennis.res",
+      "sha256": "a29d6983503a051e2a893d4545c430d07013fb018af530d2c14e6169ae4cc29f"
+    },
+    {
+      "source": "files/cstrike/maps/he_glass.res",
+      "target": "cstrike/maps/he_glass.res",
+      "sha256": "6ad15b45ee8aaf42059a88652f5629ce9045e0449e19a45ec45854cd270cbf3f"
+    },
+    {
+      "source": "files/cstrike/maps/de_rats.res",
+      "target": "cstrike/maps/de_rats.res",
+      "sha256": "3b210b0c3613d987167d0b30f5fcd1e019d39eb5015d86b88c8bf5c1e4009a1d"
+    },
+    {
+      "source": "files/cstrike/addons/yapb/data/graph/de_rats_2001.graph",
+      "target": "cstrike/addons/yapb/data/graph/de_rats_2001.graph",
+      "sha256": "696100e9768525cd33571b71c66b793f1aa239e5a372fabc4beb505215e1720a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/moin.wav",
+      "target": "cstrike/sound/lan/moin.wav",
+      "sha256": "6dd686c1dce3709159ae98e4bfcd6004e17d518dd5b09cec6058fff47eb51504"
+    },
+    {
+      "source": "files/cstrike/sound/lan/nabend.wav",
+      "target": "cstrike/sound/lan/nabend.wav",
+      "sha256": "389af84125627dbfccb26a5338e03d1c740650eec2c6e513d3c514be2cfa59bf"
+    },
+    {
+      "source": "files/cstrike/sound/lan/n8.wav",
+      "target": "cstrike/sound/lan/n8.wav",
+      "sha256": "989f338cb0e33e73e63c7e95cff4482688487f8078b059c89b63c617f7b0c2b1"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bye.wav",
+      "target": "cstrike/sound/lan/bye.wav",
+      "sha256": "cf3bd414c9871373f6dbccf559cad5f69c74aa069324e72542b3629b0c613c58"
+    },
+    {
+      "source": "files/cstrike/sound/lan/jaja.wav",
+      "target": "cstrike/sound/lan/jaja.wav",
+      "sha256": "34ea82c3333d1739e23e59283e6562e8d0aa5a3b83bd935830ce5380affaaa25"
+    },
+    {
+      "source": "files/cstrike/sound/lan/sorry.wav",
+      "target": "cstrike/sound/lan/sorry.wav",
+      "sha256": "7636dea01ec2b850935b29fae759c592f5746c770a4ebf6a03740f3d2e621706"
+    },
+    {
+      "source": "files/cstrike/sound/lan/danke.wav",
+      "target": "cstrike/sound/lan/danke.wav",
+      "sha256": "e278f84c7e3bdcf16d8f5c3573754195ec052c625d5a796acc924c0a4c10f4d7"
+    },
+    {
+      "source": "files/cstrike/sound/lan/camper.wav",
+      "target": "cstrike/sound/lan/camper.wav",
+      "sha256": "69eeb473344c1af290142de5a0a0801cba322f0c1402b370b9986359a0a81e04"
+    },
+    {
+      "source": "files/cstrike/sound/lan/lol.wav",
+      "target": "cstrike/sound/lan/lol.wav",
+      "sha256": "f0a2d8fa21559992cb3699e267a7bc8576018a6f95f9870a13aff3e38e5c317e"
+    },
+    {
+      "source": "files/cstrike/sound/lan/mimi.wav",
+      "target": "cstrike/sound/lan/mimi.wav",
+      "sha256": "4c2415097228d8953d36ab943a6ea6c11577f3e7c75d701d7bebf5d051c7fc46"
+    },
+    {
+      "source": "files/cstrike/sound/lan/zielen.wav",
+      "target": "cstrike/sound/lan/zielen.wav",
+      "sha256": "953eb6026106c6479edee932bff2164dccc833519930b8112fbca652b07b10a6"
+    },
+    {
+      "source": "files/cstrike/sound/lan/afk.wav",
+      "target": "cstrike/sound/lan/afk.wav",
+      "sha256": "be76f1e0dd45d9ad4ea4a1a967746490a072e2313695f3072501d6848f984a7e"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bier.wav",
+      "target": "cstrike/sound/lan/bier.wav",
+      "sha256": "05d79718844bfdbe92bd8fc85dbeb7f6d1936cfbf0e6ed82b546b0d6d34aeb72"
+    },
+    {
+      "source": "files/cstrike/sound/lan/blamage.wav",
+      "target": "cstrike/sound/lan/blamage.wav",
+      "sha256": "a4a4a6c568a7a425b573cda2a0a95296f5471e1a3ea1576d5291aee5dce986f5"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bockmist.wav",
+      "target": "cstrike/sound/lan/bockmist.wav",
+      "sha256": "ffd8a8c812f1e244a8f8703ad988079d8516fb53bd9b0cdba2030af2d1a0c0ed"
+    },
+    {
+      "source": "files/cstrike/sound/lan/geil.wav",
+      "target": "cstrike/sound/lan/geil.wav",
+      "sha256": "219d2521bfc616179e9a58534913e0a4b9cca8fc2ada85cf085e8008a9e26aed"
+    },
+    {
+      "source": "files/cstrike/sound/lan/noe.wav",
+      "target": "cstrike/sound/lan/noe.wav",
+      "sha256": "525e71703dbe1d330640d0bef35c9331556031c52d30d60fd02e25ad61b5feef"
+    },
+    {
+      "source": "files/cstrike/sound/lan/profi.wav",
+      "target": "cstrike/sound/lan/profi.wav",
+      "sha256": "bff13236798198bc6ce1eb0b9e2f57eaec4397ec0fe3d665dbb1aba8d844f91f"
+    },
+    {
+      "source": "files/cstrike/sound/lan/wasndalos.wav",
+      "target": "cstrike/sound/lan/wasndalos.wav",
+      "sha256": "cb615fc155184d066ede6e9dcfc228cfa8d727084b46bedca3ad320321759e11"
+    },
+    {
+      "source": "files/cstrike/sound/lan/isklar.wav",
+      "target": "cstrike/sound/lan/isklar.wav",
+      "sha256": "efec04cb7e2323fd4cca311f758e6a62c53105ece197abf303353941ffb1d6bc"
+    },
+    {
+      "source": "files/cstrike/sound/lan/kommgleich.wav",
+      "target": "cstrike/sound/lan/kommgleich.wav",
+      "sha256": "61a304c173ed66891b502583042e046792d64b639fdb502a5abd181dd8103c24"
+    },
+    {
+      "source": "files/cstrike/sound/lan/kumpel.wav",
+      "target": "cstrike/sound/lan/kumpel.wav",
+      "sha256": "745ab3514255155cc51d447f2ceb902cf975538f6bc8d5ad1699af90b30af168"
+    },
+    {
+      "source": "files/cstrike/sound/lan/wasguckstdu.wav",
+      "target": "cstrike/sound/lan/wasguckstdu.wav",
+      "sha256": "8fd395d4ead2ec295688347a0a64e25e051678ac19ad17d8cbff8492f222b46b"
+    },
+    {
+      "source": "files/cstrike/sound/lan/zonk.wav",
+      "target": "cstrike/sound/lan/zonk.wav",
+      "sha256": "e44b73530109005447313755ac21fece514d9c161be6b1b3a87458352a8ec9ff"
+    },
+    {
+      "source": "files/cstrike/sound/lan/woohoo.wav",
+      "target": "cstrike/sound/lan/woohoo.wav",
+      "sha256": "50f515d180292fb8c4c35927fff8834fc64f2b5b68588b64fd0af0547692e791"
+    },
+    {
+      "source": "files/cstrike/sound/lan/beer.wav",
+      "target": "cstrike/sound/lan/beer.wav",
+      "sha256": "d30c3a2aa489c0e6997b37b5ac577f0f29e926a604a75eec38ecb50b1bf2c16f"
+    },
+    {
+      "source": "files/cstrike/sound/lan/comeagain.wav",
+      "target": "cstrike/sound/lan/comeagain.wav",
+      "sha256": "bd1a7609a796747c63d19df3a6014487fc255a223f4668e155835cc79bb4819a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/falsch.wav",
+      "target": "cstrike/sound/lan/falsch.wav",
+      "sha256": "6a2329c9109a25ace86fd3eb712daed7f9dbd7470491b2724885d54340e4e903"
+    },
+    {
+      "source": "files/cstrike/sound/lan/arsch1.wav",
+      "target": "cstrike/sound/lan/arsch1.wav",
+      "sha256": "56e44c1bb777670a27e8953f4077b2c8c4e7263267a6292e13323b42d96eab80"
+    },
+    {
+      "source": "files/cstrike/sound/lan/blut.wav",
+      "target": "cstrike/sound/lan/blut.wav",
+      "sha256": "9af6438c77c7ed50be4fb617ce802273fca17edddc523468497334a4194e9400"
+    },
+    {
+      "source": "files/cstrike/sound/lan/burn.wav",
+      "target": "cstrike/sound/lan/burn.wav",
+      "sha256": "2453ae3b815f2f2303cf966661cb908089b011f5e365441220800929ac3cdf96"
+    },
+    {
+      "source": "files/cstrike/sound/lan/camperhp.wav",
+      "target": "cstrike/sound/lan/camperhp.wav",
+      "sha256": "4433be21a35d2ae368a09d9887a9a6d8cd22db1d42f7a71e846489b14861686a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/crazytown.wav",
+      "target": "cstrike/sound/lan/crazytown.wav",
+      "sha256": "804b7f8246b00de66dc9abd888cf3e2bf2fe0e399bb1e15b5fd594ff58769145"
+    },
+    {
+      "source": "files/cstrike/sound/lan/depp.wav",
+      "target": "cstrike/sound/lan/depp.wav",
+      "sha256": "f65d32c633a85f5e1d386c4986d02b1bc85209ac0f620dec7ad69e0008682d46"
+    },
+    {
+      "source": "files/cstrike/sound/lan/dumm.wav",
+      "target": "cstrike/sound/lan/dumm.wav",
+      "sha256": "92830057952fdd3e5b3b113a048506dd39f6baf5bf161f9095531e4854f0028e"
+    },
+    {
+      "source": "files/cstrike/sound/lan/eier.wav",
+      "target": "cstrike/sound/lan/eier.wav",
+      "sha256": "f42d5d3eb0e6aa7010b968a1815f81093f37b7552db52bb52e255226ae8b6674"
+    },
+    {
+      "source": "files/cstrike/sound/lan/feuerfrei.wav",
+      "target": "cstrike/sound/lan/feuerfrei.wav",
+      "sha256": "a7d609d8112222ba36bf1565b2b63222c9b78ee98e7f19d6c4f0797c532ea10c"
+    },
+    {
+      "source": "files/cstrike/sound/lan/grr.wav",
+      "target": "cstrike/sound/lan/grr.wav",
+      "sha256": "d72952f236428d4f1f3aee700431b05de1753ec22af4a00dad2313d92a57e630"
+    },
+    {
+      "source": "files/cstrike/sound/lan/hahaa.wav",
+      "target": "cstrike/sound/lan/hahaa.wav",
+      "sha256": "9503bf46dac1cdff8238ffbeda5a0ab5878e7ea9ddea645bbdfbdb3c845ce975"
+    },
+    {
+      "source": "files/cstrike/sound/lan/hamster.wav",
+      "target": "cstrike/sound/lan/hamster.wav",
+      "sha256": "4f53b71629ab59751cf5f58949a83fc8e9d6d0edaffebeebd6a7c54407c5fa27"
+    },
+    {
+      "source": "files/cstrike/sound/lan/hi.wav",
+      "target": "cstrike/sound/lan/hi.wav",
+      "sha256": "6e16e45783f76ce7fdb6ae45e740f36dff386f975bcfd1791554358aa8b303a4"
+    },
+    {
+      "source": "files/cstrike/sound/lan/ja.wav",
+      "target": "cstrike/sound/lan/ja.wav",
+      "sha256": "162b88bd1227950d846e5779d5bf846d50ceb597ee0e4d02880fe77a98115ce0"
+    },
+    {
+      "source": "files/cstrike/sound/lan/kotzen.wav",
+      "target": "cstrike/sound/lan/kotzen.wav",
+      "sha256": "ec328dc80554289b2b4aa7f6716896bf67cb5b30c38e3261c7120b2bbfb84033"
+    },
+    {
+      "source": "files/cstrike/sound/lan/lauf.wav",
+      "target": "cstrike/sound/lan/lauf.wav",
+      "sha256": "f5be93e142979c61fe4bacf8a931d9f77a98e981a97202306004f0554c1a24a4"
+    },
+    {
+      "source": "files/cstrike/sound/lan/loli.wav",
+      "target": "cstrike/sound/lan/loli.wav",
+      "sha256": "5815c1f28537c68f3bafbafca196a7a6d12ae9b209111e3f2866162593f3bffd"
+    },
+    {
+      "source": "files/cstrike/sound/lan/lucker.wav",
+      "target": "cstrike/sound/lan/lucker.wav",
+      "sha256": "b5a7fa5510cde87bdd731a700478db3eec16de03af6a95845db1f5cab2c8edc0"
+    },
+    {
+      "source": "files/cstrike/sound/lan/mana.wav",
+      "target": "cstrike/sound/lan/mana.wav",
+      "sha256": "9ea2ed431c85926dff53099c23dd7ababa6c42951fcbe1ebf724a80a7d8ee473"
+    },
+    {
+      "source": "files/cstrike/sound/lan/mojo.wav",
+      "target": "cstrike/sound/lan/mojo.wav",
+      "sha256": "d46883e6100971af7f8add8bc3580481cf26d7759d32262578f3ab269485b1fb"
+    },
+    {
+      "source": "files/cstrike/sound/lan/mund.wav",
+      "target": "cstrike/sound/lan/mund.wav",
+      "sha256": "372cea6e9202c5c762649dc2c323675c0017c1d1544fe5364f1e7c4ddf1d4032"
+    },
+    {
+      "source": "files/cstrike/sound/lan/nice.wav",
+      "target": "cstrike/sound/lan/nice.wav",
+      "sha256": "934d03d84dda5d0f0ed95fcc3e0dec95d44c736e1f0f0448d1c1b5d7698c6d17"
+    },
+    {
+      "source": "files/cstrike/sound/lan/sack.wav",
+      "target": "cstrike/sound/lan/sack.wav",
+      "sha256": "d5df70336b5475ccaddaa411cca8e709213c83b2b42d33d803eb634db54e7f73"
+    },
+    {
+      "source": "files/cstrike/sound/lan/wo.wav",
+      "target": "cstrike/sound/lan/wo.wav",
+      "sha256": "10df7cc096710bdcf732827d7c88ce3bf09d936defe8b3a283fa6ce794324a42"
+    },
+    {
+      "source": "files/cstrike/sound/lan/benny.wav",
+      "target": "cstrike/sound/lan/benny.wav",
+      "sha256": "b88ffea66836d7a00fcae562eaf9ba792f2f9b143786de74bfe055c5293a05e3"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bitch.wav",
+      "target": "cstrike/sound/lan/bitch.wav",
+      "sha256": "e01cb6a1a0c4b4b1c7620d5f188dc575a72d82cc2cf625ebd0cca4e9f64fa65f"
+    },
+    {
+      "source": "files/cstrike/sound/lan/boogey.wav",
+      "target": "cstrike/sound/lan/boogey.wav",
+      "sha256": "c1e8c6bc7335c58c84dec9d37e6424d06b8eb287ce95a37b19196cd81a14cb45"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bs.wav",
+      "target": "cstrike/sound/lan/bs.wav",
+      "sha256": "c54a86fa95e6d541f4ed18ee581d9098fe31121c21198a656dff9bb68fb6ed93"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bull.wav",
+      "target": "cstrike/sound/lan/bull.wav",
+      "sha256": "534edc7b2f5653686b06256db13a819581865ab47a76ca27e3c7bfd5749a9b61"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bung.wav",
+      "target": "cstrike/sound/lan/bung.wav",
+      "sha256": "ee8dbdde7457157143809ef24bfa52bc0c7302dec8cc4666830bb8ece53e9046"
+    },
+    {
+      "source": "files/cstrike/sound/lan/camper_agc.wav",
+      "target": "cstrike/sound/lan/camper_agc.wav",
+      "sha256": "48a1696c0b233c3f0a7a7f6dc53c49430d1e45e5a9031f174771b06c04447eec"
+    },
+    {
+      "source": "files/cstrike/sound/lan/comedian.wav",
+      "target": "cstrike/sound/lan/comedian.wav",
+      "sha256": "8b427c37db3ba100b4ac80e6cfa28d087af9613712e79d9fef0deca567b906d5"
+    },
+    {
+      "source": "files/cstrike/sound/lan/crap.wav",
+      "target": "cstrike/sound/lan/crap.wav",
+      "sha256": "da2d46433b4bb1a25ac6732b3405c02bb6e11a3208d92020c8a34055f07a27c0"
+    },
+    {
+      "source": "files/cstrike/sound/lan/dipshit.wav",
+      "target": "cstrike/sound/lan/dipshit.wav",
+      "sha256": "896ec59c67cbceb755642bb1cb72171e8285df3c662158a2a0147415c690701d"
+    },
+    {
+      "source": "files/cstrike/sound/lan/fart.wav",
+      "target": "cstrike/sound/lan/fart.wav",
+      "sha256": "8a0bf33cd41eadab5c7f299067e27ada99aed1209a901b79f34d8abe002d2e5c"
+    },
+    {
+      "source": "files/cstrike/sound/lan/gh.wav",
+      "target": "cstrike/sound/lan/gh.wav",
+      "sha256": "69cfe26c35dcf9570fedc4cd97e79ce6b1c656180d6b700bd39dc51f5e121a5b"
+    },
+    {
+      "source": "files/cstrike/sound/lan/haha.wav",
+      "target": "cstrike/sound/lan/haha.wav",
+      "sha256": "b025d05665e311c9ecc613e4b1dedf3d4bbe7f626748ee7adbd658e61bbb44a1"
+    },
+    {
+      "source": "files/cstrike/sound/lan/imsorry.wav",
+      "target": "cstrike/sound/lan/imsorry.wav",
+      "sha256": "a1611cfaa59327ed3f6589ec2b5f60b5198edd52dd6ebb3844fbdf5da950de16"
+    },
+    {
+      "source": "files/cstrike/sound/lan/kickass.wav",
+      "target": "cstrike/sound/lan/kickass.wav",
+      "sha256": "70ca80074d6c4a11df0fb6cac1763335c31fb65fc942d9e95074bf80df44d100"
+    },
+    {
+      "source": "files/cstrike/sound/lan/muaha.wav",
+      "target": "cstrike/sound/lan/muaha.wav",
+      "sha256": "4f3c93833138407d51f5624c428d41050fa24e8b7a9df6eac8447f531ab9901a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/omg.wav",
+      "target": "cstrike/sound/lan/omg.wav",
+      "sha256": "2694c4a05106048bc22b21d0f0eb7270a232d2fd8f7590844ed7a3b43151cf92"
+    },
+    {
+      "source": "files/cstrike/sound/lan/ow.wav",
+      "target": "cstrike/sound/lan/ow.wav",
+      "sha256": "f088e4307bff63dd5067ffc95d08bd3153a6741930fb345174fe0e24bb18ed50"
+    },
+    {
+      "source": "files/cstrike/sound/lan/stfu.wav",
+      "target": "cstrike/sound/lan/stfu.wav",
+      "sha256": "b52534eb0f776cf65610e9ad00ceb128f2474aceb70e441a7a866925a85dbe6c"
+    },
+    {
+      "source": "files/cstrike/sound/lan/stfu10.wav",
+      "target": "cstrike/sound/lan/stfu10.wav",
+      "sha256": "beff44b3e5b3316bb38607d11746690f43a22690381a833440c641cfee5b066b"
+    },
+    {
+      "source": "files/cstrike/sound/lan/wazza.wav",
+      "target": "cstrike/sound/lan/wazza.wav",
+      "sha256": "6f54d5c7946d8efcabe4947aba8f6d330b6b7b5e81e98e1fb9ec878679767161"
+    },
+    {
+      "source": "files/cstrike/sound/lan/au.wav",
+      "target": "cstrike/sound/lan/au.wav",
+      "sha256": "0ac46ca9afc61da94fe3f80e81ef7c25e4310d072f73716ef75e05b652c2f2d7"
+    },
+    {
+      "source": "files/cstrike/sound/lan/bekloppt.wav",
+      "target": "cstrike/sound/lan/bekloppt.wav",
+      "sha256": "ccf43e930436b8bc4e8006fa78b911aefae7900f3f7f93b782a673cf9c02b76a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/benny_cp.wav",
+      "target": "cstrike/sound/lan/benny_cp.wav",
+      "sha256": "c821939be11f33ea5efe739d566773a1b80f55eac0d01f8a6d26db8b1498bb78"
+    },
+    {
+      "source": "files/cstrike/sound/lan/biene3.wav",
+      "target": "cstrike/sound/lan/biene3.wav",
+      "sha256": "11e91e47c3ed2bbf9722ca65e367c5f0f87352305b176bc88b1d61627e80fd06"
+    },
+    {
+      "source": "files/cstrike/sound/lan/blade.wav",
+      "target": "cstrike/sound/lan/blade.wav",
+      "sha256": "9065d4b8d96afe3c41aaa908ae6d0c7bc1aae9995c015c97459c7e5c1331c611"
+    },
+    {
+      "source": "files/cstrike/sound/lan/blitz.wav",
+      "target": "cstrike/sound/lan/blitz.wav",
+      "sha256": "37e0d0c9cbb0e17aa42b4977c4fa405a398ff42da5d4fbd40494902b3fdffdb5"
+    },
+    {
+      "source": "files/cstrike/sound/lan/chicken.wav",
+      "target": "cstrike/sound/lan/chicken.wav",
+      "sha256": "7dc84fc23dbd8e6346afadf4638813505bddf0c0ca18d4e1cfb2983fa32b86a0"
+    },
+    {
+      "source": "files/cstrike/sound/lan/chicken2.wav",
+      "target": "cstrike/sound/lan/chicken2.wav",
+      "sha256": "7a0481e9e4bd5c4f6d1d268f148e7f4a0be5c1d5c0111242813254d9482e45f8"
+    },
+    {
+      "source": "files/cstrike/sound/lan/chicken3.wav",
+      "target": "cstrike/sound/lan/chicken3.wav",
+      "sha256": "58370bcd5eac2554f2691dcb9f2081b34daff366f2f69d0fac5c5d7f2ce89c8a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/cool.wav",
+      "target": "cstrike/sound/lan/cool.wav",
+      "sha256": "3ea9b6a1ef710c8a08ec5844891d969016287a77ce62b1add3df29f9e004887b"
+    },
+    {
+      "source": "files/cstrike/sound/lan/cornholio.wav",
+      "target": "cstrike/sound/lan/cornholio.wav",
+      "sha256": "1534678b0f475c7fe7e815822353275e43902577cc127a2f8e3e1f6a33ae5f44"
+    },
+    {
+      "source": "files/cstrike/sound/lan/doh.wav",
+      "target": "cstrike/sound/lan/doh.wav",
+      "sha256": "5d110b18dcdb5d85f1fb98227eb0f8199745a9b707975547d7c341bd7d99ed15"
+    },
+    {
+      "source": "files/cstrike/sound/lan/faithless4.wav",
+      "target": "cstrike/sound/lan/faithless4.wav",
+      "sha256": "19ce0e58cc09a65d517f2df2962268638377522cb3125e714681ee76bb1bd925"
+    },
+    {
+      "source": "files/cstrike/sound/lan/feelgood.wav",
+      "target": "cstrike/sound/lan/feelgood.wav",
+      "sha256": "faf80b7c812264dc4b714d31d8a733903a5307f39a3c47d4bc3adb0867f866bf"
+    },
+    {
+      "source": "files/cstrike/sound/lan/fuckdup.wav",
+      "target": "cstrike/sound/lan/fuckdup.wav",
+      "sha256": "fdc01b5b4e65fbe862c5178f76860dc008ac8e7a1db762ae3096529c767fac8e"
+    },
+    {
+      "source": "files/cstrike/sound/lan/good-boyyy3.wav",
+      "target": "cstrike/sound/lan/good-boyyy3.wav",
+      "sha256": "c845857139129667890153bc8bad60bbc6ff197db37a492b33da588b0ca7bebc"
+    },
+    {
+      "source": "files/cstrike/sound/lan/haha_cp.wav",
+      "target": "cstrike/sound/lan/haha_cp.wav",
+      "sha256": "b1c1225438ba775f75bea9d44b362b37ae0a17437dd190279cf96e9a87a8416a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/haha2.wav",
+      "target": "cstrike/sound/lan/haha2.wav",
+      "sha256": "31a78a9d1121295dcb73d9b5ae6e095afa656f18e57be8517e27800abbaeae0a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/hell.wav",
+      "target": "cstrike/sound/lan/hell.wav",
+      "sha256": "c82cf74c0996d16bfd934c7c32e1fb3178357c28cbb826462042d3c5eb310f4d"
+    },
+    {
+      "source": "files/cstrike/sound/lan/jtab.wav",
+      "target": "cstrike/sound/lan/jtab.wav",
+      "sha256": "f21e9cdf61cac98981915da28a7062415f12e51e1d9576bdac59282a8d882a31"
+    },
+    {
+      "source": "files/cstrike/sound/lan/kurwa.wav",
+      "target": "cstrike/sound/lan/kurwa.wav",
+      "sha256": "ec22bb7236161cefbb9791ba2a4b8172b846efd2c22b026cb1ec044e4922a4fc"
+    },
+    {
+      "source": "files/cstrike/sound/lan/lala.wav",
+      "target": "cstrike/sound/lan/lala.wav",
+      "sha256": "c9675b28c15a56ab69c7f62bc281b98ffed0fcff551ece8222ed52df365bd4fe"
+    },
+    {
+      "source": "files/cstrike/sound/lan/loser.wav",
+      "target": "cstrike/sound/lan/loser.wav",
+      "sha256": "400ffc9aa510aeb08f39bbc8325d57cdae4a91613c05cba677722046c62963cc"
+    },
+    {
+      "source": "files/cstrike/sound/lan/mad3.wav",
+      "target": "cstrike/sound/lan/mad3.wav",
+      "sha256": "d642fcce09c194b7a0d01614d4623b3de7b4d01cb44f30ac486eafb06027a604"
+    },
+    {
+      "source": "files/cstrike/sound/lan/otto.wav",
+      "target": "cstrike/sound/lan/otto.wav",
+      "sha256": "1548a35ce837be53ce97f43f7ef7688458f29fdae27b5d8c758ee7f2d92d76d2"
+    },
+    {
+      "source": "files/cstrike/sound/lan/pruegel.wav",
+      "target": "cstrike/sound/lan/pruegel.wav",
+      "sha256": "df53b26a4921b12a6b445de85fe3c54fe4e8c8803fed96476e67c37ea7500c53"
+    },
+    {
+      "source": "files/cstrike/sound/lan/runnlauter.wav",
+      "target": "cstrike/sound/lan/runnlauter.wav",
+      "sha256": "0f94ab6721e91437a2f7ed4f94660f86aa48419fe6b20ca6bac85f9e97abefef"
+    },
+    {
+      "source": "files/cstrike/sound/lan/saufen.wav",
+      "target": "cstrike/sound/lan/saufen.wav",
+      "sha256": "159a2659452d9f3d479f2ff5d1924acd0c56a980660fad3a3fa62fedab53e37d"
+    },
+    {
+      "source": "files/cstrike/sound/lan/scheisse.wav",
+      "target": "cstrike/sound/lan/scheisse.wav",
+      "sha256": "0b1c7a7d7fcaa0887af80880167b0378f31275119b0feedca8307696f188c57e"
+    },
+    {
+      "source": "files/cstrike/sound/lan/sonnenschein.wav",
+      "target": "cstrike/sound/lan/sonnenschein.wav",
+      "sha256": "69c1f0a4b2e23a25613a376181c0aff9f7d1aa60c140bfcacf6d4410e5684a77"
+    },
+    {
+      "source": "files/cstrike/sound/lan/trains.wav",
+      "target": "cstrike/sound/lan/trains.wav",
+      "sha256": "43bdd704535d2ad47fbbecb9d5fe36586ab72208c9401419db1dffd543e0918a"
+    },
+    {
+      "source": "files/cstrike/sound/lan/vodka.wav",
+      "target": "cstrike/sound/lan/vodka.wav",
+      "sha256": "dcadf03e7269a73cec0c24cf1b10f65e9204942b66b98429aa9fa5dff4ed0452"
+    },
+    {
+      "source": "files/cstrike/sound/lan/welcome.wav",
+      "target": "cstrike/sound/lan/welcome.wav",
+      "sha256": "5689641e55c5d4b03ce6ae1224e80a36d6b633994bf2bbe1cfdc6048d2f06280"
+    },
+    {
+      "source": "files/cstrike/sound/lan/wow.wav",
+      "target": "cstrike/sound/lan/wow.wav",
+      "sha256": "7d6f336d93595f153343d1dc020341eb34f9a3c8a25b93d0f7594ff567b96a63"
+    },
+    {
+      "source": "files/cstrike/sound/lan/what_is_that.wav",
+      "target": "cstrike/sound/lan/what_is_that.wav",
+      "sha256": "1b2fd52644759be5b27c9fd426b3de0fb352b66a386ce7efb5f4a3ff694ae971"
+    },
+    {
+      "source": "files/cstrike/motd.txt",
+      "target": "cstrike/motd.txt",
+      "sha256": "8d871aa4c79e7244615d1c1c3854030b9386988cf72592d444022a0da5f2a2e9",
+      "replaceExistingSha256": [
+        "a1dd39b41d700b3bd65a22bffe960f2ce3a643d40bea5d5500d2f77979764472",
+        "4d96941dfd1278a133b7d53efbcb3ddce863da6c7c1564fa65593bde83430e68"
+      ]
+    },
+    {
+      "source": "files/cstrike/addons/yapb/conf/lang/en_chat.cfg",
+      "target": "cstrike/addons/yapb/conf/lang/en_chat.cfg",
+      "sha256": "352ab24e51fb8ecad3f57cec9ce53b6d03478a8a5a0b895bf9c61e6a98fea098",
+      "replaceExistingSha256": [
+        "99225fd481188f38e9cd9fff8f336193effb84e1a7c6569103709fbedd438580",
+        "aa69f0fdd64c796ef5b7efdd1ef1d6263f969b5b436836a1a2d0c396fb4b0b70"
+      ]
+    }
+  ],
+  "maps": [
+    {
+      "name": "de_rats_2001",
+      "ctSpawns": 10,
+      "tSpawns": 10,
+      "maxPlayers": 20,
+      "navigation": "YaPB auto-analysis, 546 nodes; gameplay review pending"
+    },
+    {
+      "name": "awp_map",
+      "ctSpawns": 10,
+      "tSpawns": 10,
+      "maxPlayers": 20,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "fy_iceworld",
+      "ctSpawns": 12,
+      "tSpawns": 12,
+      "maxPlayers": 24,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "fy_pool_day",
+      "ctSpawns": 16,
+      "tSpawns": 16,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "fy_snow",
+      "ctSpawns": 16,
+      "tSpawns": 16,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "fy_iceworld2k",
+      "ctSpawns": 12,
+      "tSpawns": 12,
+      "maxPlayers": 24,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "aim_ak-colt",
+      "ctSpawns": 18,
+      "tSpawns": 18,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "aim_map",
+      "ctSpawns": 16,
+      "tSpawns": 16,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "awp_india",
+      "ctSpawns": 16,
+      "tSpawns": 16,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "35hp",
+      "ctSpawns": 12,
+      "tSpawns": 12,
+      "maxPlayers": 24,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "he_tennis",
+      "ctSpawns": 5,
+      "tSpawns": 5,
+      "maxPlayers": 10,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "he_glass",
+      "ctSpawns": 16,
+      "tSpawns": 16,
+      "maxPlayers": 32,
+      "navigation": "official-graph"
+    },
+    {
+      "name": "de_rats",
+      "ctSpawns": 10,
+      "tSpawns": 10,
+      "maxPlayers": 20,
+      "navigation": "official-graph"
+    }
+  ],
+  "sounds": [
+    {
+      "keyword": "moin",
+      "path": "sound/lan/moin.wav",
+      "seconds": 4.65,
+      "description": "Morning greeting",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/moin.mp3",
+      "sourceSha256": "f373db17118b57b196f3e8090e7ca9ce54185388facc9509e4849121dac9dd90",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "nabend",
+      "path": "sound/lan/nabend.wav",
+      "seconds": 1.515,
+      "description": "Evening greeting",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/nabend.mp3",
+      "sourceSha256": "8a9709a37fc7f0cbfbc6bd324380fee2137eff4310b2688ec8e381f508d2023f",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "n8",
+      "path": "sound/lan/n8.wav",
+      "seconds": 1.149,
+      "description": "Good night",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/n8.mp3",
+      "sourceSha256": "1bb01fc5669d996e4584644d7e6593b6825069845468ea03ae3393b04730ccf6",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "bye",
+      "path": "sound/lan/bye.wav",
+      "seconds": 3.554,
+      "description": "Goodbye",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/bye.wav",
+      "sourceSha256": "8df1428308491966c8ca3906b8e059fd8cf85d6f31dc41e85c48142d6df15cf8",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "jaja",
+      "path": "sound/lan/jaja.wav",
+      "seconds": 1.552,
+      "description": "Yes, yes",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/jaja.mp3",
+      "sourceSha256": "4cd54141b3d1044a9e9cbfe187f2550c7b562527d80373b0d46f11c6eb632da4",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "sorry",
+      "path": "sound/lan/sorry.wav",
+      "seconds": 0.653,
+      "description": "Apology",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/sorry.mp3",
+      "sourceSha256": "e5dac87b4262dcf38324941c86599a84b1dda3e107872568d0f7eccf937d5a77",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "danke",
+      "path": "sound/lan/danke.wav",
+      "seconds": 0.6,
+      "description": "Thanks",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/thx.wav",
+      "sourceSha256": "3021e9104b297a4429ca36e1f3cd1b5d1c90c64d53b0a706692f6bfba9c58f58",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "camper",
+      "path": "sound/lan/camper.wav",
+      "seconds": 3.346,
+      "description": "Camper joke",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/camper2.wav",
+      "sourceSha256": "1e37115f43ac2c868f34cd43258d261e3a3ff2cedb1e030f396dacb0b8b522ab",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "lol",
+      "path": "sound/lan/lol.wav",
+      "seconds": 1.56,
+      "description": "Laugh",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/lol.wav",
+      "sourceSha256": "16e75bd205b826660382b5ba019a51dbb8f27ff9850989e4885ddb64221e466b",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "mimi",
+      "path": "sound/lan/mimi.wav",
+      "seconds": 1.656,
+      "description": "Whining reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/mimi.wav",
+      "sourceSha256": "5981767e27c407cc9ad8d54b0e589d3651a44c7533ff1bb615938b830ee16cfe",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "zielen",
+      "path": "sound/lan/zielen.wav",
+      "seconds": 2.686,
+      "description": "Aim carefully",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/zielen.wav",
+      "sourceSha256": "c7d48f4360ffcec89f571a59d741912a213ece85670fce6194fc59cc3a40add9",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "afk",
+      "path": "sound/lan/afk.wav",
+      "seconds": 1.288,
+      "description": "AFK announcement",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/afk.wav",
+      "sourceSha256": "9f4ccbffea9c3c0f6664aa86cccb7255bf65d3260d2b338cf4267a662738e0ba",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "bier",
+      "path": "sound/lan/bier.wav",
+      "seconds": 2.352,
+      "description": "Beer break",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/bier3.mp3",
+      "sourceSha256": "7b5b7b9d878e68575413134bf9b035b41addc19ee313495bb41c80ceb7013a6f",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "blamage",
+      "path": "sound/lan/blamage.wav",
+      "seconds": 3.083,
+      "description": "Embarrassment reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/blamage.wav",
+      "sourceSha256": "f7323751573f36fe23217f7def8b4be01194701ac2a290f0ca4d62b11447cbbd",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "bockmist",
+      "path": "sound/lan/bockmist.wav",
+      "seconds": 2.708,
+      "description": "Mistake reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/bockmist.wav",
+      "sourceSha256": "25843ebcf08e7b3d8cb0a3244c3d0564a9304d32d0c8f3c86d4a8412858168a5",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "geil",
+      "path": "sound/lan/geil.wav",
+      "seconds": 1.555,
+      "description": "Excited reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/geil.wav",
+      "sourceSha256": "cbb64c649a3639f29d2beb79f9d3adc4726054a9b5fa00370f1c8b75349cbda0",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "noe",
+      "path": "sound/lan/noe.wav",
+      "seconds": 1.248,
+      "description": "No",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/noe.wav",
+      "sourceSha256": "e8611f7057e15a441326ea5da9bc39c5b0a3a63faa8b9cd87ed7a043d187d2a5",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "profi",
+      "path": "sound/lan/profi.wav",
+      "seconds": 2.21,
+      "description": "Professional joke",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/profi.wav",
+      "sourceSha256": "9fd4ddc3b83917b708a073a2c64be6d2b7cec5573fd9743c4c38d93516b9b515",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "wasndalos",
+      "path": "sound/lan/wasndalos.wav",
+      "seconds": 1.846,
+      "description": "Surprise reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/wasndalos.wav",
+      "sourceSha256": "7c7adf60e7ea399ca58b0a69fbe73ed0f3bbb2076db09e457cf5847c3ae4e95a",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "isklar",
+      "path": "sound/lan/isklar.wav",
+      "seconds": 1.752,
+      "description": "Sarcastic agreement",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/isklar.mp3",
+      "sourceSha256": "be538a0cec437a787ef0d2653666ebac861e7f1f851bb2ef5f58294e7ca91e34",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "kommgleich",
+      "path": "sound/lan/kommgleich.wav",
+      "seconds": 1.833,
+      "description": "Back in a moment",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/kommgleich.wav",
+      "sourceSha256": "acf286f7128340b1b2a2fe0db82b2d875c0acab7bd4cb61a2fb36ef44edd4b2b",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "kumpel",
+      "path": "sound/lan/kumpel.wav",
+      "seconds": 3.683,
+      "description": "Friend joke",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/kumpel.mp3",
+      "sourceSha256": "50fb39b6b592c058110d4d05fcbe7eee98eeee1cb81e08900c230f81e7bee2f9",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "wasguckstdu",
+      "path": "sound/lan/wasguckstdu.wav",
+      "seconds": 5.773,
+      "description": "What are you looking at",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/wasguckstdu.mp3",
+      "sourceSha256": "d89b8c32823df0d05ae73f5ae3b2bec3f6cdd40de391913650e466bfcc7defcd",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "zonk",
+      "path": "sound/lan/zonk.wav",
+      "seconds": 2.665,
+      "description": "Zonk effect",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/zonk.mp3",
+      "sourceSha256": "121ee690b4bc95997db09387f654fc2623888992dfee22eef6eba49e2d0f75b9",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "woohoo",
+      "path": "sound/lan/woohoo.wav",
+      "seconds": 0.926,
+      "description": "Classic cheer",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/woohoo.wav",
+      "sourceSha256": "8d677c325369d40e6d02c5d747a8509a3864138c821187bae1a4410bdc3ddb66",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "beer",
+      "path": "sound/lan/beer.wav",
+      "seconds": 1.918,
+      "description": "Classic beer reaction",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/beer.wav",
+      "sourceSha256": "41607e85360c0b66451e69bf521faa7610a31be33eecdeb7b8850742a1027de4",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "comeagain",
+      "path": "sound/lan/comeagain.wav",
+      "seconds": 0.892,
+      "description": "Classic goodbye",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/comeagain.wav",
+      "sourceSha256": "d4376bd1850702bcaae85697e3022cae85983c2180a634c2f29ee507a548408f",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "falsch",
+      "path": "sound/lan/falsch.wav",
+      "seconds": 4.056,
+      "description": "Wrong decision",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/falsch.mp3",
+      "sourceSha256": "d84b0a607500d769d6339c2be92a17ab72c63051af3b30aab27b7d231a07d2f2",
+      "review": "Filename, local automatic transcript and audio format checked; human listening pending"
+    },
+    {
+      "keyword": "arsch1",
+      "path": "sound/lan/arsch1.wav",
+      "seconds": 6.034,
+      "description": "Operator-selected clip: arsch1",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/arsch1.mp3",
+      "sourceSha256": "3173a20193a130d912c319d934df05377387d023374170512aeffbdba05876cf",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 3
+    },
+    {
+      "keyword": "blut",
+      "path": "sound/lan/blut.wav",
+      "seconds": 3.188,
+      "description": "Operator-selected clip: blut",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/blut.mp3",
+      "sourceSha256": "c1e15631e33795c09a5c6b9650ce5b6eda784ab8a120d9420e229ebd4bc32435",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 6
+    },
+    {
+      "keyword": "burn",
+      "path": "sound/lan/burn.wav",
+      "seconds": 7.387,
+      "description": "Operator-selected clip: burn",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/burn.mp3",
+      "sourceSha256": "7e92cc74eab92c9ec2735c17b3334b47b649c00a5129b4382be543a1290250d2",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 8
+    },
+    {
+      "keyword": "camperhp",
+      "path": "sound/lan/camperhp.wav",
+      "seconds": 4.493,
+      "description": "Operator-selected clip: camperhp",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/camperhp.mp3",
+      "sourceSha256": "0c75e750f03da33f3d3d6b53ffd0e18753ddf3d232789fccd7e8ecf42042722c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 10
+    },
+    {
+      "keyword": "crazytown",
+      "path": "sound/lan/crazytown.wav",
+      "seconds": 73.169,
+      "description": "Operator-selected clip: crazytown",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/crazytown.mp3",
+      "sourceSha256": "9e4ea05a7943f27bd19e8f8b40aa015b859f3dc9a47b7fe3972eb3c8abff10c1",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 12
+    },
+    {
+      "keyword": "depp",
+      "path": "sound/lan/depp.wav",
+      "seconds": 12.885,
+      "description": "Operator-selected clip: depp",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/depp.wav",
+      "sourceSha256": "30abc2343067308b602d9487015fd34686784d4f8c7461d5e459ff0e6becac30",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 13
+    },
+    {
+      "keyword": "dumm",
+      "path": "sound/lan/dumm.wav",
+      "seconds": 1.658,
+      "description": "Operator-selected clip: dumm",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/dumm.wav",
+      "sourceSha256": "1d7ea3cd7950a66bf346831049729eecb9f44b0db53621892c45339994a00921",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 16
+    },
+    {
+      "keyword": "eier",
+      "path": "sound/lan/eier.wav",
+      "seconds": 1.97,
+      "description": "Operator-selected clip: eier",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/eier.wav",
+      "sourceSha256": "b3f33bcfe3f02999acc8460023638dfb37b228a8564e55f012d79f301a56afee",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 17
+    },
+    {
+      "keyword": "feuerfrei",
+      "path": "sound/lan/feuerfrei.wav",
+      "seconds": 11.389,
+      "description": "Operator-selected clip: feuerfrei",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/feuerfrei.mp3",
+      "sourceSha256": "53f8af0c762a2f4afe5ae530170b59e7111bfd8500495077ac74f9a77a46a19f",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 18
+    },
+    {
+      "keyword": "grr",
+      "path": "sound/lan/grr.wav",
+      "seconds": 2.403,
+      "description": "Operator-selected clip: grr",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/grr.mp3",
+      "sourceSha256": "d7939f3a05d835a30dea553d6af750934480f82405cf992cc4256c4d6b59030c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 22
+    },
+    {
+      "keyword": "hahaa",
+      "path": "sound/lan/hahaa.wav",
+      "seconds": 2.107,
+      "description": "Operator-selected clip: hahaa",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/hahaa.wav",
+      "sourceSha256": "17109e6fea3b3219d053ee9c85017f91737cf65e4e0faecb1615752d9c0bb9ce",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 23
+    },
+    {
+      "keyword": "hamster",
+      "path": "sound/lan/hamster.wav",
+      "seconds": 9.711,
+      "description": "Operator-selected clip: hamster",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/hamster.wav",
+      "sourceSha256": "bea5088a9e748cdde53427e947f29ce3fc12152a3af315e60b94e9f10aa50387",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 24
+    },
+    {
+      "keyword": "hi",
+      "path": "sound/lan/hi.wav",
+      "seconds": 0.758,
+      "description": "Operator-selected clip: hi",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/hi.mp3",
+      "sourceSha256": "4da0622dc7137cbd4bea6be8a71d531d2479ae9dd915f9b29fff28f09e74d86b",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 27
+    },
+    {
+      "keyword": "ja",
+      "path": "sound/lan/ja.wav",
+      "seconds": 5.538,
+      "description": "Operator-selected clip: ja",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/ja.mp3",
+      "sourceSha256": "02529c1a2631fbce42e6382f9bb8f1f64b2f6e05c3c80b7909fc906284dadac8",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 30
+    },
+    {
+      "keyword": "kotzen",
+      "path": "sound/lan/kotzen.wav",
+      "seconds": 9.62,
+      "description": "Operator-selected clip: kotzen",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/kotzen.mp3",
+      "sourceSha256": "9e07cfd5cf0f0026b5dae51c22e32190486b1bbf492f0a4b3538d8a1182af756",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 33
+    },
+    {
+      "keyword": "lauf",
+      "path": "sound/lan/lauf.wav",
+      "seconds": 2.718,
+      "description": "Operator-selected clip: lauf",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/lauf.wav",
+      "sourceSha256": "440f8c712694a7ade7981b5b9bb2e638f7ae0d8b6081b3bf684abf4f2d7faf4c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 35
+    },
+    {
+      "keyword": "loli",
+      "path": "sound/lan/loli.wav",
+      "seconds": 3.579,
+      "description": "Operator-selected clip: loli",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/loli.wav",
+      "sourceSha256": "489090a9429e66f7ad42c0bc6e3d9b6488a6ba12200b168c026685718df84bbd",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 36
+    },
+    {
+      "keyword": "lucker",
+      "path": "sound/lan/lucker.wav",
+      "seconds": 4.754,
+      "description": "Operator-selected clip: lucker",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/lucker.mp3",
+      "sourceSha256": "101ae866c59939e5f59d59bc3af217f9cedbf1f39212eb982e91f3dc8f67f5b8",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 37
+    },
+    {
+      "keyword": "mana",
+      "path": "sound/lan/mana.wav",
+      "seconds": 11.938,
+      "description": "Operator-selected clip: mana",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/mana.mp3",
+      "sourceSha256": "8ca04e68961d3e84403af33b52ca6e714a618c4863a8e60aa88b4aaadab0962f",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 39
+    },
+    {
+      "keyword": "mojo",
+      "path": "sound/lan/mojo.wav",
+      "seconds": 12.042,
+      "description": "Operator-selected clip: mojo",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/mojo.mp3",
+      "sourceSha256": "e326be5846169c943c7d6dbf27c4813aae418fab6bc2fb4c8dbaba972632f70c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 41
+    },
+    {
+      "keyword": "mund",
+      "path": "sound/lan/mund.wav",
+      "seconds": 12.199,
+      "description": "Operator-selected clip: mund",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/mund.mp3",
+      "sourceSha256": "7d745cdecd4bfd2718dec1c369e9d55dc597d4c622a0cf6359f66cc4cb4f0467",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 42
+    },
+    {
+      "keyword": "nice",
+      "path": "sound/lan/nice.wav",
+      "seconds": 7.27,
+      "description": "Operator-selected clip: nice",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/nice.mp3",
+      "sourceSha256": "e1f0b83225cd1ce2d7af8ae45adc93cb809701ddc45d764fd64597e84f34f7ce",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 44
+    },
+    {
+      "keyword": "sack",
+      "path": "sound/lan/sack.wav",
+      "seconds": 7.811,
+      "description": "Operator-selected clip: sack",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/sack.mp3",
+      "sourceSha256": "2346a593a5945d0cdd3487a85d0ae201f63bff07f5b6b8dc5b86c1747ed2c71c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 48
+    },
+    {
+      "keyword": "wo",
+      "path": "sound/lan/wo.wav",
+      "seconds": 2.078,
+      "description": "Operator-selected clip: wo",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "admin_plugin/wo.wav",
+      "sourceSha256": "e91d981995cfe842756fab2d25442b0f5536c54b18cd9e85b9831077de9f2e0a",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 55
+    },
+    {
+      "keyword": "benny",
+      "path": "sound/lan/benny.wav",
+      "seconds": 14.279,
+      "description": "Operator-selected clip: benny",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/benny.mp3",
+      "sourceSha256": "027155977cc0bd2e7e382b40e4e6d6f090e84b29d3ce57f4bcd2fb895fad9478",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 62
+    },
+    {
+      "keyword": "bitch",
+      "path": "sound/lan/bitch.wav",
+      "seconds": 1.62,
+      "description": "Operator-selected clip: bitch",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/bitch.mp3",
+      "sourceSha256": "762561cb17765bae89b7144674efe1c7ff51e3440f8da45504aea0ccde93fb3f",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 63
+    },
+    {
+      "keyword": "boogey",
+      "path": "sound/lan/boogey.wav",
+      "seconds": 1.619,
+      "description": "Operator-selected clip: boogey",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/boogey.wav",
+      "sourceSha256": "2d8cf84d2b8e8d83fd8e88610f9927c93655c5130656a50a2f2d12889d8c5722",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 65
+    },
+    {
+      "keyword": "bs",
+      "path": "sound/lan/bs.wav",
+      "seconds": 1.097,
+      "description": "Operator-selected clip: bs",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/bs.mp3",
+      "sourceSha256": "ba244b7e817492688e7108905d803fb69195429ca26b70ff2d56e079f0d47959",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 67
+    },
+    {
+      "keyword": "bull",
+      "path": "sound/lan/bull.wav",
+      "seconds": 1.672,
+      "description": "Operator-selected clip: bull",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/bull.mp3",
+      "sourceSha256": "223953d7ae31f1b84f24d6b99fe5b43ad7c4c32ed0debf34291e248c3e25d646",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 68
+    },
+    {
+      "keyword": "bung",
+      "path": "sound/lan/bung.wav",
+      "seconds": 3.59,
+      "description": "Operator-selected clip: bung",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/bung.wav",
+      "sourceSha256": "3521e4dbbdd2f37b6c073394d70755504582ab0162e817e78cc0a0952fcbac2e",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 69
+    },
+    {
+      "keyword": "camper_agc",
+      "path": "sound/lan/camper_agc.wav",
+      "seconds": 1.711,
+      "description": "Operator-selected clip: camper",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/camper.wav",
+      "sourceSha256": "346a0b9a2eb2e78cf236c2a319bbdab17300b08a6d7b5be444e3f776dcaaa8ab",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 70
+    },
+    {
+      "keyword": "comedian",
+      "path": "sound/lan/comedian.wav",
+      "seconds": 2.41,
+      "description": "Operator-selected clip: comedian",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/comedian.wav",
+      "sourceSha256": "84bfb2aacc4a4dc6a15111abf256bd7ba11bf5edd1f9e5b6e51b1de6e26abd16",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 72
+    },
+    {
+      "keyword": "crap",
+      "path": "sound/lan/crap.wav",
+      "seconds": 1.221,
+      "description": "Operator-selected clip: crap",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/crap.wav",
+      "sourceSha256": "c72d2d121dd9e5b1ba04690264abb5e7213dc641e7f2cf0d3ec5d6d0ff400497",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 73
+    },
+    {
+      "keyword": "dipshit",
+      "path": "sound/lan/dipshit.wav",
+      "seconds": 1.537,
+      "description": "Operator-selected clip: dipshit",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/dipshit.wav",
+      "sourceSha256": "93f74359224dc71b2190b6b0da16a4ab4dc4d6a9ef64e1fef61f7bb14ab533ba",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 76
+    },
+    {
+      "keyword": "fart",
+      "path": "sound/lan/fart.wav",
+      "seconds": 2.511,
+      "description": "Operator-selected clip: fart",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/fart.wav",
+      "sourceSha256": "12f0969e9be1c9376fc0cf4fa482cf15c7729ecf07b4600b7a903f79379f4e13",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 78
+    },
+    {
+      "keyword": "gh",
+      "path": "sound/lan/gh.wav",
+      "seconds": 2.208,
+      "description": "Operator-selected clip: gh",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/gh.wav",
+      "sourceSha256": "87acf997803a76caa80be9b83e2002764f74200bd9cbdd51412c8cec2651d7f5",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 84
+    },
+    {
+      "keyword": "haha",
+      "path": "sound/lan/haha.wav",
+      "seconds": 1.102,
+      "description": "Operator-selected clip: haha",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/haha.wav",
+      "sourceSha256": "f05a0fa6115fa8b6b1b311605cc8110c5047f80f205512359d9a0208c759cbe0",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 86
+    },
+    {
+      "keyword": "imsorry",
+      "path": "sound/lan/imsorry.wav",
+      "seconds": 1.672,
+      "description": "Operator-selected clip: imsorry",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/imsorry.wav",
+      "sourceSha256": "8f1f40a0822826cd8151f472aa78fa7addba6532d4bea230279609095a45e235",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 88
+    },
+    {
+      "keyword": "kickass",
+      "path": "sound/lan/kickass.wav",
+      "seconds": 3.796,
+      "description": "Operator-selected clip: kickass",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/kickass.wav",
+      "sourceSha256": "0ad72f5c83d498944e4c8efa78ff4d248987cc3433e9e8ddea13bc430aa1eb51",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 89
+    },
+    {
+      "keyword": "muaha",
+      "path": "sound/lan/muaha.wav",
+      "seconds": 3.428,
+      "description": "Operator-selected clip: muaha",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/muaha.wav",
+      "sourceSha256": "94208ba2a82b5d2770ee6ab109647825a71ebf5384f69480b1f50e34b1ec0523",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 92
+    },
+    {
+      "keyword": "omg",
+      "path": "sound/lan/omg.wav",
+      "seconds": 1.358,
+      "description": "Operator-selected clip: omg",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/omg.mp3",
+      "sourceSha256": "2f05b46165d9c93b7419cf5feb04adf15f114c303d81f7c1461d0282b9c02196",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 95
+    },
+    {
+      "keyword": "ow",
+      "path": "sound/lan/ow.wav",
+      "seconds": 0.575,
+      "description": "Operator-selected clip: ow",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/ow.wav",
+      "sourceSha256": "16123bf1b6fe48c9ec0b188a5bb163d44738a959a6bb361da27e258d3e1be5d6",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 97
+    },
+    {
+      "keyword": "stfu",
+      "path": "sound/lan/stfu.wav",
+      "seconds": 1.829,
+      "description": "Operator-selected clip: stfu",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/stfu.mp3",
+      "sourceSha256": "c1eda51ba154458996eb2cc76b82518d76612bfda31106f01488be9d6eadd76c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 101
+    },
+    {
+      "keyword": "stfu10",
+      "path": "sound/lan/stfu10.wav",
+      "seconds": 3.239,
+      "description": "Operator-selected clip: stfu10",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/stfu10.mp3",
+      "sourceSha256": "42785262f77d0c48a03079c35b6976e90c2106e619a4c0743d0a7adf87a3c209",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 103
+    },
+    {
+      "keyword": "wazza",
+      "path": "sound/lan/wazza.wav",
+      "seconds": 1.682,
+      "description": "Operator-selected clip: wazza",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "agc/wazza.wav",
+      "sourceSha256": "9a4baa6836e45afce25d096612b69b69a46353be4308b5cb83309a7ad6abf918",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 107
+    },
+    {
+      "keyword": "au",
+      "path": "sound/lan/au.wav",
+      "seconds": 2.212,
+      "description": "Operator-selected clip: au",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/au.wav",
+      "sourceSha256": "eca7b5845b0b3ef8b66d4f412428e006ac3d4034fcbbb61105e16a03f2ae643e",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 121
+    },
+    {
+      "keyword": "bekloppt",
+      "path": "sound/lan/bekloppt.wav",
+      "seconds": 4.702,
+      "description": "Operator-selected clip: bekloppt",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/bekloppt.mp3",
+      "sourceSha256": "31ae9f580099e0bf3322aa923b0f368448cd06150484a90d625728fea1694356",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 124
+    },
+    {
+      "keyword": "benny_cp",
+      "path": "sound/lan/benny_cp.wav",
+      "seconds": 15.569,
+      "description": "Operator-selected clip: benny",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/benny.wav",
+      "sourceSha256": "7749dc03f4922abd0987dd43c3d1c2a05edab6b45ea86c17c88e5f7a8f5ad84b",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 125
+    },
+    {
+      "keyword": "biene3",
+      "path": "sound/lan/biene3.wav",
+      "seconds": 6.87,
+      "description": "Operator-selected clip: biene3",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/biene3.mp3",
+      "sourceSha256": "30e0fff7cb91bb78d031408e6dcdcbfe4d1195e4a9ac4ba4740417aaec44a1f3",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 126
+    },
+    {
+      "keyword": "blade",
+      "path": "sound/lan/blade.wav",
+      "seconds": 10.789,
+      "description": "Operator-selected clip: blade",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/blade.mp3",
+      "sourceSha256": "dd0dbbc3fe8a51bf53f1f55f52895b09a83dfc35d9e884b5a1d2cb8b229149c4",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 128
+    },
+    {
+      "keyword": "blitz",
+      "path": "sound/lan/blitz.wav",
+      "seconds": 2.601,
+      "description": "Operator-selected clip: blitz",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/blitz.wav",
+      "sourceSha256": "ddf3f238a7cd88b2e655f1d0be92a7e9311595161a7653b330cffcc53203cb15",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 129
+    },
+    {
+      "keyword": "chicken",
+      "path": "sound/lan/chicken.wav",
+      "seconds": 8.832,
+      "description": "Operator-selected clip: chicken",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/chicken.wav",
+      "sourceSha256": "2b9042c48bce965a095e4cc2bda3bf4e89bc5051af5b296cf0322124f5947439",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 135
+    },
+    {
+      "keyword": "chicken2",
+      "path": "sound/lan/chicken2.wav",
+      "seconds": 8.999,
+      "description": "Operator-selected clip: chicken2",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/chicken2.wav",
+      "sourceSha256": "3f220bc2b25c5f5054d3812a30a13dff23efb54bfe0344d02e2ae50877cbb7c5",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 136
+    },
+    {
+      "keyword": "chicken3",
+      "path": "sound/lan/chicken3.wav",
+      "seconds": 8.934,
+      "description": "Operator-selected clip: chicken3",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/chicken3.wav",
+      "sourceSha256": "318608a5e37d529f8fe7b413133336a7055218c525926e29c869f4e64927b81d",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 137
+    },
+    {
+      "keyword": "cool",
+      "path": "sound/lan/cool.wav",
+      "seconds": 1.022,
+      "description": "Operator-selected clip: cool",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/cool.wav",
+      "sourceSha256": "3dbed87c96a72d74b830efae58816e1528cb73d98d4d197f4d606cf24536b774",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 143
+    },
+    {
+      "keyword": "cornholio",
+      "path": "sound/lan/cornholio.wav",
+      "seconds": 3.074,
+      "description": "Operator-selected clip: cornholio",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/cornholio.wav",
+      "sourceSha256": "8f80a5f24d39b082ce2dae48029642842f7b18ef24b68d447d6e6cba01914908",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 144
+    },
+    {
+      "keyword": "doh",
+      "path": "sound/lan/doh.wav",
+      "seconds": 7.312,
+      "description": "Operator-selected clip: doh",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/doh.wav",
+      "sourceSha256": "e0b0b253487596025803c790408111d60166e74da2defbf1f5638df98428213f",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 150
+    },
+    {
+      "keyword": "faithless4",
+      "path": "sound/lan/faithless4.wav",
+      "seconds": 17.058,
+      "description": "Operator-selected clip: faithless4",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/faithless4.mp3",
+      "sourceSha256": "cd5b84d3fda76874a350d2fde6c9b6176707bd07248d11fe914bc2cd12a54210",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 153
+    },
+    {
+      "keyword": "feelgood",
+      "path": "sound/lan/feelgood.wav",
+      "seconds": 3.918,
+      "description": "Operator-selected clip: feelgood",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/feelgood.wav",
+      "sourceSha256": "257ea74bc59e0f989fa1c970e485379e977aec5322993d9fb106f6283c114d11",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 156
+    },
+    {
+      "keyword": "fuckdup",
+      "path": "sound/lan/fuckdup.wav",
+      "seconds": 4.84,
+      "description": "Operator-selected clip: fuckdup",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/fuckdup.wav",
+      "sourceSha256": "c9da895b4056f821075988851f5c41b0f5af206c303d6cbcbea763627ca59d07",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 157
+    },
+    {
+      "keyword": "good-boyyy3",
+      "path": "sound/lan/good-boyyy3.wav",
+      "seconds": 2.219,
+      "description": "Operator-selected clip: good-boyyy3",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/good-boyyy3.mp3",
+      "sourceSha256": "bcbc774e4122f3556d711a3afc4dc3387fe22a8b77b3d511a62cb438fd89ca10",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 162
+    },
+    {
+      "keyword": "haha_cp",
+      "path": "sound/lan/haha_cp.wav",
+      "seconds": 7.259,
+      "description": "Operator-selected clip: haha",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/haha.wav",
+      "sourceSha256": "0529b5bc3f48a3295709e015f924734a33d4aed8e50cdb6ce446496f5b68f013",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 164
+    },
+    {
+      "keyword": "haha2",
+      "path": "sound/lan/haha2.wav",
+      "seconds": 1.685,
+      "description": "Operator-selected clip: haha2",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/haha2.wav",
+      "sourceSha256": "11aee45737c48a040ce8dedc6254523b4dc173c6f7f224f87dcd8361d734521c",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 165
+    },
+    {
+      "keyword": "hell",
+      "path": "sound/lan/hell.wav",
+      "seconds": 1.586,
+      "description": "Operator-selected clip: hell",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/hell.wav",
+      "sourceSha256": "dfe4be50aaebe3f83b455af416936cbb7e13e9dce49160bc321cc75edff0a866",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 166
+    },
+    {
+      "keyword": "jtab",
+      "path": "sound/lan/jtab.wav",
+      "seconds": 67.553,
+      "description": "Operator-selected clip: jtab",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/jtab.mp3",
+      "sourceSha256": "3254f32cc9afd9f4a5006d2814f25547451b54e64a341a3239b878cc698806b0",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 170
+    },
+    {
+      "keyword": "kurwa",
+      "path": "sound/lan/kurwa.wav",
+      "seconds": 2.429,
+      "description": "Operator-selected clip: kurwa",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/kurwa.mp3",
+      "sourceSha256": "753f95672b4660ac432785db6712d651149fb7416375a1e367372214eea4d5c2",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 172
+    },
+    {
+      "keyword": "lala",
+      "path": "sound/lan/lala.wav",
+      "seconds": 4.079,
+      "description": "Operator-selected clip: lala",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/lala.wav",
+      "sourceSha256": "17d78173246315df8faad5ae53e0532899c07a0b5d1d5e35ca3acc6fcfd77334",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 176
+    },
+    {
+      "keyword": "loser",
+      "path": "sound/lan/loser.wav",
+      "seconds": 22.529,
+      "description": "Operator-selected clip: loser",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/loser.mp3",
+      "sourceSha256": "32ef01b533ceac50f248aaaceb490819276c06aee7ba7b3e499192b530c2180e",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 177
+    },
+    {
+      "keyword": "mad3",
+      "path": "sound/lan/mad3.wav",
+      "seconds": 3.448,
+      "description": "Operator-selected clip: mad3",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/mad3.mp3",
+      "sourceSha256": "0c22433ee6b2af5b6f56f0ed36fb5ada00685b3ec648b08ef42146597eb671d3",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 178
+    },
+    {
+      "keyword": "otto",
+      "path": "sound/lan/otto.wav",
+      "seconds": 5.108,
+      "description": "Operator-selected clip: otto",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/otto.mp3",
+      "sourceSha256": "a39161ba956c8400a4de9456595073e7959e1c3502d7f5ee0186574ef2740158",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 190
+    },
+    {
+      "keyword": "pruegel",
+      "path": "sound/lan/pruegel.wav",
+      "seconds": 2.325,
+      "description": "Operator-selected clip: pruegel",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/pruegel.mp3",
+      "sourceSha256": "8d428365d156dad22eb6322d0529ae7ed802569b0a38544fb9a9aebdfc7b5e02",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 191
+    },
+    {
+      "keyword": "runnlauter",
+      "path": "sound/lan/runnlauter.wav",
+      "seconds": 4.336,
+      "description": "Operator-selected clip: runnlauter",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/runnlauter.mp3",
+      "sourceSha256": "9b8a50351c64ab5b6308279f9d95dd4a9dfd19864f35f2002e67eff53a211db3",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 194
+    },
+    {
+      "keyword": "saufen",
+      "path": "sound/lan/saufen.wav",
+      "seconds": 15.338,
+      "description": "Operator-selected clip: saufen",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/saufen.mp3",
+      "sourceSha256": "d13bae108308526ef7090b03a9e77ae76cf4fe2bbd97c413c47b99582739b817",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 195
+    },
+    {
+      "keyword": "scheisse",
+      "path": "sound/lan/scheisse.wav",
+      "seconds": 4.123,
+      "description": "Operator-selected clip: scheisse",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/scheisse.wav",
+      "sourceSha256": "42f7c084af42eecf8139ada59dbda31a91184129a8b420a2ced48bfbb0753a35",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 196
+    },
+    {
+      "keyword": "sonnenschein",
+      "path": "sound/lan/sonnenschein.wav",
+      "seconds": 9.672,
+      "description": "Operator-selected clip: sonnenschein",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/sonnenschein.mp3",
+      "sourceSha256": "a4a635bc6ece08aa28d300e51e3838fc21924be39bbb2941db1a2e609592d12e",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 200
+    },
+    {
+      "keyword": "trains",
+      "path": "sound/lan/trains.wav",
+      "seconds": 1.212,
+      "description": "Operator-selected clip: trains",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/trains.mp3",
+      "sourceSha256": "a9a2509cf4a8401d6515e84fc7a6c034ff660d1e57daa8f006c6d3102cba1c54",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 205
+    },
+    {
+      "keyword": "vodka",
+      "path": "sound/lan/vodka.wav",
+      "seconds": 12.651,
+      "description": "Operator-selected clip: vodka",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/vodka.mp3",
+      "sourceSha256": "d190565df31644e55c94cf320ce6f022d825558f1e05a9066f17524b4e7895f7",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 207
+    },
+    {
+      "keyword": "welcome",
+      "path": "sound/lan/welcome.wav",
+      "seconds": 1.638,
+      "description": "Operator-selected clip: welcome",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/welcome.wav",
+      "sourceSha256": "b8813100aaf11420e51e3a7b3ed60df0b5b5a54605dc107d41b640e5f4a713e9",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 208
+    },
+    {
+      "keyword": "wow",
+      "path": "sound/lan/wow.wav",
+      "seconds": 1.01,
+      "description": "Operator-selected clip: wow",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "cp/wow.wav",
+      "sourceSha256": "e266dc098d5c60ec4bc981254941bcbc1d54a36b25e23e093ef181119517c9a9",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 209
+    },
+    {
+      "keyword": "what_is_that",
+      "path": "sound/lan/what_is_that.wav",
+      "seconds": 3.851,
+      "description": "Operator-selected clip: what_is_that",
+      "sourceCollection": "Operator-provided Day of Defeat Source server downloads",
+      "sourceFile": "new/what_is_that.wav",
+      "sourceSha256": "de76979da3174861072fec5551208f1db74c49be823185a97a7bf56a32a85858",
+      "review": "Selected by the operator in the marked desktop list; converted audio format verified",
+      "selectionBatch": "2026-11-04",
+      "sourceSelectionNumber": 233
+    }
+  ],
+  "joinSound": "sound/lan/welcome.wav"
+}

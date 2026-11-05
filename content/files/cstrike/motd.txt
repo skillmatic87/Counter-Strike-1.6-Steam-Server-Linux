@@ -1,0 +1,28 @@
+Welcome to YOUR new CS 1.6 Server!
+========================================
+Classic Counter-Strike. Good games. Have fun!
+
+CHAT: SOUNDS & STATS
+/soundlist      All sound commands
+/sounds         Alternative sound list
+/soundson       Enable sounds
+/soundsoff      Mute sounds
+/rank           Your ranking
+/top15          Best players
+/statsme        Your statistics
+/hp             Last opponent's remaining HP
+
+CHAT: MAPS
+maps or /maps   Open the map nomination menu
+<map name>      Nominate, e.g. de_rats_2001
+nextmap         Next map
+timeleft        Time remaining
+rtv or /rtv     Request a map vote
+
+CONSOLE
+amxmodmenu      Admin menu (admins only)
+
+THANK YOU!
+Thanks for playing, and thanks to all mod & map authors!
+Server package, updates and feedback:
+https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAN Sound Preview</title>
+<style>
+  :root { color-scheme:light; font:16px/1.55 system-ui,sans-serif; color:#172e39; background:#f3f5f3; }
+  body { max-width:880px; margin:42px auto; padding:0 20px 40px; }
+  header { border-top:5px solid #207363; padding-top:20px; }
+  h1 { font-size:clamp(2rem,5vw,3rem); letter-spacing:-.045em; margin:0 0 8px; }
+  p { max-width:66ch; margin:8px 0 20px; }
+  label { display:block; font-weight:650; margin-bottom:6px; }
+  input { width:min(100%,420px); box-sizing:border-box; font:inherit; padding:10px 12px; border:1px solid #71877e; border-radius:6px; }
+  input:focus-visible { outline:3px solid #207363; outline-offset:3px; }
+  table { width:100%; border-collapse:collapse; background:white; margin-top:24px; }
+  th,td { text-align:left; padding:12px 14px; border-bottom:1px solid #dce3df; }
+  thead { background:#173f36; color:white; }
+  code { font-size:1rem; }
+  audio { width:min(100%,300px); vertical-align:middle; }
+  .note { color:#425c53; font-size:.92rem; margin-top:24px; }
+  [hidden] { display:none; }
+  @media(max-width:540px) { th,td { padding:10px 6px; } audio { width:175px; } td:nth-child(2),th:nth-child(2) { display:none; } }
+</style>
+<header><h1>LAN Sound Preview</h1>
+<p>108 clips selected from the supplied server collection. Play a clip below; its keyword is what players type into chat.</p></header>
+<label for="filter">Find a keyword</label>
+<input type="search" id="filter" placeholder="moin, afk, bier..." autocomplete="off">
+<table><thead><tr><th scope="col">Chat keyword</th><th scope="col">Duration</th><th scope="col">Listen</th></tr></thead><tbody>
+<tr data-keyword="moin"><th scope="row"><code>moin</code></th><td>4.65 s</td><td><audio controls preload="none" aria-label="Listen to moin" src="files/cstrike/sound/lan/moin.wav"></audio></td></tr>
+<tr data-keyword="nabend"><th scope="row"><code>nabend</code></th><td>1.52 s</td><td><audio controls preload="none" aria-label="Listen to nabend" src="files/cstrike/sound/lan/nabend.wav"></audio></td></tr>
+<tr data-keyword="n8"><th scope="row"><code>n8</code></th><td>1.15 s</td><td><audio controls preload="none" aria-label="Listen to n8" src="files/cstrike/sound/lan/n8.wav"></audio></td></tr>
+<tr data-keyword="bye"><th scope="row"><code>bye</code></th><td>3.55 s</td><td><audio controls preload="none" aria-label="Listen to bye" src="files/cstrike/sound/lan/bye.wav"></audio></td></tr>
+<tr data-keyword="jaja"><th scope="row"><code>jaja</code></th><td>1.55 s</td><td><audio controls preload="none" aria-label="Listen to jaja" src="files/cstrike/sound/lan/jaja.wav"></audio></td></tr>
+<tr data-keyword="sorry"><th scope="row"><code>sorry</code></th><td>0.65 s</td><td><audio controls preload="none" aria-label="Listen to sorry" src="files/cstrike/sound/lan/sorry.wav"></audio></td></tr>
+<tr data-keyword="danke"><th scope="row"><code>danke</code></th><td>0.60 s</td><td><audio controls preload="none" aria-label="Listen to danke" src="files/cstrike/sound/lan/danke.wav"></audio></td></tr>
+<tr data-keyword="camper"><th scope="row"><code>camper</code></th><td>3.35 s</td><td><audio controls preload="none" aria-label="Listen to camper" src="files/cstrike/sound/lan/camper.wav"></audio></td></tr>
+<tr data-keyword="lol"><th scope="row"><code>lol</code></th><td>1.56 s</td><td><audio controls preload="none" aria-label="Listen to lol" src="files/cstrike/sound/lan/lol.wav"></audio></td></tr>
+<tr data-keyword="mimi"><th scope="row"><code>mimi</code></th><td>1.66 s</td><td><audio controls preload="none" aria-label="Listen to mimi" src="files/cstrike/sound/lan/mimi.wav"></audio></td></tr>
+<tr data-keyword="zielen"><th scope="row"><code>zielen</code></th><td>2.69 s</td><td><audio controls preload="none" aria-label="Listen to zielen" src="files/cstrike/sound/lan/zielen.wav"></audio></td></tr>
+<tr data-keyword="afk"><th scope="row"><code>afk</code></th><td>1.29 s</td><td><audio controls preload="none" aria-label="Listen to afk" src="files/cstrike/sound/lan/afk.wav"></audio></td></tr>
+<tr data-keyword="bier"><th scope="row"><code>bier</code></th><td>2.35 s</td><td><audio controls preload="none" aria-label="Listen to bier" src="files/cstrike/sound/lan/bier.wav"></audio></td></tr>
+<tr data-keyword="blamage"><th scope="row"><code>blamage</code></th><td>3.08 s</td><td><audio controls preload="none" aria-label="Listen to blamage" src="files/cstrike/sound/lan/blamage.wav"></audio></td></tr>
+<tr data-keyword="bockmist"><th scope="row"><code>bockmist</code></th><td>2.71 s</td><td><audio controls preload="none" aria-label="Listen to bockmist" src="files/cstrike/sound/lan/bockmist.wav"></audio></td></tr>
+<tr data-keyword="geil"><th scope="row"><code>geil</code></th><td>1.56 s</td><td><audio controls preload="none" aria-label="Listen to geil" src="files/cstrike/sound/lan/geil.wav"></audio></td></tr>
+<tr data-keyword="noe"><th scope="row"><code>noe</code></th><td>1.25 s</td><td><audio controls preload="none" aria-label="Listen to noe" src="files/cstrike/sound/lan/noe.wav"></audio></td></tr>
+<tr data-keyword="profi"><th scope="row"><code>profi</code></th><td>2.21 s</td><td><audio controls preload="none" aria-label="Listen to profi" src="files/cstrike/sound/lan/profi.wav"></audio></td></tr>
+<tr data-keyword="wasndalos"><th scope="row"><code>wasndalos</code></th><td>1.85 s</td><td><audio controls preload="none" aria-label="Listen to wasndalos" src="files/cstrike/sound/lan/wasndalos.wav"></audio></td></tr>
+<tr data-keyword="isklar"><th scope="row"><code>isklar</code></th><td>1.75 s</td><td><audio controls preload="none" aria-label="Listen to isklar" src="files/cstrike/sound/lan/isklar.wav"></audio></td></tr>
+<tr data-keyword="kommgleich"><th scope="row"><code>kommgleich</code></th><td>1.83 s</td><td><audio controls preload="none" aria-label="Listen to kommgleich" src="files/cstrike/sound/lan/kommgleich.wav"></audio></td></tr>
+<tr data-keyword="kumpel"><th scope="row"><code>kumpel</code></th><td>3.68 s</td><td><audio controls preload="none" aria-label="Listen to kumpel" src="files/cstrike/sound/lan/kumpel.wav"></audio></td></tr>
+<tr data-keyword="wasguckstdu"><th scope="row"><code>wasguckstdu</code></th><td>5.77 s</td><td><audio controls preload="none" aria-label="Listen to wasguckstdu" src="files/cstrike/sound/lan/wasguckstdu.wav"></audio></td></tr>
+<tr data-keyword="zonk"><th scope="row"><code>zonk</code></th><td>2.67 s</td><td><audio controls preload="none" aria-label="Listen to zonk" src="files/cstrike/sound/lan/zonk.wav"></audio></td></tr>
+<tr data-keyword="woohoo"><th scope="row"><code>woohoo</code></th><td>0.93 s</td><td><audio controls preload="none" aria-label="Listen to woohoo" src="files/cstrike/sound/lan/woohoo.wav"></audio></td></tr>
+<tr data-keyword="beer"><th scope="row"><code>beer</code></th><td>1.92 s</td><td><audio controls preload="none" aria-label="Listen to beer" src="files/cstrike/sound/lan/beer.wav"></audio></td></tr>
+<tr data-keyword="comeagain"><th scope="row"><code>comeagain</code></th><td>0.89 s</td><td><audio controls preload="none" aria-label="Listen to comeagain" src="files/cstrike/sound/lan/comeagain.wav"></audio></td></tr>
+<tr data-keyword="falsch"><th scope="row"><code>falsch</code></th><td>4.06 s</td><td><audio controls preload="none" aria-label="Listen to falsch" src="files/cstrike/sound/lan/falsch.wav"></audio></td></tr>
+<tr data-keyword="arsch1"><th scope="row"><code>arsch1</code></th><td>6.03 s</td><td><audio controls preload="none" aria-label="Listen to arsch1" src="files/cstrike/sound/lan/arsch1.wav"></audio></td></tr>
+<tr data-keyword="blut"><th scope="row"><code>blut</code></th><td>3.19 s</td><td><audio controls preload="none" aria-label="Listen to blut" src="files/cstrike/sound/lan/blut.wav"></audio></td></tr>
+<tr data-keyword="burn"><th scope="row"><code>burn</code></th><td>7.39 s</td><td><audio controls preload="none" aria-label="Listen to burn" src="files/cstrike/sound/lan/burn.wav"></audio></td></tr>
+<tr data-keyword="camperhp"><th scope="row"><code>camperhp</code></th><td>4.49 s</td><td><audio controls preload="none" aria-label="Listen to camperhp" src="files/cstrike/sound/lan/camperhp.wav"></audio></td></tr>
+<tr data-keyword="crazytown"><th scope="row"><code>crazytown</code></th><td>73.17 s</td><td><audio controls preload="none" aria-label="Listen to crazytown" src="files/cstrike/sound/lan/crazytown.wav"></audio></td></tr>
+<tr data-keyword="depp"><th scope="row"><code>depp</code></th><td>12.89 s</td><td><audio controls preload="none" aria-label="Listen to depp" src="files/cstrike/sound/lan/depp.wav"></audio></td></tr>
+<tr data-keyword="dumm"><th scope="row"><code>dumm</code></th><td>1.66 s</td><td><audio controls preload="none" aria-label="Listen to dumm" src="files/cstrike/sound/lan/dumm.wav"></audio></td></tr>
+<tr data-keyword="eier"><th scope="row"><code>eier</code></th><td>1.97 s</td><td><audio controls preload="none" aria-label="Listen to eier" src="files/cstrike/sound/lan/eier.wav"></audio></td></tr>
+<tr data-keyword="feuerfrei"><th scope="row"><code>feuerfrei</code></th><td>11.39 s</td><td><audio controls preload="none" aria-label="Listen to feuerfrei" src="files/cstrike/sound/lan/feuerfrei.wav"></audio></td></tr>
+<tr data-keyword="grr"><th scope="row"><code>grr</code></th><td>2.40 s</td><td><audio controls preload="none" aria-label="Listen to grr" src="files/cstrike/sound/lan/grr.wav"></audio></td></tr>
+<tr data-keyword="hahaa"><th scope="row"><code>hahaa</code></th><td>2.11 s</td><td><audio controls preload="none" aria-label="Listen to hahaa" src="files/cstrike/sound/lan/hahaa.wav"></audio></td></tr>
+<tr data-keyword="hamster"><th scope="row"><code>hamster</code></th><td>9.71 s</td><td><audio controls preload="none" aria-label="Listen to hamster" src="files/cstrike/sound/lan/hamster.wav"></audio></td></tr>
+<tr data-keyword="hi"><th scope="row"><code>hi</code></th><td>0.76 s</td><td><audio controls preload="none" aria-label="Listen to hi" src="files/cstrike/sound/lan/hi.wav"></audio></td></tr>
+<tr data-keyword="ja"><th scope="row"><code>ja</code></th><td>5.54 s</td><td><audio controls preload="none" aria-label="Listen to ja" src="files/cstrike/sound/lan/ja.wav"></audio></td></tr>
+<tr data-keyword="kotzen"><th scope="row"><code>kotzen</code></th><td>9.62 s</td><td><audio controls preload="none" aria-label="Listen to kotzen" src="files/cstrike/sound/lan/kotzen.wav"></audio></td></tr>
+<tr data-keyword="lauf"><th scope="row"><code>lauf</code></th><td>2.72 s</td><td><audio controls preload="none" aria-label="Listen to lauf" src="files/cstrike/sound/lan/lauf.wav"></audio></td></tr>
+<tr data-keyword="loli"><th scope="row"><code>loli</code></th><td>3.58 s</td><td><audio controls preload="none" aria-label="Listen to loli" src="files/cstrike/sound/lan/loli.wav"></audio></td></tr>
+<tr data-keyword="lucker"><th scope="row"><code>lucker</code></th><td>4.75 s</td><td><audio controls preload="none" aria-label="Listen to lucker" src="files/cstrike/sound/lan/lucker.wav"></audio></td></tr>
+<tr data-keyword="mana"><th scope="row"><code>mana</code></th><td>11.94 s</td><td><audio controls preload="none" aria-label="Listen to mana" src="files/cstrike/sound/lan/mana.wav"></audio></td></tr>
+<tr data-keyword="mojo"><th scope="row"><code>mojo</code></th><td>12.04 s</td><td><audio controls preload="none" aria-label="Listen to mojo" src="files/cstrike/sound/lan/mojo.wav"></audio></td></tr>
+<tr data-keyword="mund"><th scope="row"><code>mund</code></th><td>12.20 s</td><td><audio controls preload="none" aria-label="Listen to mund" src="files/cstrike/sound/lan/mund.wav"></audio></td></tr>
+<tr data-keyword="nice"><th scope="row"><code>nice</code></th><td>7.27 s</td><td><audio controls preload="none" aria-label="Listen to nice" src="files/cstrike/sound/lan/nice.wav"></audio></td></tr>
+<tr data-keyword="sack"><th scope="row"><code>sack</code></th><td>7.81 s</td><td><audio controls preload="none" aria-label="Listen to sack" src="files/cstrike/sound/lan/sack.wav"></audio></td></tr>
+<tr data-keyword="wo"><th scope="row"><code>wo</code></th><td>2.08 s</td><td><audio controls preload="none" aria-label="Listen to wo" src="files/cstrike/sound/lan/wo.wav"></audio></td></tr>
+<tr data-keyword="benny"><th scope="row"><code>benny</code></th><td>14.28 s</td><td><audio controls preload="none" aria-label="Listen to benny" src="files/cstrike/sound/lan/benny.wav"></audio></td></tr>
+<tr data-keyword="bitch"><th scope="row"><code>bitch</code></th><td>1.62 s</td><td><audio controls preload="none" aria-label="Listen to bitch" src="files/cstrike/sound/lan/bitch.wav"></audio></td></tr>
+<tr data-keyword="boogey"><th scope="row"><code>boogey</code></th><td>1.62 s</td><td><audio controls preload="none" aria-label="Listen to boogey" src="files/cstrike/sound/lan/boogey.wav"></audio></td></tr>
+<tr data-keyword="bs"><th scope="row"><code>bs</code></th><td>1.10 s</td><td><audio controls preload="none" aria-label="Listen to bs" src="files/cstrike/sound/lan/bs.wav"></audio></td></tr>
+<tr data-keyword="bull"><th scope="row"><code>bull</code></th><td>1.67 s</td><td><audio controls preload="none" aria-label="Listen to bull" src="files/cstrike/sound/lan/bull.wav"></audio></td></tr>
+<tr data-keyword="bung"><th scope="row"><code>bung</code></th><td>3.59 s</td><td><audio controls preload="none" aria-label="Listen to bung" src="files/cstrike/sound/lan/bung.wav"></audio></td></tr>
+<tr data-keyword="camper_agc"><th scope="row"><code>camper_agc</code></th><td>1.71 s</td><td><audio controls preload="none" aria-label="Listen to camper_agc" src="files/cstrike/sound/lan/camper_agc.wav"></audio></td></tr>
+<tr data-keyword="comedian"><th scope="row"><code>comedian</code></th><td>2.41 s</td><td><audio controls preload="none" aria-label="Listen to comedian" src="files/cstrike/sound/lan/comedian.wav"></audio></td></tr>
+<tr data-keyword="crap"><th scope="row"><code>crap</code></th><td>1.22 s</td><td><audio controls preload="none" aria-label="Listen to crap" src="files/cstrike/sound/lan/crap.wav"></audio></td></tr>
+<tr data-keyword="dipshit"><th scope="row"><code>dipshit</code></th><td>1.54 s</td><td><audio controls preload="none" aria-label="Listen to dipshit" src="files/cstrike/sound/lan/dipshit.wav"></audio></td></tr>
+<tr data-keyword="fart"><th scope="row"><code>fart</code></th><td>2.51 s</td><td><audio controls preload="none" aria-label="Listen to fart" src="files/cstrike/sound/lan/fart.wav"></audio></td></tr>
+<tr data-keyword="gh"><th scope="row"><code>gh</code></th><td>2.21 s</td><td><audio controls preload="none" aria-label="Listen to gh" src="files/cstrike/sound/lan/gh.wav"></audio></td></tr>
+<tr data-keyword="haha"><th scope="row"><code>haha</code></th><td>1.10 s</td><td><audio controls preload="none" aria-label="Listen to haha" src="files/cstrike/sound/lan/haha.wav"></audio></td></tr>
+<tr data-keyword="imsorry"><th scope="row"><code>imsorry</code></th><td>1.67 s</td><td><audio controls preload="none" aria-label="Listen to imsorry" src="files/cstrike/sound/lan/imsorry.wav"></audio></td></tr>
+<tr data-keyword="kickass"><th scope="row"><code>kickass</code></th><td>3.80 s</td><td><audio controls preload="none" aria-label="Listen to kickass" src="files/cstrike/sound/lan/kickass.wav"></audio></td></tr>
+<tr data-keyword="muaha"><th scope="row"><code>muaha</code></th><td>3.43 s</td><td><audio controls preload="none" aria-label="Listen to muaha" src="files/cstrike/sound/lan/muaha.wav"></audio></td></tr>
+<tr data-keyword="omg"><th scope="row"><code>omg</code></th><td>1.36 s</td><td><audio controls preload="none" aria-label="Listen to omg" src="files/cstrike/sound/lan/omg.wav"></audio></td></tr>
+<tr data-keyword="ow"><th scope="row"><code>ow</code></th><td>0.58 s</td><td><audio controls preload="none" aria-label="Listen to ow" src="files/cstrike/sound/lan/ow.wav"></audio></td></tr>
+<tr data-keyword="stfu"><th scope="row"><code>stfu</code></th><td>1.83 s</td><td><audio controls preload="none" aria-label="Listen to stfu" src="files/cstrike/sound/lan/stfu.wav"></audio></td></tr>
+<tr data-keyword="stfu10"><th scope="row"><code>stfu10</code></th><td>3.24 s</td><td><audio controls preload="none" aria-label="Listen to stfu10" src="files/cstrike/sound/lan/stfu10.wav"></audio></td></tr>
+<tr data-keyword="wazza"><th scope="row"><code>wazza</code></th><td>1.68 s</td><td><audio controls preload="none" aria-label="Listen to wazza" src="files/cstrike/sound/lan/wazza.wav"></audio></td></tr>
+<tr data-keyword="au"><th scope="row"><code>au</code></th><td>2.21 s</td><td><audio controls preload="none" aria-label="Listen to au" src="files/cstrike/sound/lan/au.wav"></audio></td></tr>
+<tr data-keyword="bekloppt"><th scope="row"><code>bekloppt</code></th><td>4.70 s</td><td><audio controls preload="none" aria-label="Listen to bekloppt" src="files/cstrike/sound/lan/bekloppt.wav"></audio></td></tr>
+<tr data-keyword="benny_cp"><th scope="row"><code>benny_cp</code></th><td>15.57 s</td><td><audio controls preload="none" aria-label="Listen to benny_cp" src="files/cstrike/sound/lan/benny_cp.wav"></audio></td></tr>
+<tr data-keyword="biene3"><th scope="row"><code>biene3</code></th><td>6.87 s</td><td><audio controls preload="none" aria-label="Listen to biene3" src="files/cstrike/sound/lan/biene3.wav"></audio></td></tr>
+<tr data-keyword="blade"><th scope="row"><code>blade</code></th><td>10.79 s</td><td><audio controls preload="none" aria-label="Listen to blade" src="files/cstrike/sound/lan/blade.wav"></audio></td></tr>
+<tr data-keyword="blitz"><th scope="row"><code>blitz</code></th><td>2.60 s</td><td><audio controls preload="none" aria-label="Listen to blitz" src="files/cstrike/sound/lan/blitz.wav"></audio></td></tr>
+<tr data-keyword="chicken"><th scope="row"><code>chicken</code></th><td>8.83 s</td><td><audio controls preload="none" aria-label="Listen to chicken" src="files/cstrike/sound/lan/chicken.wav"></audio></td></tr>
+<tr data-keyword="chicken2"><th scope="row"><code>chicken2</code></th><td>9.00 s</td><td><audio controls preload="none" aria-label="Listen to chicken2" src="files/cstrike/sound/lan/chicken2.wav"></audio></td></tr>
+<tr data-keyword="chicken3"><th scope="row"><code>chicken3</code></th><td>8.93 s</td><td><audio controls preload="none" aria-label="Listen to chicken3" src="files/cstrike/sound/lan/chicken3.wav"></audio></td></tr>
+<tr data-keyword="cool"><th scope="row"><code>cool</code></th><td>1.02 s</td><td><audio controls preload="none" aria-label="Listen to cool" src="files/cstrike/sound/lan/cool.wav"></audio></td></tr>
+<tr data-keyword="cornholio"><th scope="row"><code>cornholio</code></th><td>3.07 s</td><td><audio controls preload="none" aria-label="Listen to cornholio" src="files/cstrike/sound/lan/cornholio.wav"></audio></td></tr>
+<tr data-keyword="doh"><th scope="row"><code>doh</code></th><td>7.31 s</td><td><audio controls preload="none" aria-label="Listen to doh" src="files/cstrike/sound/lan/doh.wav"></audio></td></tr>
+<tr data-keyword="faithless4"><th scope="row"><code>faithless4</code></th><td>17.06 s</td><td><audio controls preload="none" aria-label="Listen to faithless4" src="files/cstrike/sound/lan/faithless4.wav"></audio></td></tr>
+<tr data-keyword="feelgood"><th scope="row"><code>feelgood</code></th><td>3.92 s</td><td><audio controls preload="none" aria-label="Listen to feelgood" src="files/cstrike/sound/lan/feelgood.wav"></audio></td></tr>
+<tr data-keyword="fuckdup"><th scope="row"><code>fuckdup</code></th><td>4.84 s</td><td><audio controls preload="none" aria-label="Listen to fuckdup" src="files/cstrike/sound/lan/fuckdup.wav"></audio></td></tr>
+<tr data-keyword="good-boyyy3"><th scope="row"><code>good-boyyy3</code></th><td>2.22 s</td><td><audio controls preload="none" aria-label="Listen to good-boyyy3" src="files/cstrike/sound/lan/good-boyyy3.wav"></audio></td></tr>
+<tr data-keyword="haha_cp"><th scope="row"><code>haha_cp</code></th><td>7.26 s</td><td><audio controls preload="none" aria-label="Listen to haha_cp" src="files/cstrike/sound/lan/haha_cp.wav"></audio></td></tr>
+<tr data-keyword="haha2"><th scope="row"><code>haha2</code></th><td>1.69 s</td><td><audio controls preload="none" aria-label="Listen to haha2" src="files/cstrike/sound/lan/haha2.wav"></audio></td></tr>
+<tr data-keyword="hell"><th scope="row"><code>hell</code></th><td>1.59 s</td><td><audio controls preload="none" aria-label="Listen to hell" src="files/cstrike/sound/lan/hell.wav"></audio></td></tr>
+<tr data-keyword="jtab"><th scope="row"><code>jtab</code></th><td>67.55 s</td><td><audio controls preload="none" aria-label="Listen to jtab" src="files/cstrike/sound/lan/jtab.wav"></audio></td></tr>
+<tr data-keyword="kurwa"><th scope="row"><code>kurwa</code></th><td>2.43 s</td><td><audio controls preload="none" aria-label="Listen to kurwa" src="files/cstrike/sound/lan/kurwa.wav"></audio></td></tr>
+<tr data-keyword="lala"><th scope="row"><code>lala</code></th><td>4.08 s</td><td><audio controls preload="none" aria-label="Listen to lala" src="files/cstrike/sound/lan/lala.wav"></audio></td></tr>
+<tr data-keyword="loser"><th scope="row"><code>loser</code></th><td>22.53 s</td><td><audio controls preload="none" aria-label="Listen to loser" src="files/cstrike/sound/lan/loser.wav"></audio></td></tr>
+<tr data-keyword="mad3"><th scope="row"><code>mad3</code></th><td>3.45 s</td><td><audio controls preload="none" aria-label="Listen to mad3" src="files/cstrike/sound/lan/mad3.wav"></audio></td></tr>
+<tr data-keyword="otto"><th scope="row"><code>otto</code></th><td>5.11 s</td><td><audio controls preload="none" aria-label="Listen to otto" src="files/cstrike/sound/lan/otto.wav"></audio></td></tr>
+<tr data-keyword="pruegel"><th scope="row"><code>pruegel</code></th><td>2.33 s</td><td><audio controls preload="none" aria-label="Listen to pruegel" src="files/cstrike/sound/lan/pruegel.wav"></audio></td></tr>
+<tr data-keyword="runnlauter"><th scope="row"><code>runnlauter</code></th><td>4.34 s</td><td><audio controls preload="none" aria-label="Listen to runnlauter" src="files/cstrike/sound/lan/runnlauter.wav"></audio></td></tr>
+<tr data-keyword="saufen"><th scope="row"><code>saufen</code></th><td>15.34 s</td><td><audio controls preload="none" aria-label="Listen to saufen" src="files/cstrike/sound/lan/saufen.wav"></audio></td></tr>
+<tr data-keyword="scheisse"><th scope="row"><code>scheisse</code></th><td>4.12 s</td><td><audio controls preload="none" aria-label="Listen to scheisse" src="files/cstrike/sound/lan/scheisse.wav"></audio></td></tr>
+<tr data-keyword="sonnenschein"><th scope="row"><code>sonnenschein</code></th><td>9.67 s</td><td><audio controls preload="none" aria-label="Listen to sonnenschein" src="files/cstrike/sound/lan/sonnenschein.wav"></audio></td></tr>
+<tr data-keyword="trains"><th scope="row"><code>trains</code></th><td>1.21 s</td><td><audio controls preload="none" aria-label="Listen to trains" src="files/cstrike/sound/lan/trains.wav"></audio></td></tr>
+<tr data-keyword="vodka"><th scope="row"><code>vodka</code></th><td>12.65 s</td><td><audio controls preload="none" aria-label="Listen to vodka" src="files/cstrike/sound/lan/vodka.wav"></audio></td></tr>
+<tr data-keyword="welcome"><th scope="row"><code>welcome</code></th><td>1.64 s</td><td><audio controls preload="none" aria-label="Listen to welcome" src="files/cstrike/sound/lan/welcome.wav"></audio></td></tr>
+<tr data-keyword="wow"><th scope="row"><code>wow</code></th><td>1.01 s</td><td><audio controls preload="none" aria-label="Listen to wow" src="files/cstrike/sound/lan/wow.wav"></audio></td></tr>
+<tr data-keyword="what_is_that"><th scope="row"><code>what_is_that</code></th><td>3.85 s</td><td><audio controls preload="none" aria-label="Listen to what_is_that" src="files/cstrike/sound/lan/what_is_that.wav"></audio></td></tr>
+</tbody></table>
+<p class="note">This page works offline when kept beside the files folder. No audio is uploaded. Technical loading has been checked; listening on actual game clients remains a separate check.</p>
+<script>
+const rows = [...document.querySelectorAll('tbody tr')];
+document.querySelector('#filter').addEventListener('input', event => {
+  const query=event.target.value.trim().toLowerCase();
+  rows.forEach(row => row.hidden=!row.dataset.keyword.includes(query));
+});
+document.addEventListener('play',event=>{
+  if(event.target.tagName==='AUDIO') document.querySelectorAll('audio').forEach(audio=>{ if(audio!==event.target) audio.pause(); });
+},true);
+</script>
+</html>

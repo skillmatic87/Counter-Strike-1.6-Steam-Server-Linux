@@ -1,0 +1,1954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; media-src blob:; img-src data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title data-i18n="m_2ec6c21453">CS 1.6 · Server Control Panel</title>
+<style>
+:root{color-scheme:light;--ink:#233128;--muted:#647166;--paper:#f3f3ec;--panel:#fffef9;--line:#daddd1;--olive:#27372d;--accent:#d8ec84;--dark:#1a271f;--error:#9a342a;--focus:#447c42}*{box-sizing:border-box}body{margin:0;font:15px/1.5 "Segoe UI",Arial,sans-serif;background:var(--paper);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button,input,select,textarea,a{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus)}button{border:1px solid #bdc7b6;border-radius:7px;padding:9px 15px;background:var(--panel);color:var(--ink);font-weight:600}button:hover:not(:disabled){background:#e9eddf}button.primary{background:var(--olive);border-color:var(--olive);color:white}button.primary:hover:not(:disabled){background:#3c5140}button.small{padding:5px 10px;font-size:13px}.shell{display:grid;grid-template-columns:238px 1fr;min-height:100vh}.sidebar{background:var(--dark);color:#ecf1df;padding:32px 22px;display:flex;flex-direction:column;position:fixed;width:238px;top:0;bottom:0}.brand{display:flex;align-items:center;gap:12px;margin:0 0 34px}.badge{height:44px;width:44px;display:grid;place-items:center;border:1px solid #87976c;color:var(--accent);font:bold 21px Consolas,monospace;border-radius:8px}.brand strong{display:block;letter-spacing:.5px;font-size:13px;white-space:nowrap}.brand span{display:block;font-size:9px;color:#afbea7;letter-spacing:1.2px;line-height:1.8}.nav{display:grid;gap:5px}.nav button{text-align:left;border:0;background:transparent;color:#bdcbbb;font-weight:500;padding:12px}.nav button:hover,.nav button[aria-current=page]{background:#334338;color:#f8fcea}.nav b{display:inline-block;width:28px;color:#81957e;font:12px Consolas,monospace}.nav button[aria-current=page] b{color:var(--accent)}.sidebar-foot{margin-top:auto;padding-top:30px;font-size:12px;color:#adc0aa}.sidebar-foot a{color:#d8ecae;text-decoration:none}.sidebar-foot p{margin-bottom:14px}.main{grid-column:2;padding:30px 40px 125px;max-width:1480px;width:100%}.topline{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px}.eyebrow{font:11px Consolas,monospace;letter-spacing:2px;color:var(--muted);text-transform:uppercase}.top-actions{display:flex;gap:8px;align-items:center}.status-pill{border:1px solid #c8d2ba;background:#e8eddc;padding:5px 11px;border-radius:30px;font-size:12px;white-space:nowrap}.status-pill::before{content:'●';font-size:9px;margin-right:6px;color:#819164}h1{font-weight:650;font-size:34px;line-height:1.2;letter-spacing:-1px;margin:9px 0 12px}h2{font-size:18px;letter-spacing:-.25px;margin:0 0 6px}h3{font-size:15px;margin:0 0 10px}p{margin:0 0 14px}.lede{color:var(--muted);max-width:780px;margin-bottom:28px}.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:24px;margin-bottom:20px}.card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:20px}.hint,.note{font-size:13px;color:var(--muted)}.note{margin-top:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.metric{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:19px}.metric .number{font-size:30px;line-height:1.2;letter-spacing:-1px;font-weight:600}.metric small{display:block;color:var(--muted);margin-top:6px;font-size:12px}.metric .unit{font-size:14px;color:var(--muted);margin-left:4px}.intro-box{background:#e6ecd8;border-color:#c9d3b8}.intro-box button{margin:5px 0 0}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}.field{display:block}.field>span{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.field input,.field select,.field textarea{display:block;width:100%;background:#fffefb;color:var(--ink);border:1px solid #bfc8b9;border-radius:6px;padding:10px 11px;min-height:43px}.field small{display:block;margin-top:6px;color:var(--muted);font-size:12px}.field.wide{grid-column:1/-1}.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:8px 0}.check input{accent-color:var(--olive);width:17px;height:17px;margin:3px 0 0}.check small{display:block;font-size:12px;color:var(--muted);margin-top:3px}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.toolbar input{background:#fffefb;padding:9px 12px;border:1px solid #bfc8b9;border-radius:6px;min-width:180px}.table-wrap{overflow:auto;margin:0 -3px}table{border-collapse:collapse;width:100%;font-size:13px}th{text-align:left;color:var(--muted);font-size:11px;letter-spacing:.6px;text-transform:uppercase;font-weight:600;padding:10px 8px;border-bottom:1px solid var(--line)}td{padding:12px 8px;border-bottom:1px solid #e7e9df}td input[type=checkbox]{accent-color:var(--olive);height:17px;width:17px}.map-name,.mono{font-family:Consolas,"Courier New",monospace}.map-order{display:flex;align-items:center;gap:5px}.map-order .rank{width:22px;color:#6c7c64}.map-order button{padding:2px 7px;font-weight:400}.capacity{display:inline-block;border:1px solid #d7dfc9;border-radius:4px;padding:1px 5px;font-size:11px;color:#64745c}.count{font:12px Consolas,monospace;color:var(--muted)}.path{font:11px/1.4 Consolas,monospace;color:var(--muted);overflow-wrap:anywhere}.bar{display:flex;gap:14px;align-items:center;justify-content:space-between}.notice{padding:14px 17px;border:1px solid #cbd4b9;border-left:4px solid #81975a;background:#edf1e2;border-radius:5px;font-size:13px;margin-bottom:22px}.notice.error{border-color:#d8b8ad;border-left-color:#a84936;background:#fbebe4;color:#853b2d}.notice.success{border-color:#b5cfae;border-left-color:#58824d;background:#e5f0df}.footer{position:fixed;bottom:0;left:238px;right:0;background:rgba(250,250,243,.97);border-top:1px solid #cdd4c4;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 40px;z-index:5;backdrop-filter:blur(10px)}.footer strong{font-size:13px}.footer small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.footer .buttons{display:flex;gap:8px}.tab[hidden]{display:none}.code-area{font:13px/1.55 Consolas,monospace!important;min-height:390px;resize:vertical}.motd-preview{white-space:pre-wrap;overflow-wrap:anywhere;background:#17241d;color:#d8e4b9;border:1px solid #48553e;border-radius:7px;padding:22px;min-height:390px;font:12px/1.65 Consolas,monospace}.section-link{display:block;border:1px solid var(--line);border-radius:7px;padding:15px;margin-top:11px;text-decoration:none;color:var(--ink);background:#f8f9f1}.section-link span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.section-link:hover{border-color:#879c75}.summary-list{display:grid;grid-template-columns:130px 1fr;gap:11px;font-size:13px;margin:0}.summary-list dt{color:var(--muted)}.summary-list dd{margin:0;overflow-wrap:anywhere}.sound-name{font-family:Consolas,monospace;font-weight:600}.sound-disabled{opacity:.55}.sound-actions{white-space:nowrap}.no-results{padding:28px;color:var(--muted);text-align:center}dialog{border:1px solid #c0cbb5;border-radius:13px;max-width:740px;width:calc(100% - 36px);padding:28px;background:var(--panel);color:var(--ink);box-shadow:0 28px 90px #0004}dialog::backdrop{background:#18251f99;backdrop-filter:blur(3px)}.dialog-footer{display:flex;justify-content:flex-end;gap:9px;margin-top:23px}.review-files{list-style:none;padding:0;margin:16px 0;max-height:280px;overflow:auto}.review-files li{padding:11px 0;border-bottom:1px solid var(--line)}.review-files span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.empty-state{padding:20px;color:var(--muted)}.audio-player{width:100%;height:35px;margin-top:16px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.danger-text{color:var(--error)}@media(max-width:1100px){.main{padding:24px 24px 130px}.metrics{grid-template-columns:repeat(2,1fr)}.footer{padding:15px 24px}.topline{align-items:flex-start}.grid{grid-template-columns:1fr}.top-actions{flex-wrap:wrap;justify-content:flex-end}}@media(max-width:760px){.shell{display:block}.sidebar{position:static;width:auto;padding:18px}.brand{margin-bottom:17px}.sidebar-foot{display:none}.nav{display:flex;overflow:auto;gap:3px}.nav button{white-space:nowrap;padding:8px}.nav b{display:none}.main{padding:22px 18px 145px}.topline{display:block}.top-actions{justify-content:flex-start;margin-top:15px}h1{font-size:29px}.field-grid{grid-template-columns:1fr}.footer{left:0;padding:13px 18px;align-items:flex-start}.footer .buttons{flex-wrap:wrap;justify-content:flex-end}.footer .buttons button{font-size:12px;padding:8px}.metrics{gap:9px}.card{padding:19px}.card-heading{flex-wrap:wrap}.summary-list{grid-template-columns:90px 1fr}}
+.language-picker{display:grid;gap:2px;font-size:11px;color:var(--muted)}.language-picker select{font:inherit;font-size:13px;min-height:36px;padding:6px 9px;background:var(--panel);color:var(--ink);border:1px solid #bdc7b6;border-radius:7px;min-width:108px}
+
+.map-drag{cursor:grab;touch-action:none;padding:4px 7px!important;font-size:20px!important;line-height:1}.map-drag:active{cursor:grabbing}tr.dragging{opacity:.4}#mapRows tr.drop-before td{border-top:3px solid var(--focus)}#mapRows tr.drop-after td{border-bottom:3px solid var(--focus)}.admin-toolbar{margin:0 0 18px}.admin-account{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;padding:18px 0;border-bottom:1px solid var(--line)}.admin-account:first-child{padding-top:0}.admin-account:last-child{border-bottom:0}.admin-permissions{grid-column:1/-1;margin:0;overflow-wrap:anywhere}.admin-login{font:13px/1.8 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--paper);border-radius:6px;padding:12px}.admin-account input{min-width:0}@media(max-width:650px){.admin-account{grid-template-columns:1fr}.map-order{gap:3px!important}.map-order button{padding:4px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+ <div class="brand"><div class="badge">1.5</div><div><strong>COUNTER-STRIKE</strong><span><span data-i18n="m_ad3565331e">SERVER CONTROL PANEL</span></span></div></div>
+ <nav class="nav" aria-label="Sections" data-i18n-aria-label="m_7b40d8db4e">
+  <button data-tab="overview" aria-current="page"><b>01</b> <span data-i18n="m_4d2bb368f9">Overview</span></button>
+  <button data-tab="rules"><b>02</b> Server & <span data-i18n="m_582936c918">Rules</span></button>
+  <button data-tab="maps"><b>03</b> Maps & Rotation</button>
+  <button data-tab="bots"><b>04</b> Bots</button>
+  <button data-tab="sounds"><b>05</b> Sounds</button>
+  <button data-tab="motd"><b>06</b> <span data-i18n="m_c4dc122420">Welcome</span></button>
+ <button data-tab="admin"><b>07</b> <span data-i18n="admin.title">Administration</span></button>
+ </nav>
+ <div class="sidebar-foot"><p><span data-i18n="m_f5511b43f7">Your server. Your rules.</span><br><span data-i18n="m_9abddc9e8f">Runs locally on your computer.</span></p><a href="https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux" target="_blank" rel="noopener noreferrer"><span data-i18n="m_5df9b86ef0">Half-Life Counter-Strike 1.5 Server on GitHub ↗</span></a></div>
+</aside>
+<main class="main">
+ <div class="topline"><div><div class="eyebrow">CS 1.6 / Linux Mint 22.x <span id="projectVersion"></span></div><div class="hint" id="folderLabel"><span data-i18n="m_dc70b19d0b">No server folder selected</span></div></div><div class="top-actions"><label class="language-picker"><span data-i18n="m_f2a1cc71fa">Language</span><select id="languageSelect" aria-label="Language" data-i18n-aria-label="m_f2a1cc71fa"><option value="en">English</option><option value="de">Deutsch</option></select></label><span class="status-pill" id="modeLabel"><span data-i18n="m_69337f6de9">Preview</span></span><button id="openFolder" class="primary"><span data-i18n="m_d5044e7f44">Open server folder</span></button></div></div>
+ <div id="message" class="notice" role="status" aria-live="polite"><span data-i18n="m_07f57035bd">These are example settings. Open your installed server folder to load its current configuration.</span></div>
+ <form id="configForm" novalidate>
+ <section class="tab" id="tab-overview" aria-labelledby="heading-overview">
+  <div class="eyebrow"><span data-i18n="m_4ca78c330c">Everything in one place</span></div><h1 id="heading-overview"><span data-i18n="m_a08272096f">Ready for your next LAN.</span></h1><p class="lede"><span data-i18n="m_8b6c298269">Configure maps, slots, bots and sounds without working through individual configuration files.</span></p>
+  <div class="metrics"><div class="metric"><div class="number" id="metricSlots">32</div><small><span data-i18n="m_20e6a02042">Player slots</span></small></div><div class="metric"><div class="number" id="metricMaps">39</div><small><span data-i18n="m_663154d172">Maps in rotation</span></small></div><div class="metric"><div class="number" id="metricBots">16</div><small id="metricBotLabel"><span data-i18n="m_aa5850338a">Player target including bots</span></small></div><div class="metric"><div class="number" id="metricSounds">122</div><small><span data-i18n="m_e0fd364595">Active sound commands</span></small></div></div>
+  <div class="card"><div class="bar"><div><h2><span data-i18n="m_d6a9e42218">Server controls</span></h2><p id="processStatus" class="hint"><span data-i18n="m_0f65552c52">Use the local panel launcher to start the server and save settings.</span></p></div><div class="toolbar"><span id="processBadge" class="status-pill"><span data-i18n="m_a0b9c89e98">Not connected</span></span><button type="button" id="startServer" class="primary" disabled><span data-i18n="m_348df54750">Start server</span></button><button type="button" id="stopServer" disabled><span data-i18n="m_07792ddccf">Stop server</span></button></div></div><p class="note"><span data-i18n="m_eeeb4f30db">Stop sends the normal quit command. Closing this page does not stop the game server.</span></p></div><div class="grid"><div class="card intro-box"><h2><span data-i18n="m_6ad403422d">How it works</span></h2><p class="hint"><span data-i18n="m_580a34865b">Run</span> <strong>Start-Panel.sh</strong> <span data-i18n="m_9ed5527793">and select the installed</span> <strong>CS16Server-Linux</strong><span data-i18n="m_95eebc294e">folder containing</span> <strong>cstrike</strong><span data-i18n="m_f14b3bac02">. On Linux, select the folder containing</span> <strong>Start-CS16.sh</strong>.</p><p class="hint"><span data-i18n="m_700a8418ed">Edit settings, review changes and save. The local helper handles file access and backs up affected files first.</span></p><p class="hint"><span data-i18n="m_65a9724802">Stop the server using the button above before saving. You can start it again here afterwards.</span></p></div><div class="card"><h2><span data-i18n="m_f90ceedeb4">Your configuration</span></h2><dl class="summary-list" style="margin-top:20px"><dt>Server</dt><dd id="summaryName">CS 1.6 Steam Server</dd><dt><span data-i18n="m_cdf648878b">Platform</span></dt><dd id="summaryPlatform"><span data-i18n="m_7ce0d777d1">Example settings</span></dd><dt><span data-i18n="m_01bb4bf01c">Starting map</span></dt><dd class="mono" id="summaryStart">de_dust2</dd><dt><span data-i18n="m_880354a2d3">Map duration</span></dt><dd id="summaryTime"><span data-i18n="m_f49f54b079">30 minutes</span></dd><dt><span data-i18n="m_7180877051">Latest backup</span></dt><dd class="path" id="summaryBackup"><span data-i18n="m_33b3eb4260">No saves yet</span></dd></dl></div></div>
+  <div class="card"><div class="card-heading"><div><h2><span data-i18n="m_f75be88cfb">Jump to your settings</span></h2><p class="hint"><span data-i18n="m_4cabf967aa">Choose a section. Your edits are kept when you switch sections.</span></p></div><div class="toolbar"><button type="button" id="exportProfile" class="small"><span data-i18n="m_b600ae896f">Export profile</span></button><button type="button" id="importProfile" class="small"><span data-i18n="m_309b799378">Import profile</span></button></div></div><div class="grid"><div><a href="#maps" class="section-link" data-go="maps"><strong><span data-i18n="m_9ccd8b7364">Choose and sort maps →</span></strong><span><span data-i18n="m_6f80c0dd20">Classics, fun maps, map voting and starting map.</span></span></a><a href="#bots" class="section-link" data-go="bots"><strong><span data-i18n="m_df72706ed4">Set up bots for your game →</span></strong><span><span data-i18n="m_c598213a7e">Count, difficulty, chat and radio.</span></span></a></div><div><a href="#sounds" class="section-link" data-go="sounds"><strong><span data-i18n="m_847c022398">Manage your sound selection →</span></strong><span><span data-i18n="m_54520f9062">Preview clips, enable or disable commands, and set limits.</span></span></a><a href="#motd" class="section-link" data-go="motd"><strong><span data-i18n="m_c9d3afcc27">Welcome your players →</span></strong><span><span data-i18n="m_3f7b75c1f6">Edit the MOTD and preview its text.</span></span></a></div></div></div>
+ </section>
+ <section class="tab" id="tab-rules" hidden aria-labelledby="heading-rules"><div class="eyebrow"><span data-i18n="m_93fc1858a6">The basics of your game</span></div><h1 id="heading-rules">Server & <span data-i18n="m_b585643cca">Game rules</span></h1><p class="lede"><span data-i18n="m_f9d9344a73">Server name, player slots and round limits. Existing credentials are preserved.</span></p>
+ <div class="card"><div class="card-heading"><h2>Server</h2><span class="count"><span data-i18n="m_07c59e6d7d">Restart required</span></span></div><div class="field-grid">
+ <label class="field wide"><span><span data-i18n="m_e5e07cd03e">Server name</span></span><input id="hostname" maxlength="31" required><small><span data-i18n="m_49bef4ddcf">Up to 31 basic characters; no quotation marks or command separators.</span></small></label>
+ <label class="field"><span><span data-i18n="m_f127a08e8b">Maximum players</span></span><input id="maxPlayers" type="number" min="1" max="32" required><small><span data-i18n="m_83f48e38ca">1–32 slots. The launcher will be updated accordingly.</span></small></label>
+ <label class="field"><span><span data-i18n="m_01bb4bf01c">Starting map</span></span><select id="startMap"></select><small><span data-i18n="m_38ef868024">This map loads the next time the server starts.</span></small></label>
+ <label class="field"><span><span data-i18n="m_5d5c3e79b5">Map duration in minutes</span></span><input id="mapMinutes" type="number" min="6" max="180" required><small><span data-i18n="m_cb1e24e314">Total time on a map, rather than the length of one round.</span></small></label>
+ <label class="field"><span><span data-i18n="m_3bf9d27076">Vote before map ends</span></span><input id="voteBefore" type="number" min="0" max="179" required><small><span data-i18n="m_f18f5d9d18">Minutes before the map ends; 0 triggers voting only at the time limit.</span></small></label>
+ <label class="field"><span><span data-i18n="m_1d0090d4d9">Maximum rounds per map</span></span><input id="maxRounds" type="number" min="0" max="100" required><small><span data-i18n="m_6d7c460bba">0 = no round limit.</span></small></label>
+ <label class="field"><span><span data-i18n="m_fda2c8bcb3">Wins before map change</span></span><input id="winLimit" type="number" min="0" max="100" required><small><span data-i18n="m_dbb6668186">0 = no win limit.</span></small></label>
+ </div><label class="check"><input id="friendlyFire" type="checkbox"><span>Friendly Fire<small><span data-i18n="m_81ed5860a3">Players can hurt their teammates.</span></small></span></label></div>
+ <div class="card"><h2>Ranking</h2><div class="field-grid" style="margin-top:18px"><label class="field"><span><span data-i18n="m_b816999db6">Scoring</span></span><select id="rankScore"><option value="KillsMinusDeaths" data-i18n="m_10c2a19afb">Kills minus deaths</option><option value="Kills" data-i18n="m_cd7a1044e7">Kills only</option><option value="Custom" data-i18n="m_d25e0ad9f9">Keep custom formula</option></select></label><label class="check"><input id="rankBots" type="checkbox"><span><span data-i18n="m_33b72dd2a8">Include bots in rankings</span><small><span data-i18n="m_f604f44824">Saved statistics will not be reset.</span></small></span></label></div></div>
+ </section>
+ <section class="tab" id="tab-maps" hidden aria-labelledby="heading-maps"><div class="eyebrow"><span data-i18n="m_a8b3130c0a">From de_dust2 to pool_day</span></div><h1 id="heading-maps">Maps & Rotation</h1><p class="lede"><span data-i18n="m_254af47973">The rotation controls map order and automatic changes. The voting list determines which maps players can nominate and vote for.</span></p><div class="card"><div class="card-heading"><div><h2><span data-i18n="m_f622786d9e">Installed maps</span></h2><p class="hint" id="mapCount"></p></div><div class="toolbar"><label><span class="sr-only"><span data-i18n="m_7e581cea70">Search maps</span></span><input id="mapSearch" type="search" placeholder="Search maps …" data-i18n-placeholder="m_34c2d63d68"></label><button type="button" id="presetClassic" class="small"><span data-i18n="m_d68c2a21cd">Classics</span></button><button type="button" id="presetFun" class="small"><span data-i18n="m_4d988a8adb">Fun maps</span></button><button type="button" id="presetAll" class="small"><span data-i18n="m_7f2ea4317f">All maps</span></button></div></div><div class="table-wrap"><table><thead><tr><th><span data-i18n="m_667a554f16">Order</span></th><th>Map</th><th>Rotation</th><th><span data-i18n="m_a519115d1c">Voting</span></th><th><span data-i18n="m_89c9c633df">Map capacity</span></th></tr></thead><tbody id="mapRows"></tbody></table></div><p class="note"><span data-i18n="maps.dragHint">Use ↑ and ↓ to reorder. Existing map capacities are preserved; new fun maps use the package capacity. Choose a suitable bot target for smaller maps.</span></p></div></section>
+ <section class="tab" id="tab-bots" hidden aria-labelledby="heading-bots"><div class="eyebrow">YaPB</div><h1 id="heading-bots"><span data-i18n="m_4c9e72a746">Good company.</span></h1><p class="lede"><span data-i18n="m_c11b68dbfe">From a quiet practice game to a full LAN. Fill mode includes human players in its target.</span></p><div class="grid"><div class="card"><h2><span data-i18n="m_f430319dd8">Players</span> & <span data-i18n="m_4681c036b1">Difficulty</span></h2><div class="field-grid" style="margin-top:22px"><label class="field"><span><span data-i18n="m_78da9b8beb">Bot mode</span></span><select id="botMode"><option value="fill" data-i18n="m_9cf0b948a1">Fill to player target</option><option value="normal" data-i18n="m_e54d671d1a">Fixed bot count</option></select></label><label class="field"><span id="botTargetLabel"><span data-i18n="m_570b723d70">Player target including bots</span></span><input id="botTarget" type="number" min="0" max="32" required><small><span data-i18n="m_95bb09907d">0 disables bots. The target cannot exceed the player slots.</span></small></label><label class="field wide"><span><span data-i18n="m_4681c036b1">Difficulty</span></span><select id="botDifficulty"><option value="0" data-i18n="m_5cd6cd2183">0 · Beginner</option><option value="1" data-i18n="m_dc36a87c98">1 · Easy</option><option value="2" data-i18n="m_c128e8f660">2 · Medium</option><option value="3" data-i18n="m_81717612b5">3 · Hard</option><option value="4" data-i18n="m_bf0d46003c">4 · Expert</option></select></label></div><label class="check"><input id="autoVacate" type="checkbox"><span><span data-i18n="m_ac7f239843">Make room for human players</span><small><span data-i18n="m_87bf9b919a">Allow YaPB to remove a bot so a human player can join.</span></small></span></label></div><div class="card"><h2>Chat & <span data-i18n="m_2fba55be8e">Radio</span></h2><label class="check"><input id="botChat" type="checkbox"><span><span data-i18n="m_14c1b1d5f6">Enable bot chat</span><small><span data-i18n="m_1c9b641d6d">Uses the installed chat messages and keyword replies.</span></small></span></label><div class="field-grid" style="margin-top:18px"><label class="field"><span><span data-i18n="m_fc8e4ad7f8">Dead chat probability</span></span><input id="botChatPercent" type="number" min="0" max="100" required><small><span data-i18n="m_36d40a4f86">0–100 percent when a bot dies. This is not a per-minute message limit.</span></small></label><label class="field"><span><span data-i18n="m_2fba55be8e">Radio</span></span><select id="radioMode"><option value="0" data-i18n="m_f0ce94502e">Off</option><option value="1" data-i18n="m_177315ad45">Standard radio</option><option value="2" data-i18n="m_30f6387c83">Radio + bot voices</option></select></label></div><p class="note"><span data-i18n="m_d113b03f7e">Bot chat text is not rewritten here.</span></p></div></div></section>
+ <section class="tab" id="tab-sounds" hidden aria-labelledby="heading-sounds"><div class="eyebrow">Sank Sounds</div><h1 id="heading-sounds"><span data-i18n="m_41fc34a796">The sound of your LAN.</span></h1><p class="lede"><span data-i18n="m_b93fcca465">Choose which chat commands are available and how often they can be played.</span></p><div class="card"><h2><span data-i18n="m_033e8fc05d">Playback</span> & Limits</h2><div class="field-grid" style="margin-top:22px"><label class="field"><span><span data-i18n="m_31a91a0c96">Sounds per player per map</span></span><input id="soundQuota" type="number" min="1" max="1000" required></label><label class="field"><span><span data-i18n="m_f2d1be7a3d">Delay between chat sounds</span></span><input id="soundDelay" type="number" min="0" max="300" step="1" required><small><span data-i18n="m_39a4e51b90">In seconds.</span></small></label><label class="field"><span><span data-i18n="m_19b09b2e4c">Maximum sound duration</span></span><input id="soundMaxDuration" type="number" min="0.1" max="600" step="0.1" required><small><span data-i18n="m_b91c6e8e5f">In seconds. The plugin rejects clips that exceed this limit.</span></small></label><label class="field"><span><span data-i18n="m_627c43bafd">Join sound</span></span><select id="joinSound"></select><small><span data-i18n="m_fdee8c1747">This clip plays when a player joins.</span></small></label></div></div><div class="card"><div class="card-heading"><div><h2><span data-i18n="m_2bffd2f7f1">Sound commands</span></h2><p id="soundCount" class="hint"></p></div><div class="toolbar"><label><span class="sr-only"><span data-i18n="m_9a3173b309">Search sounds</span></span><input id="soundSearch" type="search" placeholder="Search sounds …" data-i18n-placeholder="m_2a66cbdcb3"></label><button type="button" id="enableSounds" class="small"><span data-i18n="m_de05581b86">Enable all</span></button><button type="button" id="disableSounds" class="small"><span data-i18n="m_5c36f65153">Disable all</span></button></div></div><div class="table-wrap"><table><thead><tr><th><span data-i18n="m_8163454f37">Enabled</span></th><th><span data-i18n="m_42dca66f9f">Command / file</span></th><th><span data-i18n="m_69337f6de9">Preview</span></th></tr></thead><tbody id="soundRows"></tbody></table></div><audio id="audioPlayer" class="audio-player" controls hidden></audio><p class="note"><span data-i18n="m_ea11bca83d">Disabled commands are commented out and kept for later. No new audio files are downloaded here.</span></p></div></section>
+ <section class="tab" id="tab-motd" hidden aria-labelledby="heading-motd"><div class="eyebrow">MOTD</div><h1 id="heading-motd"><span data-i18n="m_997b35fffa">Welcome to your server.</span></h1><p class="lede"><span data-i18n="m_91c3d57b8b">The welcome message players see when they join. CS 1.6 uses plain text for this screen.</span></p><div class="grid"><div class="card"><div class="card-heading"><h2><span data-i18n="m_33f652de5f">Welcome text</span></h2><span id="motdCount" class="count"></span></div><label class="field"><span class="sr-only"><span data-i18n="m_4afd38d6f2">MOTD text</span></span><textarea id="motdText" class="code-area" maxlength="1500" spellcheck="false"></textarea><small><span data-i18n="m_11e1c2fc10">Up to 1,500 basic characters. Avoid accented characters and emoji for the legacy game display.</span></small></label></div><div class="card"><h2><span data-i18n="m_9074367a36">Text preview</span></h2><p class="hint"><span data-i18n="m_593e1e1e47">The game controls the actual font and window size.</span></p><div id="motdPreview" class="motd-preview"></div></div></div></section>
+
+ <section class="tab" id="tab-admin" hidden aria-labelledby="heading-admin">
+  <div class="eyebrow">AMX / RCON / YaPB</div><h1 id="heading-admin" data-i18n="admin.title">Administration</h1>
+  <p class="lede" data-i18n="admin.intro"></p>
+  <div class="notice" id="adminMessage" role="status" aria-live="polite"></div>
+  <div class="toolbar admin-toolbar"><button type="button" id="reloadAdmin" data-i18n="admin.reload"></button><span id="adminDirtyLabel" class="hint"></span></div>
+  <div id="adminFields" hidden>
+   <div class="card"><div class="card-heading"><div><h2 data-i18n="admin.accounts"></h2><p class="hint" id="adminProtected"></p></div><button type="button" id="addAdmin" class="small" data-i18n="admin.add"></button></div>
+    <div id="adminRows"></div><p class="note" data-i18n="admin.rules"></p>
+   </div>
+   <div class="card"><h2 data-i18n="admin.server"></h2><div class="field-grid">
+    <label class="field"><span data-i18n="admin.rcon"></span><input type="password" id="adminRcon" autocomplete="new-password" maxlength="31" data-i18n-placeholder="admin.keep"><small id="adminRconState"></small></label>
+    <label class="field"><span data-i18n="admin.yb"></span><input type="password" id="adminYb" autocomplete="new-password" maxlength="31" data-i18n-placeholder="admin.keep"><small id="adminYbState"></small></label>
+   </div><p class="note" data-i18n="admin.login"></p><pre class="admin-login" id="adminLogin"></pre><p class="hint" data-i18n="admin.reconnect"></p></div>
+   <div class="card"><p class="hint" data-i18n="admin.private"></p><p class="hint" data-i18n="admin.preview"></p><p id="adminSaveHint" class="hint"></p><div class="toolbar"><button type="button" id="reviewAdmin" class="primary" data-i18n="admin.review"></button><button type="button" id="undoAdmin" data-i18n="admin.undo"></button></div><p class="note path" id="adminBackup"></p></div>
+  </div>
+ </section>
+
+ </form>
+</main>
+</div>
+<footer class="footer"><div><strong id="changeSummary"><span data-i18n="m_e997be92ca">Example settings · nothing saved</span></strong><small id="saveHint"><span data-i18n="m_06b5261d1e">Stop the server before saving. Use the local launcher for server controls.</span></small></div><div class="buttons"><button type="button" id="undo" disabled><span data-i18n="m_c8cc28cf2c">Undo last save</span></button><button type="button" id="review" class="primary"><span data-i18n="m_f539371f88">Review changes</span></button></div></footer>
+<dialog id="adminReviewDialog" aria-labelledby="adminReviewHeading"><h2 id="adminReviewHeading" data-i18n="admin.review"></h2><ul id="adminReviewList" class="review-files"></ul><p class="hint" data-i18n="admin.private"></p><p class="hint" data-i18n="admin.stopped"></p><div id="adminProgress" role="status" aria-live="polite"></div><div class="dialog-footer"><button type="button" id="closeAdminReview" data-i18n="admin.back"></button><button type="button" id="saveAdmin" class="primary" data-i18n="admin.save"></button></div></dialog>
+<dialog id="reviewDialog" aria-labelledby="reviewHeading"><h2 id="reviewHeading"><span data-i18n="m_2d67be8510">Your changes</span></h2><p class="hint" id="reviewIntro"></p><ul id="reviewFiles" class="review-files"></ul><div class="notice" id="reviewNotice"><span data-i18n="m_54a7b34825">Original files are backed up before writing. Stop the server before saving.</span></div><div id="saveProgress" role="status" aria-live="polite"></div><div class="dialog-footer"><button type="button" id="closeReview"><span data-i18n="m_548611ce58">Back</span></button><button type="button" id="saveChanges" class="primary"><span data-i18n="m_d5526c95c5">Save with backup</span></button></div></dialog>
+<input type="file" id="profileInput" accept="application/json,.json" hidden><input type="file" id="folderInput" webkitdirectory multiple hidden>
+<dialog id="serverDialog" aria-labelledby="serverDialogHeading"><h2 id="serverDialogHeading"><span data-i18n="m_25d0cb6f5b">Select local server</span></h2><p class="hint"><span data-i18n="m_e605e5994e">The installed folder containing cstrike and Start-CS16.sh.</span></p><label class="field"><span><span data-i18n="m_8ba7d27a79">Full server path</span></span><input id="serverPath" autocomplete="off" spellcheck="false" placeholder="/home/user/CS16Server-Linux"></label><div class="dialog-footer"><button type="button" id="pickServerPath"><span data-i18n="m_a6df1d8663">Browse folders …</span></button><button type="button" id="closeServerDialog"><span data-i18n="m_f7ff1178af">Cancel</span></button><button type="button" id="loadServerPath" class="primary"><span data-i18n="m_8db8f7decb">Load folder</span></button></div><p id="serverDialogMessage" class="note" role="status"></p></dialog>
+<script>
+const UI_MESSAGES = {
+  "m_2ec6c21453": {
+    "en": "CS 1.6 · Server Control Panel",
+    "de": "CS 1.6 · Server-Konfigurator"
+  },
+  "m_ad3565331e": {
+    "en": "SERVER CONTROL PANEL",
+    "de": "SERVER KONFIGURATOR"
+  },
+  "m_7b40d8db4e": {
+    "en": "Sections",
+    "de": "Bereiche"
+  },
+  "m_4d2bb368f9": {
+    "en": "Overview",
+    "de": "Übersicht"
+  },
+  "m_582936c918": {
+    "en": "Rules",
+    "de": "Regeln"
+  },
+  "m_c4dc122420": {
+    "en": "Welcome",
+    "de": "Willkommen"
+  },
+  "m_f5511b43f7": {
+    "en": "Your server. Your rules.",
+    "de": "Dein Server. Deine Regeln."
+  },
+  "m_9abddc9e8f": {
+    "en": "Runs locally on your computer.",
+    "de": "Lokal auf deinem Rechner."
+  },
+  "m_5df9b86ef0": {
+    "en": "Half-Life Counter-Strike 1.5 Server on GitHub ↗",
+    "de": "Half-Life Counter-Strike 1.5 Server auf GitHub ↗"
+  },
+  "m_dc70b19d0b": {
+    "en": "No server folder selected",
+    "de": "Noch kein Serverordner geöffnet"
+  },
+  "m_69337f6de9": {
+    "en": "Preview",
+    "de": "Vorschau"
+  },
+  "m_d5044e7f44": {
+    "en": "Open server folder",
+    "de": "Serverordner öffnen"
+  },
+  "m_07f57035bd": {
+    "en": "These are example settings. Open your installed server folder to load its current configuration.",
+    "de": "Du siehst Beispieldaten. Öffne deinen installierten Serverordner, um seine aktuellen Einstellungen zu laden."
+  },
+  "m_4ca78c330c": {
+    "en": "Everything in one place",
+    "de": "Alles an einem Ort"
+  },
+  "m_a08272096f": {
+    "en": "Ready for public Steam games.",
+    "de": "Bereit für öffentliche Steam-Spiele."
+  },
+  "m_8b6c298269": {
+    "en": "Configure maps, slots, bots and sounds without working through individual configuration files.",
+    "de": "Mapcycle, Slots, Bots und Sounds einstellen – ohne sich durch die einzelnen Konfigurationsdateien zu arbeiten."
+  },
+  "m_20e6a02042": {
+    "en": "Player slots",
+    "de": "Spieler-Slots"
+  },
+  "m_663154d172": {
+    "en": "Maps in rotation",
+    "de": "Maps in der Rotation"
+  },
+  "m_aa5850338a": {
+    "en": "Player target including bots",
+    "de": "Spielerziel mit Bots"
+  },
+  "m_e0fd364595": {
+    "en": "Active sound commands",
+    "de": "Aktive Sound-Befehle"
+  },
+  "m_d6a9e42218": {
+    "en": "Server controls",
+    "de": "Serverbetrieb"
+  },
+  "m_0f65552c52": {
+    "en": "Use the local panel launcher to start the server and save settings.",
+    "de": "Zum Starten und Speichern den lokalen Panel-Starter verwenden."
+  },
+  "m_a0b9c89e98": {
+    "en": "Not connected",
+    "de": "Nicht verbunden"
+  },
+  "m_348df54750": {
+    "en": "Start server",
+    "de": "Server starten"
+  },
+  "m_07792ddccf": {
+    "en": "Stop server",
+    "de": "Server beenden"
+  },
+  "m_eeeb4f30db": {
+    "en": "Stop sends the normal quit command. Closing this page does not stop the game server.",
+    "de": "Beenden sendet den regulären Quit-Befehl. Das Schließen dieser Seite beendet den Spielserver nicht."
+  },
+  "m_6ad403422d": {
+    "en": "How it works",
+    "de": "So funktioniert's"
+  },
+  "m_580a34865b": {
+    "en": "Run",
+    "de": "Starte"
+  },
+  "m_9ed5527793": {
+    "en": "and select the installed",
+    "de": "und wähle den installierten"
+  },
+  "m_95eebc294e": {
+    "en": " folder containing",
+    "de": "-Ordner mit dem Unterordner"
+  },
+  "m_f14b3bac02": {
+    "en": ". On Linux, select the folder containing",
+    "de": ". Unter Linux entsprechend den Ordner mit"
+  },
+  "m_700a8418ed": {
+    "en": "Edit settings, review changes and save. The local helper handles file access and backs up affected files first.",
+    "de": "Einstellungen bearbeiten, Änderungen prüfen und speichern. Der lokale Helfer übernimmt den Dateizugriff. Vorher entsteht ein Backup der betroffenen Dateien."
+  },
+  "m_65a9724802": {
+    "en": "Stop the server using the button above before saving. You can start it again here afterwards.",
+    "de": "Beende den Server vor dem Speichern über die Schaltfläche oben. Danach kannst du ihn hier wieder starten."
+  },
+  "m_f90ceedeb4": {
+    "en": "Your configuration",
+    "de": "Deine Konfiguration"
+  },
+  "m_cdf648878b": {
+    "en": "Platform",
+    "de": "Plattform"
+  },
+  "m_7ce0d777d1": {
+    "en": "Example settings",
+    "de": "Beispieldaten"
+  },
+  "m_01bb4bf01c": {
+    "en": "Starting map",
+    "de": "Startmap"
+  },
+  "m_880354a2d3": {
+    "en": "Map duration",
+    "de": "Mapdauer"
+  },
+  "m_f49f54b079": {
+    "en": "30 minutes",
+    "de": "30 Minuten"
+  },
+  "m_7180877051": {
+    "en": "Latest backup",
+    "de": "Letztes Backup"
+  },
+  "m_33b3eb4260": {
+    "en": "No saves yet",
+    "de": "Noch keine Speicherung"
+  },
+  "m_f75be88cfb": {
+    "en": "Jump to your settings",
+    "de": "Schnell zu deinen Einstellungen"
+  },
+  "m_4cabf967aa": {
+    "en": "Choose a section. Your edits are kept when you switch sections.",
+    "de": "Wähle einen Bereich. Deine Änderungen bleiben beim Wechsel erhalten."
+  },
+  "m_b600ae896f": {
+    "en": "Export profile",
+    "de": "Profil exportieren"
+  },
+  "m_309b799378": {
+    "en": "Import profile",
+    "de": "Profil laden"
+  },
+  "m_9ccd8b7364": {
+    "en": "Choose and sort maps →",
+    "de": "Maps auswählen und sortieren →"
+  },
+  "m_6f80c0dd20": {
+    "en": "Classics, fun maps, map voting and starting map.",
+    "de": "Klassiker, Fun-Maps, Map-Vote und Startmap."
+  },
+  "m_df72706ed4": {
+    "en": "Set up bots for your game →",
+    "de": "Die Bots auf deine Runde abstimmen →"
+  },
+  "m_c598213a7e": {
+    "en": "Count, difficulty, chat and radio.",
+    "de": "Anzahl, Schwierigkeit, Chat und Funk."
+  },
+  "m_847c022398": {
+    "en": "Manage your sound selection →",
+    "de": "Deine Sound-Auswahl verwalten →"
+  },
+  "m_54520f9062": {
+    "en": "Preview clips, enable or disable commands, and set limits.",
+    "de": "Clips anhören, Befehle ein-/ausschalten und Limits setzen."
+  },
+  "m_c9d3afcc27": {
+    "en": "Welcome your players →",
+    "de": "Spieler willkommen heißen →"
+  },
+  "m_3f7b75c1f6": {
+    "en": "Edit the MOTD and preview its text.",
+    "de": "MOTD bearbeiten und direkt als Text ansehen."
+  },
+  "m_93fc1858a6": {
+    "en": "The basics of your game",
+    "de": "Die Grundlage deiner Runde"
+  },
+  "m_b585643cca": {
+    "en": "Game rules",
+    "de": "Spielregeln"
+  },
+  "m_f9d9344a73": {
+    "en": "Server name, player slots and round limits. Existing credentials are preserved.",
+    "de": "Name, Spielerzahl und Rundenlimits. Bestehende Zugangsdaten bleiben erhalten."
+  },
+  "m_07c59e6d7d": {
+    "en": "Restart required",
+    "de": "Neustart erforderlich"
+  },
+  "m_e5e07cd03e": {
+    "en": "Server name",
+    "de": "Servername"
+  },
+  "m_49bef4ddcf": {
+    "en": "Up to 31 basic characters; no quotation marks or command separators.",
+    "de": "Bis zu 31 einfache Zeichen; keine Anführungszeichen oder Befehlszeichen."
+  },
+  "m_f127a08e8b": {
+    "en": "Maximum players",
+    "de": "Maximale Spielerzahl"
+  },
+  "m_83f48e38ca": {
+    "en": "1–32 slots. The launcher will be updated accordingly.",
+    "de": "1–32 Slots. Die Startdatei wird entsprechend angepasst."
+  },
+  "m_38ef868024": {
+    "en": "This map loads the next time the server starts.",
+    "de": "Diese Map startet beim nächsten Serverstart."
+  },
+  "m_5d5c3e79b5": {
+    "en": "Map duration in minutes",
+    "de": "Mapdauer in Minuten"
+  },
+  "m_cb1e24e314": {
+    "en": "Total time on a map, rather than the length of one round.",
+    "de": "Gesamte Spielzeit einer Map, nicht die Dauer einer Runde."
+  },
+  "m_3bf9d27076": {
+    "en": "Vote before map ends",
+    "de": "Abstimmung vor Mapende"
+  },
+  "m_f18f5d9d18": {
+    "en": "Minutes before the map ends; 0 triggers voting only at the time limit.",
+    "de": "Minuten vor Ablauf der Map; 0 startet den Zeit-Trigger erst am Zeitlimit."
+  },
+  "m_1d0090d4d9": {
+    "en": "Maximum rounds per map",
+    "de": "Maximale Runden je Map"
+  },
+  "m_6d7c460bba": {
+    "en": "0 = no round limit.",
+    "de": "0 = kein Rundenlimit."
+  },
+  "m_fda2c8bcb3": {
+    "en": "Wins before map change",
+    "de": "Siege bis zum Mapwechsel"
+  },
+  "m_dbb6668186": {
+    "en": "0 = no win limit.",
+    "de": "0 = kein Sieglimit."
+  },
+  "m_81ed5860a3": {
+    "en": "Players can hurt their teammates.",
+    "de": "Spieler können Teamkameraden verletzen."
+  },
+  "m_b816999db6": {
+    "en": "Scoring",
+    "de": "Wertung"
+  },
+  "m_10c2a19afb": {
+    "en": "Kills minus deaths",
+    "de": "Kills minus Tode"
+  },
+  "m_cd7a1044e7": {
+    "en": "Kills only",
+    "de": "Nur Kills"
+  },
+  "m_d25e0ad9f9": {
+    "en": "Keep custom formula",
+    "de": "Eigene Formel beibehalten"
+  },
+  "m_33b72dd2a8": {
+    "en": "Include bots in rankings",
+    "de": "Bots im Ranking mitzählen"
+  },
+  "m_f604f44824": {
+    "en": "Saved statistics will not be reset.",
+    "de": "Gespeicherte Statistiken werden nicht zurückgesetzt."
+  },
+  "m_a8b3130c0a": {
+    "en": "From de_dust2 to pool_day",
+    "de": "Von de_dust2 bis pool_day"
+  },
+  "m_254af47973": {
+    "en": "The rotation controls map order and automatic changes. The voting list determines which maps players can nominate and vote for.",
+    "de": "Die Rotation legt Reihenfolge und automatische Wechsel fest. Die Abstimmungsliste bestimmt, welche Maps Spieler nominieren und wählen können."
+  },
+  "m_f622786d9e": {
+    "en": "Installed maps",
+    "de": "Installierte Maps"
+  },
+  "m_7e581cea70": {
+    "en": "Search maps",
+    "de": "Maps durchsuchen"
+  },
+  "m_34c2d63d68": {
+    "en": "Search maps …",
+    "de": "Map suchen …"
+  },
+  "m_d68c2a21cd": {
+    "en": "Classics",
+    "de": "Klassiker"
+  },
+  "m_4d988a8adb": {
+    "en": "Fun maps",
+    "de": "Fun-Maps"
+  },
+  "m_7f2ea4317f": {
+    "en": "All maps",
+    "de": "Alle Maps"
+  },
+  "m_667a554f16": {
+    "en": "Order",
+    "de": "Reihenfolge"
+  },
+  "m_a519115d1c": {
+    "en": "Voting",
+    "de": "Abstimmung"
+  },
+  "m_89c9c633df": {
+    "en": "Map capacity",
+    "de": "Map-Limit"
+  },
+  "m_d00bdb7c48": {
+    "en": "Use ↑ and ↓ to reorder. Existing map capacities are preserved; new fun maps use the package capacity. Choose a suitable bot target for smaller maps.",
+    "de": "Mit ↑ und ↓ sortieren. Map-Limits bestehender Einträge bleiben erhalten; neue Fun-Maps erhalten die Kapazität aus dem Paket. Für kleine Maps ein passendes Bot-Ziel wählen."
+  },
+  "m_4c9e72a746": {
+    "en": "Good company.",
+    "de": "Gute Gesellschaft."
+  },
+  "m_c11b68dbfe": {
+    "en": "From a quiet practice game to a public server. Fill mode includes human players in its target.",
+    "de": "Von einer ruhigen Trainingsrunde bis zum öffentlichen Server. „Auffüllen“ zählt menschliche Spieler mit."
+  },
+  "m_f430319dd8": {
+    "en": "Players",
+    "de": "Spieler"
+  },
+  "m_4681c036b1": {
+    "en": "Difficulty",
+    "de": "Schwierigkeit"
+  },
+  "m_78da9b8beb": {
+    "en": "Bot mode",
+    "de": "Bot-Modus"
+  },
+  "m_9cf0b948a1": {
+    "en": "Fill to player target",
+    "de": "Auf Spielerziel auffüllen"
+  },
+  "m_e54d671d1a": {
+    "en": "Fixed bot count",
+    "de": "Feste Anzahl Bots"
+  },
+  "m_570b723d70": {
+    "en": "Player target including bots",
+    "de": "Spielerziel inklusive Bots"
+  },
+  "m_95bb09907d": {
+    "en": "0 disables bots. The target cannot exceed the player slots.",
+    "de": "0 deaktiviert die Bots. Höchstens so viele wie Spieler-Slots."
+  },
+  "m_5cd6cd2183": {
+    "en": "0 · Beginner",
+    "de": "0 · Anfänger"
+  },
+  "m_dc36a87c98": {
+    "en": "1 · Easy",
+    "de": "1 · Leicht"
+  },
+  "m_c128e8f660": {
+    "en": "2 · Medium",
+    "de": "2 · Mittel"
+  },
+  "m_81717612b5": {
+    "en": "3 · Hard",
+    "de": "3 · Schwer"
+  },
+  "m_bf0d46003c": {
+    "en": "4 · Expert",
+    "de": "4 · Experte"
+  },
+  "m_ac7f239843": {
+    "en": "Make room for human players",
+    "de": "Platz für menschliche Spieler machen"
+  },
+  "m_87bf9b919a": {
+    "en": "Allow YaPB to remove a bot so a human player can join.",
+    "de": "YaPB darf einen Bot entfernen, damit ein Spieler beitreten kann."
+  },
+  "m_2fba55be8e": {
+    "en": "Radio",
+    "de": "Funk"
+  },
+  "m_14c1b1d5f6": {
+    "en": "Enable bot chat",
+    "de": "Bot-Chat einschalten"
+  },
+  "m_1c9b641d6d": {
+    "en": "Uses the installed chat messages and keyword replies.",
+    "de": "Nutzt die installierten Sprüche und Stichwort-Antworten."
+  },
+  "m_fc8e4ad7f8": {
+    "en": "Dead chat probability",
+    "de": "Zuschauer-Chat: Wahrscheinlichkeit"
+  },
+  "m_36d40a4f86": {
+    "en": "0–100 percent when a bot dies. This is not a per-minute message limit.",
+    "de": "0–100 Prozent bei Tod eines Bots. Kein Nachrichtenlimit pro Minute."
+  },
+  "m_f0ce94502e": {
+    "en": "Off",
+    "de": "Aus"
+  },
+  "m_177315ad45": {
+    "en": "Standard radio",
+    "de": "Normaler Funk"
+  },
+  "m_30f6387c83": {
+    "en": "Radio + bot voices",
+    "de": "Funk + Bot-Stimmen"
+  },
+  "m_d113b03f7e": {
+    "en": "Bot chat text is not rewritten here.",
+    "de": "Die Texte des Bot-Chats werden hier nicht umgeschrieben."
+  },
+  "m_41fc34a796": {
+    "en": "Your server sounds.",
+    "de": "Die Sounds deines Servers."
+  },
+  "m_b93fcca465": {
+    "en": "Choose which chat commands are available and how often they can be played.",
+    "de": "Bestimme, welche Chat-Befehle verfügbar sind und wie oft sie abgespielt werden dürfen."
+  },
+  "m_033e8fc05d": {
+    "en": "Playback",
+    "de": "Wiedergabe"
+  },
+  "m_31a91a0c96": {
+    "en": "Sounds per player per map",
+    "de": "Sounds je Spieler und Map"
+  },
+  "m_f2d1be7a3d": {
+    "en": "Delay between chat sounds",
+    "de": "Pause zwischen Chat-Sounds"
+  },
+  "m_39a4e51b90": {
+    "en": "In seconds.",
+    "de": "In Sekunden."
+  },
+  "m_19b09b2e4c": {
+    "en": "Maximum sound duration",
+    "de": "Maximale Sounddauer"
+  },
+  "m_b91c6e8e5f": {
+    "en": "In seconds. The plugin rejects clips that exceed this limit.",
+    "de": "In Sekunden. Zu lange Clips werden vom Plugin abgelehnt."
+  },
+  "m_627c43bafd": {
+    "en": "Join sound",
+    "de": "Sound beim Beitritt"
+  },
+  "m_fdee8c1747": {
+    "en": "This clip plays when a player joins.",
+    "de": "Dieser Clip wird bei einem Spielerbeitritt angekündigt."
+  },
+  "m_2bffd2f7f1": {
+    "en": "Sound commands",
+    "de": "Sound-Befehle"
+  },
+  "m_9a3173b309": {
+    "en": "Search sounds",
+    "de": "Sounds durchsuchen"
+  },
+  "m_2a66cbdcb3": {
+    "en": "Search sounds …",
+    "de": "Sound suchen …"
+  },
+  "m_de05581b86": {
+    "en": "Enable all",
+    "de": "Alle aktivieren"
+  },
+  "m_5c36f65153": {
+    "en": "Disable all",
+    "de": "Alle deaktivieren"
+  },
+  "m_8163454f37": {
+    "en": "Enabled",
+    "de": "Aktiv"
+  },
+  "m_42dca66f9f": {
+    "en": "Command / file",
+    "de": "Befehl / Datei"
+  },
+  "m_ea11bca83d": {
+    "en": "Disabled commands are commented out and kept for later. No new audio files are downloaded here.",
+    "de": "Deaktivierte Befehle werden mit einem Kommentar markiert und bleiben für später erhalten. Neue Audiodateien werden hier nicht heruntergeladen."
+  },
+  "m_997b35fffa": {
+    "en": "Welcome to your server.",
+    "de": "Willkommen auf deinem Server."
+  },
+  "m_91c3d57b8b": {
+    "en": "The welcome message players see when they join. CS 1.6 uses plain text for this screen.",
+    "de": "Der Begrüßungstext, den Spieler beim Beitritt sehen. CS 1.6 verwendet dafür einfachen Text."
+  },
+  "m_33f652de5f": {
+    "en": "Welcome text",
+    "de": "Begrüßungstext"
+  },
+  "m_4afd38d6f2": {
+    "en": "MOTD text",
+    "de": "MOTD-Text"
+  },
+  "m_11e1c2fc10": {
+    "en": "Up to 1,500 basic characters. Avoid accented characters and emoji for the legacy game display.",
+    "de": "Bis zu 1.500 einfache Zeichen. Für die alte Spielanzeige ohne Umlaute oder Emoji schreiben."
+  },
+  "m_9074367a36": {
+    "en": "Text preview",
+    "de": "Textvorschau"
+  },
+  "m_593e1e1e47": {
+    "en": "The game controls the actual font and window size.",
+    "de": "Die tatsächliche Schrift und Fenstergröße bestimmt das Spiel."
+  },
+  "m_e997be92ca": {
+    "en": "Example settings · nothing saved",
+    "de": "Beispieldaten · nichts gespeichert"
+  },
+  "m_06b5261d1e": {
+    "en": "Stop the server before saving. Use the local launcher for server controls.",
+    "de": "Vor dem Speichern den Server beenden. Keine Verbindung zum laufenden Spiel."
+  },
+  "m_c8cc28cf2c": {
+    "en": "Undo last save",
+    "de": "Letzte Speicherung rückgängig"
+  },
+  "m_f539371f88": {
+    "en": "Review changes",
+    "de": "Änderungen prüfen"
+  },
+  "m_2d67be8510": {
+    "en": "Your changes",
+    "de": "Deine Änderungen"
+  },
+  "m_54a7b34825": {
+    "en": "Original files are backed up before writing. Stop the server before saving.",
+    "de": "Vor dem Schreiben werden Originaldateien gesichert. Beende den Server vor dem Speichern."
+  },
+  "m_548611ce58": {
+    "en": "Back",
+    "de": "Zurück"
+  },
+  "m_d5526c95c5": {
+    "en": "Save with backup",
+    "de": "Mit Backup speichern"
+  },
+  "m_25d0cb6f5b": {
+    "en": "Select local server",
+    "de": "Lokalen Server auswählen"
+  },
+  "m_e605e5994e": {
+    "en": "The installed folder containing cstrike and Start-CS16.sh.",
+    "de": "Der installierte Ordner mit cstrike und Start-CS16.sh."
+  },
+  "m_8ba7d27a79": {
+    "en": "Full server path",
+    "de": "Vollständiger Serverpfad"
+  },
+  "m_a6df1d8663": {
+    "en": "Browse folders …",
+    "de": "Ordner durchsuchen …"
+  },
+  "m_f7ff1178af": {
+    "en": "Cancel",
+    "de": "Abbrechen"
+  },
+  "m_8db8f7decb": {
+    "en": "Load folder",
+    "de": "Ordner laden"
+  },
+  "m_801595508b": {
+    "en": "Could not read the Windows launch arguments.",
+    "de": "Die Windows-Startargumente konnten nicht gelesen werden."
+  },
+  "m_10952dbc97": {
+    "en": "Select an installed server folder first.",
+    "de": "Zuerst einen installierten Serverordner auswählen."
+  },
+  "m_0bfff5e3d7": {
+    "en": "Invalid relative file path.",
+    "de": "Ungültiger relativer Dateipfad."
+  },
+  "m_26b968f0d5": {
+    "en": "The file path leaves the server folder.",
+    "de": "Der Dateipfad verlässt den Serverordner."
+  },
+  "m_4c2734f75d": {
+    "en": "The launcher does not match this computer's operating system.",
+    "de": "Die Startdatei passt nicht zum Betriebssystem dieses PCs."
+  },
+  "m_3d35c7cde1": {
+    "en": "The launcher must contain exactly one supported HLDS launch command.",
+    "de": "Die Startdatei braucht genau eine unterstützte HLDS-Startzeile."
+  },
+  "m_d5fcd61b1c": {
+    "en": "The launcher must use -game cstrike.",
+    "de": "Die Startdatei muss -game cstrike verwenden."
+  },
+  "m_178e80da39": {
+    "en": "The server is running. Stop it in the panel before saving.",
+    "de": "Der Server läuft. Vor dem Speichern zuerst im Panel beenden."
+  },
+  "m_5255abc33b": {
+    "en": "The server is still running. No process was forcibly terminated.",
+    "de": "Der Server läuft noch. Es wurde kein Prozess zwangsweise beendet."
+  },
+  "m_cdc966adb5": {
+    "en": "This panel only accepts requests from its own local origin.",
+    "de": "Dieses Panel akzeptiert nur seinen lokalen Ursprung."
+  },
+  "m_5cb96a0deb": {
+    "en": "Invalid panel session. Reopen the page using the local launcher.",
+    "de": "Panel-Sitzung ungültig. Seite über den lokalen Starter neu öffnen."
+  },
+  "m_2d2ab165ae": {
+    "en": "Linked file paths cannot be edited.",
+    "de": "Verknüpfte Dateipfade werden nicht bearbeitet."
+  },
+  "m_ad41cb6842": {
+    "en": "A configuration is being saved. Wait before changing folders.",
+    "de": "Eine Konfiguration wird gerade gespeichert. Danach den Ordner wechseln."
+  },
+  "m_25ed8e0970": {
+    "en": "Stop the server started by this panel first.",
+    "de": "Zuerst den vom Panel gestarteten Server beenden."
+  },
+  "m_145d131b78": {
+    "en": "Choose the installed server folder containing cstrike/server.cfg.",
+    "de": "Wähle den installierten Serverordner mit cstrike/server.cfg."
+  },
+  "m_12f8709372": {
+    "en": "The server folder needs one launcher and the HLDS executable.",
+    "de": "Im Serverordner fehlen eine eindeutige Startdatei oder HLDS."
+  },
+  "m_a24322eae4": {
+    "en": "The server installation is not complete.",
+    "de": "Die Serverinstallation ist noch nicht abgeschlossen."
+  },
+  "m_7cd6e5cb84": {
+    "en": "The launcher does not reference a local IPv4 address on this computer.",
+    "de": "Die Startdatei verweist nicht auf eine IPv4-Adresse dieses PCs."
+  },
+  "m_1fbeeaf059": {
+    "en": "Invalid local server address or port in the launcher.",
+    "de": "Ungültige lokale Serveradresse oder Portnummer in der Startdatei."
+  },
+  "m_65732bf05b": {
+    "en": "The selected server changed or another save is in progress.",
+    "de": "Serverauswahl geändert oder eine andere Speicherung läuft."
+  },
+  "m_c3740c5ef1": {
+    "en": "The selected server folder changed. Reload the page.",
+    "de": "Der ausgewählte Serverordner hat sich geändert. Seite neu laden."
+  },
+  "m_1445929d40": {
+    "en": "The panel is not allowed to change this file.",
+    "de": "Diese Datei darf vom Panel nicht geändert werden."
+  },
+  "m_b902c8ad4a": {
+    "en": "Complete the current save first.",
+    "de": "Zuerst die laufende Speicherung abschließen."
+  },
+  "m_f95190b8b9": {
+    "en": "A single local RCON password is required for a normal shutdown.",
+    "de": "Für reguläres Beenden wird ein eindeutiges lokales RCON-Passwort benötigt."
+  },
+  "m_f830db0a60": {
+    "en": "A JSON request is required.",
+    "de": "JSON-Anfrage erforderlich."
+  },
+  "m_ee4f6fc8d3": {
+    "en": "Invalid request size.",
+    "de": "Ungültige Anfragegröße."
+  },
+  "m_12d295c98c": {
+    "en": "Only the installed map directory can be listed.",
+    "de": "Nur das installierte Map-Verzeichnis wird aufgelistet."
+  },
+  "m_344a5d1f14": {
+    "en": "This file is outside the panel's permitted files.",
+    "de": "Diese Datei gehört nicht zum Konfigurator."
+  },
+  "m_4f36c370fd": {
+    "en": "The file is too large.",
+    "de": "Die Datei ist zu groß."
+  },
+  "m_3d0dd1a768": {
+    "en": "Another panel session is saving.",
+    "de": "Eine andere Panel-Sitzung speichert gerade."
+  },
+  "m_7230c0a02e": {
+    "en": "The server is not responding to RCON yet. Try again shortly.",
+    "de": "Der Server antwortet noch nicht auf RCON. Gleich erneut versuchen."
+  },
+  "m_a831325aec": {
+    "en": "Could not read local status.",
+    "de": "Der lokale Status konnte nicht gelesen werden."
+  },
+  "m_1e803e65c7": {
+    "en": "Invalid panel request.",
+    "de": "Ungültige Panel-Anfrage."
+  },
+  "m_bb8c732736": {
+    "en": "File access failed. Check the path, write permissions and free disk space.",
+    "de": "Dateizugriff fehlgeschlagen. Pfad, Schreibrechte und freie Speicherkapazität prüfen."
+  },
+  "m_20142e6ca6": {
+    "en": "The local operation failed.",
+    "de": "Der lokale Vorgang ist fehlgeschlagen."
+  },
+  "m_72d26bf6f9": {
+    "en": "Backup directory is not permitted.",
+    "de": "Nicht freigegebenes Backup-Verzeichnis."
+  },
+  "m_5a82eea50f": {
+    "en": "The configuration file is too large.",
+    "de": "Die Konfigurationsdatei ist zu groß."
+  },
+  "m_0bad299d99": {
+    "en": "The server did not return a valid RCON challenge.",
+    "de": "Der Server hat keine gültige RCON-Challenge geliefert."
+  },
+  "m_b709e9599f": {
+    "en": "Invalid file data.",
+    "de": "Ungültige Dateidaten."
+  },
+  "m_cb16aa0b91": {
+    "en": "The server rejected the local RCON credentials.",
+    "de": "Der Server hat die lokalen RCON-Daten abgelehnt."
+  },
+  "m_0e30e6d289": {
+    "en": "Not found.",
+    "de": "Nicht gefunden."
+  },
+  "m_047ef0e1c7": {
+    "en": "The selected server changed. Reload the page.",
+    "de": "Serverauswahl geändert. Seite neu laden."
+  },
+  "m_890267db5e": {
+    "en": "Folder selection is unavailable. Enter the full path in the panel.",
+    "de": "Ordnerauswahl nicht verfügbar. Den vollständigen Pfad im Panel eintragen."
+  },
+  "m_f2a1cc71fa": {
+    "en": "Language",
+    "de": "Sprache"
+  },
+  "m_e8d57ede83": {
+    "en": "Language changed. Your settings are kept.",
+    "de": "Sprache geändert. Deine Einstellungen bleiben erhalten."
+  },
+  "m_152aa51861": {
+    "en": "Invalid file path.",
+    "de": "Ungültiger Dateipfad."
+  },
+  "m_5edc67d68c": {
+    "en": "A character is not supported by the existing file encoding.",
+    "de": "Ein Zeichen passt nicht zur bestehenden Dateikodierung."
+  },
+  "m_88f67445d0": {
+    "en": "Multiline values are not allowed.",
+    "de": "Mehrzeiliger Wert ist nicht erlaubt."
+  },
+  "m_67b1c3afe3": {
+    "en": "Multiple active entries for ",
+    "de": "Mehrere aktive Einträge für "
+  },
+  "m_d70d9ef9d0": {
+    "en": ". Resolve them in the file first.",
+    "de": ". Bitte zuerst in der Datei bereinigen."
+  },
+  "m_bb02d0f70d": {
+    "en": "Multiple active sound settings for ",
+    "de": "Mehrere aktive Sound-Einstellungen für "
+  },
+  "m_e02a3dc5d8": {
+    "en": "Resolve duplicate sound commands first.",
+    "de": "Doppelte Sound-Befehle müssen zuerst bereinigt werden."
+  },
+  "m_7fc403bdb6": {
+    "en": "The launcher contains multiple +",
+    "de": "Die Startdatei enthält mehrere +"
+  },
+  "m_646d23cc3f": {
+    "en": " arguments.",
+    "de": "-Argumente."
+  },
+  "m_635739f68c": {
+    "en": "The launcher must contain exactly one +",
+    "de": "Die Startdatei braucht genau ein +"
+  },
+  "m_14871cdcae": {
+    "en": " argument.",
+    "de": "-Argument."
+  },
+  "m_f22778ba2e": {
+    "en": "Invalid toggle: ",
+    "de": "Ungültiger Schalter: "
+  },
+  "m_2b1f327b41": {
+    "en": "Invalid text value.",
+    "de": "Ungültiger Textwert."
+  },
+  "m_61767029d5": {
+    "en": "No custom ranking formula is available.",
+    "de": "Keine eigene Ranking-Formel vorhanden."
+  },
+  "m_5d7c518a04": {
+    "en": "Server name: 1–31 basic characters without quotes, semicolons or backslashes.",
+    "de": "Servername: 1–31 einfache Zeichen ohne Anführungszeichen, Semikolon oder Backslash."
+  },
+  "m_91beae4978": {
+    "en": ": value outside the allowed range.",
+    "de": ": Wert außerhalb des gültigen Bereichs."
+  },
+  "m_3dc0212fff": {
+    "en": "Voting must start fewer minutes before the end than the total map duration.",
+    "de": "Die Abstimmung muss weniger Minuten vor Ende starten als die Map insgesamt dauert."
+  },
+  "m_4313774cdc": {
+    "en": "The bot target cannot exceed the player slots.",
+    "de": "Das Bot-Ziel darf die Spielerzahl nicht überschreiten."
+  },
+  "m_8f152d212a": {
+    "en": "Unknown bot mode.",
+    "de": "Unbekannter Bot-Modus."
+  },
+  "m_fc965889aa": {
+    "en": "Invalid bot difficulty.",
+    "de": "Ungültige Bot-Schwierigkeit."
+  },
+  "m_0bdab59ff7": {
+    "en": "Invalid radio mode.",
+    "de": "Ungültiger Funkmodus."
+  },
+  "m_962dc7931f": {
+    "en": "Invalid ranking score.",
+    "de": "Ungültige Ranking-Wertung."
+  },
+  "m_3607f82421": {
+    "en": "MOTD: up to 1,500 basic characters without accented letters or emoji.",
+    "de": "MOTD: höchstens 1.500 einfache Textzeichen ohne Umlaute oder Emoji."
+  },
+  "m_ad2d03b8e7": {
+    "en": "A map list contains duplicate entries.",
+    "de": "Eine Map-Liste enthält doppelte Einträge."
+  },
+  "m_6cd5505912": {
+    "en": "Invalid map name.",
+    "de": "Ungültiger Mapname."
+  },
+  "m_738ee16c03": {
+    "en": "Keep at least one map in the rotation.",
+    "de": "Mindestens eine Map muss in der Rotation bleiben."
+  },
+  "m_771695f34e": {
+    "en": "Invalid starting map.",
+    "de": "Ungültige Startmap."
+  },
+  "m_42d757074e": {
+    "en": "Choose a join sound from the existing selection.",
+    "de": "Der Join-Sound muss aus der vorhandenen Auswahl stammen."
+  },
+  "m_241dc42143": {
+    "en": "A profile cannot replace existing sound mappings.",
+    "de": "Die Sound-Zuordnungen dürfen nicht durch ein Profil ausgetauscht werden."
+  },
+  "m_9f98b7c7f0": {
+    "en": "On",
+    "de": "An"
+  },
+  "m_c8814e226d": {
+    "en": " characters",
+    "de": " Zeichen"
+  },
+  "m_d17aa7fe1f": {
+    "en": " active commands",
+    "de": " aktive Befehle"
+  },
+  "m_2931541634": {
+    "en": " entries",
+    "de": " Einträge"
+  },
+  "m_8972e5c26a": {
+    "en": "Round limit",
+    "de": "Rundenlimit"
+  },
+  "m_bd29854a96": {
+    "en": "Win limit",
+    "de": "Sieglimit"
+  },
+  "m_4529de5dce": {
+    "en": "Vote timing",
+    "de": "Zeitpunkt der Abstimmung"
+  },
+  "m_b728e5b2ca": {
+    "en": "Bot target",
+    "de": "Bot-Ziel"
+  },
+  "m_f5f54a63fa": {
+    "en": "Room for human players",
+    "de": "Platz für Spieler"
+  },
+  "m_43ea584f93": {
+    "en": "Bot chat",
+    "de": "Bot-Chat"
+  },
+  "m_ef4aa37c6f": {
+    "en": "Chat frequency",
+    "de": "Chat-Häufigkeit"
+  },
+  "m_4bdc2be729": {
+    "en": "Sound limit",
+    "de": "Sound-Limit"
+  },
+  "m_8e26bd55a3": {
+    "en": "Sound delay",
+    "de": "Sound-Pause"
+  },
+  "m_e1f80c60cd": {
+    "en": "Sound duration",
+    "de": "Sounddauer"
+  },
+  "m_88093b1422": {
+    "en": "Join sound",
+    "de": "Join-Sound"
+  },
+  "m_108d9b6502": {
+    "en": "Warning threshold adjusted to the limit",
+    "de": "Warnschwelle passend zum Limit"
+  },
+  "m_3cbb2cb485": {
+    "en": "Map rotation and order",
+    "de": "Maprotation und Reihenfolge"
+  },
+  "m_a09d66df50": {
+    "en": "Voting maps",
+    "de": "Maps für die Abstimmung"
+  },
+  "m_53bf4cec72": {
+    "en": "Welcome message",
+    "de": "Willkommensnachricht"
+  },
+  "m_46e626cd0f": {
+    "en": "Bots in rankings",
+    "de": "Bots im Ranking"
+  },
+  "m_8d8bee0f72": {
+    "en": "Ranking formula",
+    "de": "Ranking-Formel"
+  },
+  "m_7de8b753eb": {
+    "en": "Synchronize saved setup settings",
+    "de": "Gespeicherte Setup-Auswahl synchronisieren"
+  },
+  "m_a250a8dcd4": {
+    "en": "Target file is not permitted.",
+    "de": "Nicht freigegebene Zieldatei."
+  },
+  "m_690f5d4290": {
+    "en": "No sound",
+    "de": "Kein Sound"
+  },
+  "m_e006c32e38": {
+    "en": " (file missing)",
+    "de": " (Datei fehlt)"
+  },
+  "m_8bed400c23": {
+    "en": "No join sound",
+    "de": "Kein Join-Sound"
+  },
+  "m_e386ba2be3": {
+    "en": " (existing)",
+    "de": " (bestehend)"
+  },
+  "m_d38e3e93f8": {
+    "en": "Bot count",
+    "de": "Anzahl Bots"
+  },
+  "m_78d0e952ad": {
+    "en": " minutes",
+    "de": " Minuten"
+  },
+  "m_94a9bfee37": {
+    "en": " / 1,500",
+    "de": " / 1.500"
+  },
+  "m_24db69445a": {
+    "en": " of ",
+    "de": " von "
+  },
+  "m_8daf3c640f": {
+    "en": " commands enabled",
+    "de": " Befehlen aktiv"
+  },
+  "m_ad6f22a988": {
+    "en": " installed · ",
+    "de": " installiert · "
+  },
+  "m_401d3c9ab0": {
+    "en": " in rotation · ",
+    "de": " in der Rotation · "
+  },
+  "m_20ba4f56c7": {
+    "en": " in voting",
+    "de": " in der Abstimmung"
+  },
+  "m_77939ecb1b": {
+    "en": "Check settings",
+    "de": "Einstellungen prüfen"
+  },
+  "m_47f36b9011": {
+    "en": " file",
+    "de": " Datei"
+  },
+  "m_dbd3a49d0d": {
+    "en": "s",
+    "de": "en"
+  },
+  "m_cbe959efe2": {
+    "en": " with changes",
+    "de": " mit Änderungen"
+  },
+  "m_5a0017d9c3": {
+    "en": "No unsaved changes",
+    "de": "Keine ungespeicherten Änderungen"
+  },
+  "m_858c15298c": {
+    "en": "Server folder loaded",
+    "de": "Serverordner geladen"
+  },
+  "m_756119c03c": {
+    "en": "Export only",
+    "de": "Nur Export"
+  },
+  "m_fe6529a006": {
+    "en": " up\" ",
+    "de": " nach oben\" "
+  },
+  "m_14d5259b2e": {
+    "en": " down\" ",
+    "de": " nach unten\" "
+  },
+  "m_f1178dfe25": {
+    "en": " <span class=\"danger-text\">File missing</span>",
+    "de": " <span class=\"danger-text\">Datei fehlt</span>"
+  },
+  "m_1b85aa7a9a": {
+    "en": " in rotation\" ",
+    "de": " in Rotation\" "
+  },
+  "m_c1e9779004": {
+    "en": " in voting\" ",
+    "de": " in Abstimmung\" "
+  },
+  "m_ad4fb29f06": {
+    "en": " players</span></td></tr>",
+    "de": " Spieler</span></td></tr>"
+  },
+  "m_b29ed0234b": {
+    "en": "<tr><td colspan=\"5\" class=\"no-results\">No matching maps.</td></tr>",
+    "de": "<tr><td colspan=\"5\" class=\"no-results\">Keine passende Map.</td></tr>"
+  },
+  "m_1d8af89821": {
+    "en": " enabled\" ",
+    "de": " aktivieren\" "
+  },
+  "m_2e6cae0cca": {
+    "en": ">▶ Listen</button></td></tr>",
+    "de": ">▶ Anhören</button></td></tr>"
+  },
+  "m_114903d57e": {
+    "en": "<tr><td colspan=\"3\" class=\"no-results\">No matching sounds.</td></tr>",
+    "de": "<tr><td colspan=\"3\" class=\"no-results\">Kein passender Sound.</td></tr>"
+  },
+  "m_d62cfe4f7a": {
+    "en": "Configuration file is too large: ",
+    "de": "Konfigurationsdatei zu groß: "
+  },
+  "m_07fbdee2fc": {
+    "en": "File missing: ",
+    "de": "Datei fehlt: "
+  },
+  "m_0e407fb8ae": {
+    "en": "This server installation is incomplete. Finish setup first.",
+    "de": "Dieser Server ist noch nicht fertig installiert. Zuerst Setup abschließen."
+  },
+  "m_85ad16d272": {
+    "en": "Choose an installed server folder with exactly one Start-CS16.sh.",
+    "de": "Wähle einen installierten Serverordner mit genau einer Start-CS16.sh."
+  },
+  "m_54fb36d0c2": {
+    "en": "No installed maps were found in cstrike/maps.",
+    "de": "Im Ordner cstrike/maps wurden keine installierten Maps gefunden."
+  },
+  "m_d0fb433c27": {
+    "en": "Server folder loaded. Changes are saved only after your review.",
+    "de": "Serverordner geladen. Änderungen werden erst nach deiner Prüfung gespeichert."
+  },
+  "m_c6a74fa402": {
+    "en": "Server folder loaded for preview. Use the local panel launcher to save and control the server.",
+    "de": "Serverordner zur Vorschau geladen. Zum Speichern sowie Starten/Beenden den lokalen Panel-Starter verwenden."
+  },
+  "m_2e3dae305d": {
+    "en": "File changed outside the panel: ",
+    "de": "Datei wurde außerhalb des Konfigurators geändert: "
+  },
+  "m_38b39b27d9": {
+    "en": ". Reload the folder; nothing will be overwritten.",
+    "de": ". Ordner neu laden; es wird nichts überschrieben."
+  },
+  "m_4433152ff9": {
+    "en": "File has changed again",
+    "de": "Datei inzwischen erneut geändert"
+  },
+  "m_3a5cb5d1ca": {
+    "en": "Open a server folder first.",
+    "de": "Zuerst einen Serverordner öffnen."
+  },
+  "m_7b7e74672a": {
+    "en": "No changes to save.",
+    "de": "Keine Änderungen zum Speichern."
+  },
+  "m_fc449ad2f2": {
+    "en": "The browser did not grant write permission.",
+    "de": "Der Browser hat keine Schreibberechtigung erteilt."
+  },
+  "m_dc07fa1676": {
+    "en": "Backing up original files …",
+    "de": "Originaldateien sichern …"
+  },
+  "m_236b7b64ad": {
+    "en": "Could not verify backup: ",
+    "de": "Backup konnte nicht überprüft werden: "
+  },
+  "m_88e714caed": {
+    "en": "Saving: ",
+    "de": "Speichern: "
+  },
+  "m_6712b0b16e": {
+    "en": "Could not verify file: ",
+    "de": "Datei konnte nicht überprüft werden: "
+  },
+  "m_75a792d916": {
+    "en": "Saved. Backup: ",
+    "de": "Gespeichert. Backup: "
+  },
+  "m_82e97d4f2f": {
+    "en": ". The new settings apply on the next server start.",
+    "de": ". Beim nächsten Serverstart gelten die neuen Einstellungen."
+  },
+  "m_8095814e26": {
+    "en": " Restore manually from the backup: ",
+    "de": " Manuell aus dem Backup wiederherstellen: "
+  },
+  "m_6f25fd932e": {
+    "en": " Files already written have been restored.",
+    "de": " Bereits geschriebene Dateien wurden zurückgesetzt."
+  },
+  "m_ef6b84ab7f": {
+    "en": "Save cancelled: ",
+    "de": "Speichern abgebrochen: "
+  },
+  "m_59e2f4fa12": {
+    "en": "Undo the last save? Only the files changed by that save will be restored.",
+    "de": "Die letzte Speicherung rückgängig machen? Nur die dabei geänderten Dateien werden zurückgesetzt."
+  },
+  "m_20b5de8306": {
+    "en": "Write permission not granted.",
+    "de": "Keine Schreibberechtigung."
+  },
+  "m_ad09d2c1e1": {
+    "en": "Last save undone. The backup is retained.",
+    "de": "Letzte Speicherung zurückgesetzt. Das Backup bleibt erhalten."
+  },
+  "m_af90feb105": {
+    "en": "Undo cancelled: ",
+    "de": "Rückgängig abgebrochen: "
+  },
+  "m_3bacb06aa0": {
+    "en": "There are no changes yet.",
+    "de": "Es gibt noch keine Änderungen."
+  },
+  "m_29c6aac949": {
+    "en": " will be",
+    "de": " wird"
+  },
+  "m_69ebd233db": {
+    "en": "s will be",
+    "de": "en werden"
+  },
+  "m_76e65a70af": {
+    "en": " changed. Credentials are hidden and preserved.",
+    "de": " geändert. Zugangsdaten werden nicht angezeigt und bleiben erhalten."
+  },
+  "m_24d3fb13c6": {
+    "en": "Preview: use Start-Panel.sh and open your server folder to save. You can already export a profile.",
+    "de": "Vorschau: Zum Speichern Start-Panel.sh verwenden und dort den Serverordner öffnen. Dein Profil kannst du bereits exportieren."
+  },
+  "m_04860c0997": {
+    "en": "Sound not found.",
+    "de": "Sound nicht gefunden."
+  },
+  "m_807b27b6c0": {
+    "en": "The audio file is missing from the selected server folder.",
+    "de": "Die Audiodatei fehlt im ausgewählten Serverordner."
+  },
+  "m_8806f5505c": {
+    "en": "Sound preview: ",
+    "de": "Sound-Vorschau: "
+  },
+  "m_9cf59919d9": {
+    "en": "CS16-Profile.json",
+    "de": "CS16-Profil.json"
+  },
+  "m_d9f23a6826": {
+    "en": "Settings profile exported. It contains no RCON or admin credentials.",
+    "de": "Einstellungsprofil exportiert. Es enthält keine RCON- oder Admin-Zugangsdaten."
+  },
+  "m_626982a78f": {
+    "en": "Profile missing or too large.",
+    "de": "Profil fehlt oder ist zu groß."
+  },
+  "m_c951d2ba47": {
+    "en": "This is not a supported CS16 profile.",
+    "de": "Das ist kein unterstütztes CS16-Profil."
+  },
+  "m_b0a32a8931": {
+    "en": "The profile references maps missing from this server folder.",
+    "de": "Das Profil verweist auf Maps, die in diesem Serverordner fehlen."
+  },
+  "m_ec63f938c9": {
+    "en": "Profile loaded. Changes have not been saved yet.",
+    "de": "Profil geladen. Die Änderungen sind noch nicht gespeichert."
+  },
+  "m_3a8303238d": {
+    "en": "No matching maps are installed.",
+    "de": "Keine passenden Maps installiert."
+  },
+  "m_9b6e6bdbbf": {
+    "en": "Profile: ",
+    "de": "Profil: "
+  },
+  "m_cc116b0f29": {
+    "en": "Discard unsaved changes and open a server folder?",
+    "de": "Ungespeicherte Änderungen verwerfen und einen Serverordner öffnen?"
+  },
+  "m_ad4c425a22": {
+    "en": "Could not load folder: ",
+    "de": "Ordner konnte nicht geladen werden: "
+  },
+  "m_172ab089b6": {
+    "en": "The local helper rejected this operation.",
+    "de": "Der lokale Helfer hat den Vorgang abgelehnt."
+  },
+  "m_11f2410fea": {
+    "en": "Invalid file name.",
+    "de": "Ungültiger Dateiname."
+  },
+  "m_829baf1e2d": {
+    "en": "Folder missing: ",
+    "de": "Ordner fehlt: "
+  },
+  "m_5ae54dd11e": {
+    "en": "Not a folder: ",
+    "de": "Kein Ordner: "
+  },
+  "m_688f3a14eb": {
+    "en": "Not a file: ",
+    "de": "Keine Datei: "
+  },
+  "m_bc24abda8c": {
+    "en": "No file data.",
+    "de": "Keine Dateidaten."
+  },
+  "m_f85fd2bc56": {
+    "en": "Running",
+    "de": "Läuft"
+  },
+  "m_18e8956779": {
+    "en": "Starting …",
+    "de": "Startet …"
+  },
+  "m_7ebb8b213f": {
+    "en": "Stopped",
+    "de": "Beendet"
+  },
+  "m_2e7f8add56": {
+    "en": " players · ",
+    "de": " Spieler · "
+  },
+  "m_ae1e47e650": {
+    "en": "No server selected",
+    "de": "Noch kein Server ausgewählt"
+  },
+  "m_5b25dfc720": {
+    "en": "Server is running. Stop it through the panel before saving.",
+    "de": "Server läuft. Vor dem Speichern über das Panel beenden."
+  },
+  "m_106ca6c2db": {
+    "en": "Save with a backup, then start the server here.",
+    "de": "Speichern mit Backup; anschließend kannst du den Server hier starten."
+  },
+  "m_c749d031d7": {
+    "en": "Helper unavailable",
+    "de": "Helfer nicht erreichbar"
+  },
+  "m_0ae2edc7c7": {
+    "en": "Local panel",
+    "de": "Lokales Panel"
+  },
+  "m_9df702e07f": {
+    "en": "Loading local server folder …",
+    "de": "Lokalen Serverordner laden …"
+  },
+  "m_af213dec50": {
+    "en": "Local helper: ",
+    "de": "Lokaler Helfer: "
+  },
+  "m_d81e9bf4cf": {
+    "en": "Use Start-Panel.sh and select the local server first.",
+    "de": "Zuerst Start-Panel.sh verwenden und den lokalen Server auswählen."
+  },
+  "m_da399389c8": {
+    "en": "Save your changed settings before starting the server.",
+    "de": "Zuerst die geänderten Einstellungen speichern. Danach den Server starten."
+  },
+  "m_f99e937414": {
+    "en": "Starting …",
+    "de": "Wird gestartet …"
+  },
+  "m_c8b041480a": {
+    "en": "Stopping …",
+    "de": "Wird beendet …"
+  },
+  "m_065ee66556": {
+    "en": "Server start requested. The map is loading.",
+    "de": "Serverstart ausgelöst. Die Map wird geladen."
+  },
+  "m_b471a04e63": {
+    "en": "Server stopped normally. You can now save settings.",
+    "de": "Server regulär beendet. Einstellungen können jetzt gespeichert werden."
+  },
+  "m_736565ae2a": {
+    "en": "Choose a folder in the selection window …",
+    "de": "Ordner im Auswahlfenster wählen …"
+  },
+  "admin.title": {
+    "en": "Administration",
+    "de": "Administration"
+  },
+  "admin.intro": {
+    "en": "Manage administrator Steam IDs and access for AMX Mod X, RCON and YaPB. Access changes are saved separately from game settings.",
+    "de": "Steam-IDs der Administratoren und Zugänge für AMX Mod X, RCON und YaPB verwalten. Zugänge werden getrennt von den Spieleinstellungen gespeichert."
+  },
+  "admin.helper": {
+    "en": "Run bash Start-Panel.sh to manage access on this laptop.",
+    "de": "Starte bash Start-Panel.sh, um die Zugänge auf diesem Laptop zu verwalten."
+  },
+  "admin.accounts": {
+    "en": "Steam administrators",
+    "de": "Steam-Administratoren"
+  },
+  "admin.name": {
+    "en": "Steam ID",
+    "de": "Steam-ID"
+  },
+  "admin.password": {
+    "en": "New password",
+    "de": "Neues Passwort"
+  },
+  "admin.keep": {
+    "en": "Leave blank to keep",
+    "de": "Leer lassen zum Beibehalten"
+  },
+  "admin.rights": {
+    "en": "Existing permissions",
+    "de": "Bisherige Rechte"
+  },
+  "admin.add": {
+    "en": "Add administrator",
+    "de": "Administrator hinzufügen"
+  },
+  "admin.remove": {
+    "en": "Remove administrator",
+    "de": "Administrator entfernen"
+  },
+  "admin.reload": {
+    "en": "Reload access",
+    "de": "Zugänge neu laden"
+  },
+  "admin.reloadConfirm": {
+    "en": "Discard unsaved access changes and reload?",
+    "de": "Ungespeicherte Zugangsänderungen verwerfen und neu laden?"
+  },
+  "admin.empty": {
+    "en": "No Steam administrators configured.",
+    "de": "Keine Steam-Administratoren eingerichtet."
+  },
+  "admin.protected": {
+    "en": "Other account rules are preserved: ",
+    "de": "Andere Kontoregeln bleiben erhalten: "
+  },
+  "admin.rules": {
+    "en": "Use STEAM_0:X:Y IDs for administrators. Steam authenticates these accounts; no AMXX password is needed. New administrators receive full AMXX permissions. RCON/YaPB passwords use 1–31 basic characters without spaces, quotes, semicolons or backslashes.",
+    "de": "Verwende Steam-IDs im Format STEAM_0:X:Y. Steam authentifiziert diese Konten; ein AMXX-Passwort ist nicht nötig. Neue Administratoren erhalten volle AMXX-Rechte. RCON-/YaPB-Passwörter: 1–31 einfache Zeichen ohne Leerzeichen, Anführungszeichen, Semikolon oder Backslash."
+  },
+  "admin.server": {
+    "en": "Server access",
+    "de": "Serverzugänge"
+  },
+  "admin.rcon": {
+    "en": "New RCON password",
+    "de": "Neues RCON-Passwort"
+  },
+  "admin.yb": {
+    "en": "New YaPB password",
+    "de": "Neues YaPB-Passwort"
+  },
+  "admin.configured": {
+    "en": "Password configured",
+    "de": "Passwort eingerichtet"
+  },
+  "admin.unconfigured": {
+    "en": "No password configured",
+    "de": "Kein Passwort eingerichtet"
+  },
+  "admin.login": {
+    "en": "Client login commands (replace <password>):",
+    "de": "Anmeldung in der Client-Konsole (<password> ersetzen):"
+  },
+  "admin.reconnect": {
+    "en": "Sign into the approved Steam account. After changing access, start the server and reconnect. YaPB uses a separate client password. Update saved RCON credentials if changed.",
+    "de": "Melde dich beim freigeschalteten Steam-Konto an. Nach Zugangsänderungen den Server starten und neu verbinden. YaPB verwendet ein eigenes Client-Passwort. Geänderte RCON-Zugangsdaten auch im verwendeten Client aktualisieren."
+  },
+  "admin.private": {
+    "en": "Existing passwords are never displayed. Access is excluded from exported profiles. Private backups contain previous credentials and stay in the server folder.",
+    "de": "Bisherige Passwörter werden nicht angezeigt. Zugänge sind nicht in exportierten Profilen enthalten. Private Backups enthalten die bisherigen Zugangsdaten und bleiben im Serverordner."
+  },
+  "admin.review": {
+    "en": "Review access changes",
+    "de": "Zugangsänderungen prüfen"
+  },
+  "admin.undo": {
+    "en": "Undo last access save",
+    "de": "Letzte Zugangsspeicherung rückgängig machen"
+  },
+  "admin.save": {
+    "en": "Save access with backup",
+    "de": "Zugänge mit Backup speichern"
+  },
+  "admin.stopped": {
+    "en": "Stop the server before saving or restoring access.",
+    "de": "Vor dem Speichern oder Wiederherstellen der Zugänge den Server beenden."
+  },
+  "admin.noChanges": {
+    "en": "No access changes to save.",
+    "de": "Keine Zugangsänderungen zu speichern."
+  },
+  "admin.changedPassword": {
+    "en": "password changed",
+    "de": "Passwort geändert"
+  },
+  "admin.newAccount": {
+    "en": "New administrator with full AMX permissions: ",
+    "de": "Neuer Administrator mit vollen AMX-Rechten: "
+  },
+  "admin.changedName": {
+    "en": "Steam ID: ",
+    "de": "Steam-ID: "
+  },
+  "admin.back": {
+    "en": "Back",
+    "de": "Zurück"
+  },
+  "admin.saved": {
+    "en": "Access saved. Private backup: ",
+    "de": "Zugänge gespeichert. Privates Backup: "
+  },
+  "admin.restored": {
+    "en": "Previous access restored. Start the server and reconnect with the previous credentials.",
+    "de": "Bisherige Zugänge wiederhergestellt. Server starten und mit den bisherigen Zugangsdaten neu verbinden."
+  },
+  "admin.undoConfirm": {
+    "en": "Restore the access files from your last access save?",
+    "de": "Die Zugangsdateien aus der letzten Zugangsspeicherung wiederherstellen?"
+  },
+  "admin.loaded": {
+    "en": "Access loaded. Empty password fields keep existing passwords.",
+    "de": "Zugänge geladen. Leere Passwortfelder behalten die bisherigen Passwörter bei."
+  },
+  "admin.loading": {
+    "en": "Loading access …",
+    "de": "Zugänge werden geladen …"
+  },
+  "admin.load": {
+    "en": "Load administration",
+    "de": "Administration laden"
+  },
+  "admin.unsaved": {
+    "en": "Unsaved access changes",
+    "de": "Ungespeicherte Zugangsänderungen"
+  },
+  "admin.preview": {
+    "en": "New passwords are applied only when you save here. Game settings and map order use the regular “Review changes” button.",
+    "de": "Neue Passwörter werden erst beim Speichern hier übernommen. Spieleinstellungen und Mapreihenfolge verwenden die normale Schaltfläche „Änderungen prüfen“."
+  },
+  "maps.drag": {
+    "en": "Drag to reorder ",
+    "de": "Ziehen zum Umsortieren: "
+  },
+  "maps.moved": {
+    "en": "Map order updated: ",
+    "de": "Mapreihenfolge geändert: "
+  },
+  "maps.dragHint": {
+    "en": "Drag the ⠿ handle onto another rotation map to place it before or after that row. You can also use ↑ and ↓. Existing map capacities are preserved; choose a suitable bot target for smaller maps.",
+    "de": "Ziehe eine Map am Griff ⠿ auf eine andere Map der Rotation, um sie davor oder dahinter einzusortieren. Alternativ funktionieren ↑ und ↓. Bestehende Mapkapazitäten bleiben erhalten; wähle für kleine Maps eine passende Botanzahl."
+  },
+  "admin.error.0": {
+    "en": "New passwords must use 1-31 basic characters without spaces, quotes, semicolons or backslashes.",
+    "de": "Neue Passwörter müssen aus 1–31 einfachen Zeichen ohne Leerzeichen, Anführungszeichen, Semikolons oder Backslashes bestehen."
+  },
+  "admin.error.1": {
+    "en": "Use a Steam ID in STEAM_0:X:Y format.",
+    "de": "Verwende eine Steam-ID im Format STEAM_0:X:Y."
+  },
+  "admin.error.2": {
+    "en": "Multiple active credential settings were found. Resolve them before editing access.",
+    "de": "Mehrere aktive Passwort-Einstellungen gefunden. Diese vor der Bearbeitung bereinigen."
+  },
+  "admin.error.3": {
+    "en": "The configured login key cannot be displayed as a client command.",
+    "de": "Das konfigurierte Anmeldefeld lässt sich nicht als Client-Befehl darstellen."
+  },
+  "admin.error.4": {
+    "en": "The access backup could not be verified.",
+    "de": "Das Zugangsbackup konnte nicht überprüft werden."
+  },
+  "admin.error.5": {
+    "en": "Access files changed during saving. Reload administration and try again.",
+    "de": "Zugangsdateien wurden während des Speicherns verändert. Administration neu laden."
+  },
+  "admin.error.6": {
+    "en": "Access saving failed. Restore the private access backup manually before continuing.",
+    "de": "Speichern fehlgeschlagen. Das private Zugangsbackup vor dem Fortfahren manuell wiederherstellen."
+  },
+  "admin.error.7": {
+    "en": "Another configuration save is in progress.",
+    "de": "Eine andere Konfiguration wird gerade gespeichert."
+  },
+  "admin.error.8": {
+    "en": "Access settings changed. Reload administration before saving.",
+    "de": "Zugänge wurden inzwischen geändert. Administration vor dem Speichern neu laden."
+  },
+  "admin.error.9": {
+    "en": "Invalid administrator list.",
+    "de": "Ungültige Administratorenliste."
+  },
+  "admin.error.10": {
+    "en": "The administrator list is incomplete or stale. Reload it before saving.",
+    "de": "Die Administratorenliste ist unvollständig oder veraltet. Vor dem Speichern neu laden."
+  },
+  "admin.error.11": {
+    "en": "Invalid administrator entry.",
+    "de": "Ungültiger Administratoreneintrag."
+  },
+  "admin.error.12": {
+    "en": "Steam administrators sign in through Steam.",
+    "de": "Steam-Administratoren melden sich über Steam an."
+  },
+  "admin.error.13": {
+    "en": "Administrator names must be unique.",
+    "de": "Administratornamen müssen eindeutig sein."
+  },
+  "admin.error.14": {
+    "en": "Invalid password value.",
+    "de": "Ungültiges Passwort."
+  },
+  "admin.error.15": {
+    "en": "Server selection changed or another save is in progress.",
+    "de": "Serverauswahl geändert oder eine andere Speicherung läuft."
+  },
+  "admin.error.16": {
+    "en": "Invalid access backup.",
+    "de": "Ungültiges Zugangsbackup."
+  },
+  "admin.error.17": {
+    "en": "This access backup belongs to a different server.",
+    "de": "Dieses Zugangsbackup gehört zu einem anderen Server."
+  },
+  "admin.error.18": {
+    "en": "Access files changed since this backup. Restore was cancelled.",
+    "de": "Zugangsdateien wurden seit diesem Backup verändert. Wiederherstellung abgebrochen."
+  },
+  "admin.error.19": {
+    "en": "Access files changed during restoring.",
+    "de": "Zugangsdateien wurden während der Wiederherstellung verändert."
+  },
+  "admin.error.20": {
+    "en": "An access file is too large to edit.",
+    "de": "Eine Zugangsdatei ist zu groß zur Bearbeitung."
+  },
+  "admin.error.21": {
+    "en": "The server configuration is missing.",
+    "de": "Die Serverkonfiguration fehlt."
+  },
+  "admin.error.22": {
+    "en": "The YaPB configuration is missing.",
+    "de": "Die YaPB-Konfiguration fehlt."
+  }
+};
+if(window.CS16Panel?.version){const label=document.getElementById('projectVersion');if(label)label.textContent='v'+window.CS16Panel.version;}
+const UI_LANGUAGE_KEY='CS16Panel.language';
+let uiLanguage='en';
+try{const saved=localStorage.getItem(UI_LANGUAGE_KEY);if(saved==='en'||saved==='de')uiLanguage=saved}catch{}
+const UI_KEYS_BY_TEXT=new Map();
+for(const [key,message]of Object.entries(UI_MESSAGES)){UI_KEYS_BY_TEXT.set(message.de,key);UI_KEYS_BY_TEXT.set(message.en,key)}
+function t(key){return UI_MESSAGES[key]?.[uiLanguage]??UI_MESSAGES[key]?.en??key}
+function localizeMessage(message){const key=UI_KEYS_BY_TEXT.get(String(message));return key?t(key):String(message)}
+function translateStaticUI(){
+ document.documentElement.lang=uiLanguage;
+ for(const element of document.querySelectorAll('[data-i18n]'))element.textContent=t(element.dataset.i18n);
+ for(const attribute of ['aria-label','placeholder','title'])for(const element of document.querySelectorAll('[data-i18n-'+attribute+']'))element.setAttribute(attribute,t(element.getAttribute('data-i18n-'+attribute)));
+ document.getElementById('languageSelect').value=uiLanguage;
+}
+function setLanguage(language){
+ if(!['en','de'].includes(language))return;
+ const app=globalThis.CS16ConfigApp;
+ if(app)CS16ConfigCore.state.model=app.readForm();
+ uiLanguage=language;
+ try{localStorage.setItem(UI_LANGUAGE_KEY,language)}catch{}
+ translateStaticUI();
+ if(app){
+  app.renderForm();
+  if(window.CS16Panel&&CS16ConfigCore.state.root){document.getElementById('modeLabel').textContent=localizeMessage('Lokales Panel');document.getElementById('folderLabel').textContent=CS16ConfigCore.state.panelInfo?.root||CS16ConfigCore.state.root.name;refreshPanelStatus()}
+  if(document.getElementById('reviewDialog').open)app.review();
+  if(document.getElementById('adminReviewDialog').open)reviewAdmin();
+  notify(localizeMessage('Sprache geändert. Deine Einstellungen bleiben erhalten.'));
+ }
+}
+document.getElementById('languageSelect').addEventListener('change',event=>setLanguage(event.target.value));
+globalThis.CS16I18n={t,setLanguage,get language(){return uiLanguage},messages:UI_MESSAGES,localizeMessage};
+translateStaticUI();
+
+</script>
+<script>
+'use strict';
+const DEMO = {"maps": [{"name": "35hp", "capacity": 24}, {"name": "aim_ak-colt", "capacity": 32}, {"name": "aim_map", "capacity": 32}, {"name": "as_oilrig", "capacity": 32}, {"name": "as_tundra", "capacity": 32}, {"name": "awp_india", "capacity": 32}, {"name": "awp_map", "capacity": 20}, {"name": "cs_747", "capacity": 32}, {"name": "cs_assault", "capacity": 32}, {"name": "cs_backalley", "capacity": 32}, {"name": "cs_estate", "capacity": 32}, {"name": "cs_havana", "capacity": 32}, {"name": "cs_italy", "capacity": 32}, {"name": "cs_militia", "capacity": 32}, {"name": "cs_office", "capacity": 32}, {"name": "cs_siege", "capacity": 32}, {"name": "de_aztec", "capacity": 32}, {"name": "de_cbble", "capacity": 32}, {"name": "de_chateau", "capacity": 32}, {"name": "de_dust", "capacity": 32}, {"name": "de_dust2", "capacity": 32}, {"name": "de_inferno", "capacity": 32}, {"name": "de_nuke", "capacity": 32}, {"name": "de_piranesi", "capacity": 32}, {"name": "de_prodigy", "capacity": 32}, {"name": "de_rats", "capacity": 20}, {"name": "de_rats_2001", "capacity": 20}, {"name": "de_storm", "capacity": 32}, {"name": "de_survivor", "capacity": 32}, {"name": "de_torn", "capacity": 32}, {"name": "de_train", "capacity": 32}, {"name": "de_vegas", "capacity": 32}, {"name": "de_vertigo", "capacity": 32}, {"name": "fy_iceworld", "capacity": 24}, {"name": "fy_iceworld2k", "capacity": 24}, {"name": "fy_pool_day", "capacity": 32}, {"name": "fy_snow", "capacity": 32}, {"name": "he_glass", "capacity": 32}, {"name": "he_tennis", "capacity": 10}], "files": {"cstrike/server.cfg": "// Example configuration only. No real credentials.\r\nhostname \"CS 1.6 Steam Server\"\r\nsv_lan 0\r\nmp_timelimit 30\r\nmp_friendlyfire 0\r\nmp_maxrounds 0\r\nmp_winlimit 0\r\n", "cstrike/addons/yapb/conf/yapb.cfg": "yb_quota \"16\"\r\nyb_quota_mode \"fill\"\r\nyb_difficulty \"3\"\r\nyb_autovacate \"1\"\r\nyb_chat \"1\"\r\nyb_chat_percent \"30\"\r\nyb_radio_mode \"2\"\r\n", "cstrike/addons/amxmodx/configs/SND-LIST.CFG": "SND_MAX; 100\r\nSND_MAX_DUR; 180.0\r\nSND_WARN; 97\r\nSND_DELAY; 3\r\nSND_JOIN; sound/lan/welcome.wav\r\nSND_EXIT;\r\ndominating; sound/misc/dominating.wav\r\ndoublekill; sound/misc/doublekill.wav\r\nfirstblood; sound/misc/firstblood.wav\r\ngodlike; sound/misc/godlike.wav\r\nheadshot; sound/misc/headshot.wav\r\nhumiliation; sound/misc/humiliation.wav\r\nkillingspree; sound/misc/killingspree.wav\r\nmonsterkill; sound/misc/monsterkill.wav\r\nmultikill; sound/misc/multikill.wav\r\nperfect; sound/misc/perfect.wav\r\nprepare; sound/misc/prepare.wav\r\nrampage; sound/misc/rampage.wav\r\nultrakill; sound/misc/ultrakill.wav\r\nunstoppable; sound/misc/unstoppable.wav\r\nmoin; sound/lan/moin.wav\r\nnabend; sound/lan/nabend.wav\r\nn8; sound/lan/n8.wav\r\nbye; sound/lan/bye.wav\r\njaja; sound/lan/jaja.wav\r\nsorry; sound/lan/sorry.wav\r\ndanke; sound/lan/danke.wav\r\ncamper; sound/lan/camper.wav\r\nlol; sound/lan/lol.wav\r\nmimi; sound/lan/mimi.wav\r\nzielen; sound/lan/zielen.wav\r\nafk; sound/lan/afk.wav\r\nbier; sound/lan/bier.wav\r\nblamage; sound/lan/blamage.wav\r\nbockmist; sound/lan/bockmist.wav\r\ngeil; sound/lan/geil.wav\r\nnoe; sound/lan/noe.wav\r\nprofi; sound/lan/profi.wav\r\nwasndalos; sound/lan/wasndalos.wav\r\nisklar; sound/lan/isklar.wav\r\nkommgleich; sound/lan/kommgleich.wav\r\nkumpel; sound/lan/kumpel.wav\r\nwasguckstdu; sound/lan/wasguckstdu.wav\r\nzonk; sound/lan/zonk.wav\r\nwoohoo; sound/lan/woohoo.wav\r\nbeer; sound/lan/beer.wav\r\ncomeagain; sound/lan/comeagain.wav\r\nfalsch; sound/lan/falsch.wav\r\narsch1; sound/lan/arsch1.wav\r\nblut; sound/lan/blut.wav\r\nburn; sound/lan/burn.wav\r\ncamperhp; sound/lan/camperhp.wav\r\ncrazytown; sound/lan/crazytown.wav\r\ndepp; sound/lan/depp.wav\r\ndumm; sound/lan/dumm.wav\r\neier; sound/lan/eier.wav\r\nfeuerfrei; sound/lan/feuerfrei.wav\r\ngrr; sound/lan/grr.wav\r\nhahaa; sound/lan/hahaa.wav\r\nhamster; sound/lan/hamster.wav\r\nhi; sound/lan/hi.wav\r\nja; sound/lan/ja.wav\r\nkotzen; sound/lan/kotzen.wav\r\nlauf; sound/lan/lauf.wav\r\nloli; sound/lan/loli.wav\r\nlucker; sound/lan/lucker.wav\r\nmana; sound/lan/mana.wav\r\nmojo; sound/lan/mojo.wav\r\nmund; sound/lan/mund.wav\r\nnice; sound/lan/nice.wav\r\nsack; sound/lan/sack.wav\r\nwo; sound/lan/wo.wav\r\nbenny; sound/lan/benny.wav\r\nbitch; sound/lan/bitch.wav\r\nboogey; sound/lan/boogey.wav\r\nbs; sound/lan/bs.wav\r\nbull; sound/lan/bull.wav\r\nbung; sound/lan/bung.wav\r\ncamper_agc; sound/lan/camper_agc.wav\r\ncomedian; sound/lan/comedian.wav\r\ncrap; sound/lan/crap.wav\r\ndipshit; sound/lan/dipshit.wav\r\nfart; sound/lan/fart.wav\r\ngh; sound/lan/gh.wav\r\nhaha; sound/lan/haha.wav\r\nimsorry; sound/lan/imsorry.wav\r\nkickass; sound/lan/kickass.wav\r\nmuaha; sound/lan/muaha.wav\r\nomg; sound/lan/omg.wav\r\now; sound/lan/ow.wav\r\nstfu; sound/lan/stfu.wav\r\nstfu10; sound/lan/stfu10.wav\r\nwazza; sound/lan/wazza.wav\r\nau; sound/lan/au.wav\r\nbekloppt; sound/lan/bekloppt.wav\r\nbenny_cp; sound/lan/benny_cp.wav\r\nbiene3; sound/lan/biene3.wav\r\nblade; sound/lan/blade.wav\r\nblitz; sound/lan/blitz.wav\r\nchicken; sound/lan/chicken.wav\r\nchicken2; sound/lan/chicken2.wav\r\nchicken3; sound/lan/chicken3.wav\r\ncool; sound/lan/cool.wav\r\ncornholio; sound/lan/cornholio.wav\r\ndoh; sound/lan/doh.wav\r\nfaithless4; sound/lan/faithless4.wav\r\nfeelgood; sound/lan/feelgood.wav\r\nfuckdup; sound/lan/fuckdup.wav\r\ngood-boyyy3; sound/lan/good-boyyy3.wav\r\nhaha_cp; sound/lan/haha_cp.wav\r\nhaha2; sound/lan/haha2.wav\r\nhell; sound/lan/hell.wav\r\njtab; sound/lan/jtab.wav\r\nkurwa; sound/lan/kurwa.wav\r\nlala; sound/lan/lala.wav\r\nloser; sound/lan/loser.wav\r\nmad3; sound/lan/mad3.wav\r\notto; sound/lan/otto.wav\r\npruegel; sound/lan/pruegel.wav\r\nrunnlauter; sound/lan/runnlauter.wav\r\nsaufen; sound/lan/saufen.wav\r\nscheisse; sound/lan/scheisse.wav\r\nsonnenschein; sound/lan/sonnenschein.wav\r\ntrains; sound/lan/trains.wav\r\nvodka; sound/lan/vodka.wav\r\nwelcome; sound/lan/welcome.wav\r\nwow; sound/lan/wow.wav\r\nwhat_is_that; sound/lan/what_is_that.wav\r\n", "cstrike/addons/amxmodx/configs/mapmanager.cfg": "mapm_start_vote_before_end 5\r\n", "cstrike/mapcycle.txt": "35hp \"\\minplayers\\0\\maxplayers\\24\"\r\naim_ak-colt \"\\minplayers\\0\\maxplayers\\32\"\r\naim_map \"\\minplayers\\0\\maxplayers\\32\"\r\nas_oilrig \"\\minplayers\\0\\maxplayers\\32\"\r\nas_tundra \"\\minplayers\\0\\maxplayers\\32\"\r\nawp_india \"\\minplayers\\0\\maxplayers\\32\"\r\nawp_map \"\\minplayers\\0\\maxplayers\\20\"\r\ncs_747 \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_assault \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_backalley \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_estate \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_havana \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_italy \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_militia \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_office \"\\minplayers\\0\\maxplayers\\32\"\r\ncs_siege \"\\minplayers\\0\\maxplayers\\32\"\r\nde_aztec \"\\minplayers\\0\\maxplayers\\32\"\r\nde_cbble \"\\minplayers\\0\\maxplayers\\32\"\r\nde_chateau \"\\minplayers\\0\\maxplayers\\32\"\r\nde_dust \"\\minplayers\\0\\maxplayers\\32\"\r\nde_dust2 \"\\minplayers\\0\\maxplayers\\32\"\r\nde_inferno \"\\minplayers\\0\\maxplayers\\32\"\r\nde_nuke \"\\minplayers\\0\\maxplayers\\32\"\r\nde_piranesi \"\\minplayers\\0\\maxplayers\\32\"\r\nde_prodigy \"\\minplayers\\0\\maxplayers\\32\"\r\nde_rats \"\\minplayers\\0\\maxplayers\\20\"\r\nde_rats_2001 \"\\minplayers\\0\\maxplayers\\20\"\r\nde_storm \"\\minplayers\\0\\maxplayers\\32\"\r\nde_survivor \"\\minplayers\\0\\maxplayers\\32\"\r\nde_torn \"\\minplayers\\0\\maxplayers\\32\"\r\nde_train \"\\minplayers\\0\\maxplayers\\32\"\r\nde_vegas \"\\minplayers\\0\\maxplayers\\32\"\r\nde_vertigo \"\\minplayers\\0\\maxplayers\\32\"\r\nfy_iceworld \"\\minplayers\\0\\maxplayers\\24\"\r\nfy_iceworld2k \"\\minplayers\\0\\maxplayers\\24\"\r\nfy_pool_day \"\\minplayers\\0\\maxplayers\\32\"\r\nfy_snow \"\\minplayers\\0\\maxplayers\\32\"\r\nhe_glass \"\\minplayers\\0\\maxplayers\\32\"\r\nhe_tennis \"\\minplayers\\0\\maxplayers\\10\"\r\n", "cstrike/addons/amxmodx/configs/maps.ini": "35hp 0 24\r\naim_ak-colt 0 32\r\naim_map 0 32\r\nas_oilrig 0 32\r\nas_tundra 0 32\r\nawp_india 0 32\r\nawp_map 0 20\r\ncs_747 0 32\r\ncs_assault 0 32\r\ncs_backalley 0 32\r\ncs_estate 0 32\r\ncs_havana 0 32\r\ncs_italy 0 32\r\ncs_militia 0 32\r\ncs_office 0 32\r\ncs_siege 0 32\r\nde_aztec 0 32\r\nde_cbble 0 32\r\nde_chateau 0 32\r\nde_dust 0 32\r\nde_dust2 0 32\r\nde_inferno 0 32\r\nde_nuke 0 32\r\nde_piranesi 0 32\r\nde_prodigy 0 32\r\nde_rats 0 20\r\nde_rats_2001 0 20\r\nde_storm 0 32\r\nde_survivor 0 32\r\nde_torn 0 32\r\nde_train 0 32\r\nde_vegas 0 32\r\nde_vertigo 0 32\r\nfy_iceworld 0 24\r\nfy_iceworld2k 0 24\r\nfy_pool_day 0 32\r\nfy_snow 0 32\r\nhe_glass 0 32\r\nhe_tennis 0 10\r\n", "cstrike/addons/amxmodx/configs/csstats.cfg": "csstats_rank 1\ncsstats_rankbots 0\ncsstats_reset 0\n", "cstrike/motd.txt": "Welcome to YOUR new CS 1.6 Server!\n========================================\nClassic Counter-Strike. Good games. Have fun!\n\nCHAT: SOUNDS & STATS\n/soundlist      All sound commands\n/sounds         Alternative sound list\n/soundson       Enable sounds\n/soundsoff      Mute sounds\n/rank           Your ranking\n/top15          Best players\n/statsme        Your statistics\n/hp             Last opponent's remaining HP\n\nCHAT: MAPS\nmaps or /maps   Open the map nomination menu\n<map name>      Nominate, e.g. de_rats_2001\nnextmap         Next map\ntimeleft        Time remaining\nrtv or /rtv     Request a map vote\n\nCONSOLE\namxmodmenu      Admin menu (admins only)\n\nTHANK YOU!\nThanks for playing, and thanks to all mod & map authors!\nServer package, updates and feedback:\nhttps://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux\n", "settings.local.json": "{\n  \"ServerName\": \"CS 1.6 Steam Server\",\n  \"MapMinutes\": 30,\n  \"FriendlyFire\": 0,\n  \"BotTarget\": 16,\n  \"BotDifficulty\": 2,\n  \"SoundCooldown\": 3,\n  \"SoundQuota\": 100,\n  \"RankBots\": 0,\n  \"RankScore\": \"KillsMinusDeaths\"\n}\n", "Start-CS16.sh": "#!/usr/bin/env bash\nexec ./hlds_linux -game cstrike -port 27015 +ip 0.0.0.0 +sv_lan 0 +maxplayers 32 +map de_dust2\n"}};
+const PATHS={server:'cstrike/server.cfg',bots:'cstrike/addons/yapb/conf/yapb.cfg',sounds:'cstrike/addons/amxmodx/configs/SND-LIST.CFG',vote:'cstrike/addons/amxmodx/configs/mapmanager.cfg',cycle:'cstrike/mapcycle.txt',maps:'cstrike/addons/amxmodx/configs/maps.ini',stats:'cstrike/addons/amxmodx/configs/csstats.cfg',motd:'cstrike/motd.txt',settings:'settings.local.json'};
+const FIELDS=['hostname','maxPlayers','startMap','mapMinutes','voteBefore','maxRounds','winLimit','friendlyFire','rankScore','rankBots','botMode','botTarget','botDifficulty','autoVacate','botChat','botChatPercent','radioMode','soundQuota','soundDelay','soundMaxDuration','joinSound','motdText'];
+const state={root:null,readOnlyFiles:null,files:new Map(),catalog:[],base:null,model:null,pending:null,lastSave:null,busy:false,audioURL:null};
+const $=id=>document.getElementById(id);
+const eq=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const escapeRE=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const clone=v=>JSON.parse(JSON.stringify(v));
+function assert(ok,message){if(!ok)throw Error(message)}
+function validPath(path){assert(typeof path==='string'&&path.length<250&&!path.includes('\\')&&!path.startsWith('/')&&!/[<>:"|?*\x00-\x1f]/.test(path)&&path.split('/').every(p=>p&&p!=='.'&&p!=='..'),t("m_152aa51861"));return path}
+function equalBytes(a,b){return a.length===b.length&&a.every((v,i)=>v===b[i])}
+function decodeFile(bytes){const bom=bytes.length>=3&&bytes[0]===239&&bytes[1]===187&&bytes[2]===191;try{return {text:new TextDecoder('utf-8',{fatal:true}).decode(bytes),encoding:'utf8',bom}}catch{let text='';for(let n=0;n<bytes.length;n+=8192)text+=String.fromCharCode(...bytes.subarray(n,n+8192));return {text,encoding:'latin1',bom:false}}}
+function encodeFile(text,meta){if(meta.encoding==='latin1'){assert([...text].every(c=>c.charCodeAt(0)<=255),t("m_5edc67d68c"));return Uint8Array.from(text,c=>c.charCodeAt(0))}const bytes=new TextEncoder().encode(text);return meta.bom?new Uint8Array([239,187,191,...bytes]):bytes}
+function fileRecord(bytes){return {bytes,...decodeFile(bytes)}}
+function eol(text){return text.includes('\r\n')?'\r\n':'\n'}
+function cvar(text,name,fallback){const m=text.match(new RegExp('^[ \\t]*'+escapeRE(name)+'[ \\t]+(?:"([^"\\r\\n]*)"|([^\\s;]+))','m'));return m?(m[1]??m[2]):fallback}
+function patchCvar(text,name,value){assert(!/[\r\n]/.test(value),t("m_88f67445d0"));const re=new RegExp('^([ \\t]*'+escapeRE(name)+'[ \\t]+)(?:"[^"\\r\\n]*"|[^\\s;]+)([^\\r\\n]*)','gm');const matches=[...text.matchAll(re)];assert(matches.length<=1,t("m_67b1c3afe3")+name+t("m_d70d9ef9d0"));return matches.length?text.replace(re,(_,prefix,tail)=>prefix+value+tail):text+(text&&!/[\r\n]$/.test(text)?eol(text):'')+name+' '+value+eol(text)}
+function soundSetting(text,name,fallback){const m=text.match(new RegExp('^[ \\t]*'+escapeRE(name)+'[ \\t]*;[ \\t]*([^\\r\\n]*)','m'));return m?m[1].trim():fallback}
+function patchSoundSetting(text,name,value){const re=new RegExp('^([ \\t]*'+escapeRE(name)+'[ \\t]*;)[ \\t]*[^\\r\\n]*','gm');const matches=[...text.matchAll(re)];assert(matches.length<=1,t("m_bb02d0f70d")+name+'.');return matches.length?text.replace(re,(_,prefix)=>prefix+' '+value):text+(text&&!/[\r\n]$/.test(text)?eol(text):'')+name+'; '+value+eol(text)}
+function soundEntries(text){const result=[];for(const line of text.split(/\r\n|\n|\r/)){const match=line.match(/^(# CS16CFG-OFF )?([a-z0-9_-]{1,30})[ \t]*;[ \t]*(sound\/[a-zA-Z0-9_./-]+\.wav)[ \t]*$/);if(match){validPath(match[3]);result.push({keyword:match[2],path:match[3],enabled:!match[1]})}}assert(new Set(result.map(s=>s.keyword)).size===result.length,t("m_e02a3dc5d8"));return result}
+function patchSoundEntries(text,before,after){const changes=new Map(after.filter((s,i)=>s.enabled!==before[i].enabled).map(s=>[s.keyword,s]));return text.replace(/(^|\n)([^\r\n]*)(\r?)(?=\n|$)/g,(all,start,line,cr)=>{const m=line.match(/^(# CS16CFG-OFF )?([a-z0-9_-]{1,30})[ \t]*;/);if(!m||!changes.has(m[2]))return all;const s=changes.get(m[2]);return start+(s.enabled?line.replace(/^# CS16CFG-OFF /,''):'# CS16CFG-OFF '+line)+cr})}
+function mapEntries(text){return text.split(/\r\n|\n|\r/).map(line=>{const m=line.match(/^[ \t]*([a-zA-Z0-9_-]{1,31})(?:[ \t]+.*)?$/);return m?{name:m[1],line}:null}).filter(Boolean)}
+function patchMapList(text,names,kind,catalog){const old=mapEntries(text);if(eq(old.map(m=>m.name),names))return text;const byName=new Map(old.map(m=>[m.name,m.line]));const limits=new Map(catalog.map(m=>[m.name,m.capacity]));const fresh=names.map(name=>byName.get(name)||(kind==='vote'?name+' 0 '+(limits.get(name)||32):name+' "\\minplayers\\0\\maxplayers\\'+(limits.get(name)||32)+'"'));let next=0;let out='';const re=/([^\r\n]*)(\r\n|\n|\r|$)/g;for(const m of text.matchAll(re)){if(!m[0])continue;const isMap=/^[ \t]*[a-zA-Z0-9_-]{1,31}(?:[ \t]+.*)?$/.test(m[1]);if(isMap){if(next<fresh.length)out+=fresh[next++]+(m[2]||eol(text))}else out+=m[0]}if(next<fresh.length){if(out&&!/[\r\n]$/.test(out))out+=eol(text);out+=fresh.slice(next).join(eol(text))+eol(text)}return out}
+function launcherValue(text,key,fallback){const matches=[...text.matchAll(new RegExp('\\+'+key+'[ \\t]+([a-zA-Z0-9_-]+)','g'))];assert(matches.length<=1,t("m_7fc403bdb6")+key+t("m_646d23cc3f"));return matches.length?matches[0][1]:fallback}
+function patchLauncher(text,key,value){const re=new RegExp('(\\+'+key+'[ \\t]+)[a-zA-Z0-9_-]+','g');assert([...text.matchAll(re)].length===1,t("m_635739f68c")+key+t("m_14871cdcae"));return text.replace(re,(_,prefix)=>prefix+value)}
+function getText(key){return state.files.get(PATHS[key])?.text||''}
+function modelFromFiles(){const server=getText('server'),bots=getText('bots'),sounds=getText('sounds'),stats=getText('stats'),launch=state.files.get(state.launcher).text;const score=JSON.parse(getText('settings')||'{}').RankScore||'KillsMinusDeaths';const model={hostname:cvar(server,'hostname','CS 1.6 Steam Server'),maxPlayers:Number(launcherValue(launch,'maxplayers',32)),startMap:launcherValue(launch,'map','de_dust2'),mapMinutes:Number(cvar(server,'mp_timelimit',30)),voteBefore:Number(cvar(getText('vote'),'mapm_start_vote_before_end',5)),maxRounds:Number(cvar(server,'mp_maxrounds',0)),winLimit:Number(cvar(server,'mp_winlimit',0)),friendlyFire:cvar(server,'mp_friendlyfire','0')!=='0',rankScore:score,rankBots:cvar(stats,'csstats_rankbots','0')!=='0',botMode:cvar(bots,'yb_quota_mode','fill'),botTarget:Number(cvar(bots,'yb_quota',0)),botDifficulty:cvar(bots,'yb_difficulty','2'),autoVacate:cvar(bots,'yb_autovacate','1')!=='0',botChat:cvar(bots,'yb_chat','1')!=='0',botChatPercent:Number(cvar(bots,'yb_chat_percent',30)),radioMode:cvar(bots,'yb_radio_mode','2'),soundQuota:Number(soundSetting(sounds,'SND_MAX',20)),soundDelay:Number(soundSetting(sounds,'SND_DELAY',5)),soundMaxDuration:Number(soundSetting(sounds,'SND_MAX_DUR',180)),joinSound:soundSetting(sounds,'SND_JOIN',''),motdText:getText('motd').replace(/\r\n|\r/g,'\n'),cycle:mapEntries(getText('cycle')).map(m=>m.name),voting:mapEntries(getText('maps')).map(m=>m.name),sounds:soundEntries(sounds)};return model}
+function validate(model){for(const key of ['friendlyFire','rankBots','autoVacate','botChat'])assert(typeof model[key]==='boolean',t("m_f22778ba2e")+key);assert(typeof model.startMap==='string'&&typeof model.motdText==='string',t("m_2b1f327b41"));assert(model.rankScore!=='Custom'||state.base?.rankScore==='Custom',t("m_61767029d5"));assert(typeof model.hostname==='string'&&model.hostname.trim().length>0&&model.hostname.length<=31&&!/[^\x20-\x7e]|[";\\]/.test(model.hostname),t("m_5d7c518a04"));for(const [name,min,max,integer] of [['maxPlayers',1,32,true],['mapMinutes',6,180,true],['voteBefore',0,179,true],['maxRounds',0,100,true],['winLimit',0,100,true],['botTarget',0,32,true],['botChatPercent',0,100,true],['soundQuota',1,1000,true],['soundDelay',0,300,true],['soundMaxDuration',0.1,600,false]])assert(Number.isFinite(model[name])&&model[name]>=min&&model[name]<=max&&(!integer||Number.isInteger(model[name])),name+t("m_91beae4978"));assert(model.voteBefore<model.mapMinutes,t("m_3dc0212fff"));assert(model.botTarget<=model.maxPlayers,t("m_4313774cdc"));assert(['fill','normal'].includes(model.botMode)||model.botMode===state.base?.botMode,t("m_8f152d212a"));assert(/^[0-4]$/.test(model.botDifficulty),t("m_fc965889aa"));assert(/^[0-2]$/.test(model.radioMode),t("m_0bdab59ff7"));assert(['Kills','KillsMinusDeaths','Custom'].includes(model.rankScore),t("m_962dc7931f"));assert(model.motdText===state.base?.motdText||(model.motdText.length<=1500&&!/[^\x09\x0a\x0d\x20-\x7e]/.test(model.motdText)),t("m_3607f82421"));for(const list of [model.cycle,model.voting]){assert(Array.isArray(list)&&list.length<=500&&new Set(list).size===list.length,t("m_ad2d03b8e7"));for(const name of list)assert(/^[a-zA-Z0-9_-]{1,31}$/.test(name),t("m_6cd5505912"))}assert(model.cycle.length>0,t("m_738ee16c03"));assert(/^[a-zA-Z0-9_-]{1,31}$/.test(model.startMap),t("m_771695f34e"));assert(model.joinSound===''||model.sounds.some(s=>s.path===model.joinSound)||model.joinSound===state.base?.joinSound,t("m_42d757074e"));assert(model.sounds.length===state.base.sounds.length&&model.sounds.every((s,i)=>s.keyword===state.base.sounds[i].keyword&&s.path===state.base.sounds[i].path&&typeof s.enabled==='boolean'),t("m_241dc42143"));}
+function makePlan(model){validate(model);const before=state.base,updates=new Map(),notes=new Map();const textFor=path=>updates.get(path)??state.files.get(path)?.text??'';const put=(path,text,note)=>{updates.set(path,text);notes.set(path,[...(notes.get(path)||[]),note])};const describe=(key,value)=>typeof value==='boolean'?(value?t("m_9f98b7c7f0"):t("m_f0ce94502e")):key==='motdText'?value.length+t("m_c8814e226d"):key==='sounds'?value.filter(s=>s.enabled).length+t("m_d17aa7fe1f"):Array.isArray(value)?value.length+t("m_2931541634"):String(value);const change=(key,path,apply,label)=>{if(!eq(model[key],before[key]))put(path,apply(textFor(path)),label+': '+describe(key,before[key])+' \u2192 '+describe(key,model[key]))};
+for(const [key,cvarName,quote,label] of [['hostname','hostname',true,t("m_e5e07cd03e")],['mapMinutes','mp_timelimit',false,t("m_880354a2d3")],['maxRounds','mp_maxrounds',false,t("m_8972e5c26a")],['winLimit','mp_winlimit',false,t("m_bd29854a96")],['friendlyFire','mp_friendlyfire',false,'Friendly Fire']])change(key,PATHS.server,text=>patchCvar(text,cvarName,quote?'"'+model[key]+'"':typeof model[key]==='boolean'?String(Number(model[key])):String(model[key])),label);
+change('maxPlayers',state.launcher,text=>patchLauncher(text,'maxplayers',model.maxPlayers),t("m_20e6a02042"));change('startMap',state.launcher,text=>patchLauncher(text,'map',model.startMap),t("m_01bb4bf01c"));change('voteBefore',PATHS.vote,text=>patchCvar(text,'mapm_start_vote_before_end',String(model.voteBefore)),t("m_4529de5dce"));
+for(const [key,name,label] of [['botMode','yb_quota_mode',t("m_78da9b8beb")],['botTarget','yb_quota',t("m_b728e5b2ca")],['botDifficulty','yb_difficulty',t("m_4681c036b1")],['autoVacate','yb_autovacate',t("m_f5f54a63fa")],['botChat','yb_chat',t("m_43ea584f93")],['botChatPercent','yb_chat_percent',t("m_ef4aa37c6f")],['radioMode','yb_radio_mode',t("m_2fba55be8e")]])change(key,PATHS.bots,text=>patchCvar(text,name,'"'+(typeof model[key]==='boolean'?Number(model[key]):model[key])+'"'),label);
+for(const [key,name,label] of [['soundQuota','SND_MAX',t("m_4bdc2be729")],['soundDelay','SND_DELAY',t("m_8e26bd55a3")],['soundMaxDuration','SND_MAX_DUR',t("m_e1f80c60cd")],['joinSound','SND_JOIN',t("m_88093b1422")]])change(key,PATHS.sounds,text=>patchSoundSetting(text,name,String(model[key])),label);
+if(model.soundQuota!==before.soundQuota)put(PATHS.sounds,patchSoundSetting(textFor(PATHS.sounds),'SND_WARN',String(Math.max(1,model.soundQuota-3))),t("m_108d9b6502"));
+change('sounds',PATHS.sounds,text=>patchSoundEntries(text,before.sounds,model.sounds),t("m_e0fd364595"));change('cycle',PATHS.cycle,text=>patchMapList(text,model.cycle,'cycle',state.catalog),t("m_3cbb2cb485"));change('voting',PATHS.maps,text=>patchMapList(text,model.voting,'vote',state.catalog),t("m_a09d66df50"));change('motdText',PATHS.motd,text=>model.motdText.replace(/\r\n|\r|\n/g,eol(text)),t("m_53bf4cec72"));
+if(state.files.has(PATHS.stats)){change('rankBots',PATHS.stats,text=>patchCvar(text,'csstats_rankbots',String(Number(model.rankBots))),t("m_46e626cd0f"));}
+if(state.files.has(PATHS.settings)){const settings=JSON.parse(textFor(PATHS.settings));let changed=false;for(const [key,setting] of [['hostname','ServerName'],['mapMinutes','MapMinutes'],['friendlyFire','FriendlyFire'],['botTarget','BotTarget'],['botDifficulty','BotDifficulty'],['soundDelay','SoundCooldown'],['soundQuota','SoundQuota'],['rankBots','RankBots'],['rankScore','RankScore']])if(!eq(model[key],before[key])&&model[key]!=='Custom'){settings[setting]=typeof model[key]==='boolean'?Number(model[key]):key==='botDifficulty'?Number(model[key]):model[key];changed=true}if(changed)put(PATHS.settings,JSON.stringify(settings,null,2)+eol(textFor(PATHS.settings)),t("m_7de8b753eb"))}
+const plan=[];for(const [path,text] of updates){validPath(path);assert(Object.values(PATHS).includes(path)||path===state.launcher,t("m_a250a8dcd4"));const record=state.files.get(path);const after=encodeFile(text,record||{encoding:'utf8',bom:false});if(!record||!equalBytes(record.bytes,after))plan.push({path,before:record?.bytes??null,after,notes:notes.get(path)})}return plan}
+globalThis.CS16ConfigCore={cvar,patchCvar,soundEntries,patchSoundEntries,mapEntries,patchMapList,launcherValue,patchLauncher,decodeFile,encodeFile,equalBytes,validate,makePlan,state};
+</script>
+<script>
+const NUMERIC=new Set(['maxPlayers','mapMinutes','voteBefore','maxRounds','winLimit','botTarget','botChatPercent','soundQuota','soundDelay','soundMaxDuration']);
+function notify(message,type=''){const box=$('message');box.textContent=localizeMessage(message);box.className='notice'+(type?' '+type:'')}
+function showTab(name){for(const panel of document.querySelectorAll('.tab'))panel.hidden=panel.id!=='tab-'+name;for(const button of document.querySelectorAll('[data-tab]')){if(button.dataset.tab===name)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')}window.scrollTo({top:0,behavior:'instant'});if(name==='admin'&&!adminState.info&&!adminState.loading)loadAdmin().catch(error=>adminNotice(error.message,'error'))}
+function readForm(){const m=clone(state.model);for(const key of FIELDS){const input=$(key);m[key]=input.type==='checkbox'?input.checked:NUMERIC.has(key)?Number(input.value):input.value}return m}
+function setSelectOptions(id,items,current){const select=$(id);select.replaceChildren();const all=items.slice();if(!all.some(i=>String(i.value)===String(current)))all.push({value:current,label:current||t("m_690f5d4290")});for(const item of all){const option=document.createElement('option');option.value=item.value;option.textContent=item.label;select.append(option)}select.value=String(current)}
+function renderForm(){const m=state.model;setSelectOptions('startMap',state.catalog.map(m=>({value:m.name,label:m.name+(m.installed?'':t("m_e006c32e38"))})),m.startMap);setSelectOptions('joinSound',[{value:'',label:t("m_8bed400c23")},...m.sounds.map(s=>({value:s.path,label:s.keyword+' · '+s.path}))],m.joinSound);if(![...$('botMode').options].some(o=>o.value===m.botMode))$('botMode').add(new Option(m.botMode+t("m_e386ba2be3"),m.botMode));for(const key of FIELDS){const input=$(key);if(input.type==='checkbox')input.checked=m[key];else input.value=m[key]}
+$('rankScore').querySelector('[value=Custom]').disabled=state.base.rankScore!=='Custom';for(const key of ['rankScore','rankBots'])$(key).disabled=Boolean(state.root||state.readOnlyFiles)&&!state.files.has(PATHS.stats);renderMaps();renderSounds();updateSummary();renderAdmin()}
+function updateSummary(){const m=state.model;$('metricSlots').textContent=m.maxPlayers;$('metricMaps').textContent=m.cycle.length;$('metricBots').textContent=m.botTarget;$('metricBotLabel').textContent=m.botMode==='fill'?t("m_aa5850338a"):t("m_e54d671d1a");$('botTargetLabel').textContent=m.botMode==='fill'?t("m_570b723d70"):t("m_d38e3e93f8");$('metricSounds').textContent=m.sounds.filter(s=>s.enabled).length;$('summaryName').textContent=m.hostname;$('summaryStart').textContent=m.startMap;$('summaryTime').textContent=m.mapMinutes+t("m_78d0e952ad");$('summaryPlatform').textContent=state.root||state.readOnlyFiles?(state.launcher.endsWith('.sh')?'Linux':'Windows'):t("m_7ce0d777d1");$('motdPreview').textContent=m.motdText;$('motdCount').textContent=m.motdText.length+t("m_94a9bfee37");$('soundCount').textContent=m.sounds.filter(s=>s.enabled).length+t("m_24db69445a")+m.sounds.length+t("m_8daf3c640f");$('mapCount').textContent=state.catalog.filter(m=>m.installed).length+t("m_ad6f22a988")+m.cycle.length+t("m_401d3c9ab0")+m.voting.length+t("m_20ba4f56c7");let count=0,error='';try{count=makePlan(m).length}catch(e){error=e.message}$('changeSummary').textContent=error?t("m_77939ecb1b"):count?count+t("m_47f36b9011")+(count===1?'':t("m_dbd3a49d0d"))+t("m_cbe959efe2"):state.root||state.readOnlyFiles?t("m_5a0017d9c3"):t("m_e997be92ca");$('review').disabled=state.busy;$('undo').disabled=state.busy||!state.lastSave;$('summaryBackup').textContent=state.lastSave?.backup||state.adminBackup||t("m_33b3eb4260");$('modeLabel').textContent=state.root?t("m_858c15298c"):state.readOnlyFiles?t("m_756119c03c"):t("m_69337f6de9");$('folderLabel').textContent=state.root?.name||state.folderName||t("m_dc70b19d0b")}
+function renderMaps(){const query=$('mapSearch').value.toLowerCase();const m=state.model;const order=new Map(m.cycle.map((name,i)=>[name,i]));const visible=state.catalog.filter(map=>map.name.toLowerCase().includes(query)).sort((a,b)=>(order.get(a.name)??999)-(order.get(b.name)??999)||a.name.localeCompare(b.name));$('mapRows').innerHTML=visible.map(map=>{const index=order.get(map.name);return '<tr data-map-name="'+esc(map.name)+'"><td><div class="map-order">'+(index===undefined?'':'<button type="button" class="map-drag" draggable="true" data-drag-map="'+esc(map.name)+'" aria-label="'+esc(t('maps.drag')+map.name)+'">⠿</button>')+'<span class="rank">'+(index===undefined?'—':String(index+1).padStart(2,'0'))+'</span>'+(index===undefined?'':'<button type="button" data-map-action="up" data-name="'+esc(map.name)+'" aria-label="'+esc(map.name)+t("m_fe6529a006")+(index===0?'disabled':'')+'>↑</button><button type="button" data-map-action="down" data-name="'+esc(map.name)+'" aria-label="'+esc(map.name)+t("m_14d5259b2e")+(index===m.cycle.length-1?'disabled':'')+'>↓</button>')+'</div></td><td><span class="map-name">'+esc(map.name)+'</span>'+(!map.installed?t("m_f1178dfe25"):'')+'</td><td><input type="checkbox" data-map-action="cycle" data-name="'+esc(map.name)+'" aria-label="'+esc(map.name)+t("m_1b85aa7a9a")+(index!==undefined?'checked':'')+'></td><td><input type="checkbox" data-map-action="voting" data-name="'+esc(map.name)+'" aria-label="'+esc(map.name)+t("m_c1e9779004")+(m.voting.includes(map.name)?'checked':'')+'></td><td><span class="capacity">'+map.capacity+t("m_ad4fb29f06")}).join('')||t("m_b29ed0234b")}
+function renderSounds(){const query=$('soundSearch').value.toLowerCase();const rows=state.model.sounds.filter(s=>(s.keyword+' '+s.path).toLowerCase().includes(query));$('soundRows').innerHTML=rows.map(s=>'<tr class="'+(s.enabled?'':'sound-disabled')+'"><td><input type="checkbox" data-sound-toggle="'+esc(s.keyword)+'" aria-label="Sound '+esc(s.keyword)+t("m_1d8af89821")+(s.enabled?'checked':'')+'></td><td><span class="sound-name">'+esc(s.keyword)+'</span><div class="path">'+esc(s.path)+'</div></td><td class="sound-actions"><button type="button" class="small" data-play="'+esc(s.keyword)+'" '+(!state.root&&!state.readOnlyFiles?'disabled':'')+t("m_2e6cae0cca")).join('')||t("m_114903d57e");updateSummary()}
+function hasEdits(){try{return adminDirty()||makePlan(readForm()).length>0}catch{return true}}
+async function getHandle(root,path,create=false){validPath(path);const parts=path.split('/');let directory=root;for(const part of parts.slice(0,-1))directory=await directory.getDirectoryHandle(part,{create});return directory.getFileHandle(parts.at(-1),{create})}
+async function getDirectory(root,path,create=false){validPath(path);let directory=root;for(const part of path.split('/'))directory=await directory.getDirectoryHandle(part,{create});return directory}
+async function readBytes(root,path,optional=false){try{const handle=await getHandle(root,path);const file=await handle.getFile();assert(file.size<=2*1024*1024,t("m_d62cfe4f7a")+path);return new Uint8Array(await file.arrayBuffer())}catch(e){if(optional&&e.name==='NotFoundError')return null;throw e}}
+async function readLoaded(path,optional=false){if(state.root)return readBytes(state.root,path,optional);const file=state.readOnlyFiles?.get(path);if(!file){if(optional)return null;throw Error(t("m_07fbdee2fc")+path)}return new Uint8Array(await file.arrayBuffer())}
+async function loadInstallation(root,readOnlyFiles=null,folderName=''){const files=new Map();async function read(path,optional=false){if(root)return readBytes(root,path,optional);const file=readOnlyFiles.get(path);if(!file){if(optional)return null;throw Error(t("m_07fbdee2fc")+path)}assert(file.size<=2*1024*1024,t("m_d62cfe4f7a")+path);return new Uint8Array(await file.arrayBuffer())}
+assert(await read('.install-incomplete',true)===null,t("m_0e407fb8ae"));for(const [key,path] of Object.entries(PATHS)){const bytes=await read(path,['stats','motd','settings'].includes(key));if(bytes!==null)files.set(path,fileRecord(bytes))}if(files.has(PATHS.settings))JSON.parse(files.get(PATHS.settings).text);
+const linux=await read('Start-CS16.sh',true);assert(linux,t("m_85ad16d272"));const launcher='Start-CS16.sh';files.set(launcher,fileRecord(linux));let names=[];if(root){const maps=await getDirectory(root,'cstrike/maps');for await(const [name,handle]of maps.entries())if(handle.kind==='file'&&/\.bsp$/i.test(name))names.push(name.slice(0,-4))}else names=[...readOnlyFiles.keys()].filter(p=>/^cstrike\/maps\/[^/]+\.bsp$/i.test(p)).map(p=>p.split('/').at(-1).slice(0,-4));assert(names.length>0,t("m_54fb36d0c2"));const capacities=new Map(DEMO.maps.map(m=>[m.name,m.capacity]));const catalog=new Map(names.map(name=>[name,{name,capacity:capacities.get(name)||32,installed:true}]));for(const item of mapEntries(files.get(PATHS.maps).text)){const cap=item.line.match(/^[^\s]+\s+\d+\s+(\d+)/);if(cap&&catalog.has(item.name))catalog.get(item.name).capacity=Math.min(32,Math.max(1,Number(cap[1])))}for(const item of [...mapEntries(files.get(PATHS.maps).text),...mapEntries(files.get(PATHS.cycle).text)])if(!catalog.has(item.name))catalog.set(item.name,{name:item.name,capacity:capacities.get(item.name)||32,installed:false});
+const previous={root:state.root,readOnlyFiles:state.readOnlyFiles,folderName:state.folderName,files:state.files,launcher:state.launcher,catalog:state.catalog,model:state.model,base:state.base,pending:state.pending,lastSave:state.lastSave};try{state.root=root;state.readOnlyFiles=readOnlyFiles;state.folderName=folderName;state.files=files;state.launcher=launcher;state.catalog=[...catalog.values()].sort((a,b)=>a.name.localeCompare(b.name));state.model=modelFromFiles();state.base=clone(state.model);state.pending=null;state.lastSave=null}catch(error){Object.assign(state,previous);throw error}resetAdmin();renderForm();if(!$('tab-admin').hidden)loadAdmin().catch(error=>adminNotice(error.message,'error'));notify(root?t("m_d0fb433c27"):t("m_c6a74fa402"),'success')}
+function setBusy(busy){state.busy=busy;updateAdminControls();$('saveChanges').disabled=busy||!state.root||Boolean(state.serverStatus?.running);$('closeReview').disabled=busy;$('openFolder').disabled=busy;$('undo').disabled=busy||!state.lastSave;$('review').disabled=busy}
+async function writeBytes(root,path,bytes){const handle=await getHandle(root,path,true);const stream=await handle.createWritable();try{await stream.write(bytes);await stream.close()}catch(error){try{await stream.abort()}catch{}throw error}}
+async function checkSnapshots(plan,after=false){for(const item of plan){const actual=await readBytes(state.root,item.path,true);const expected=after?item.after:item.before;assert(expected===null?actual===null:actual!==null&&equalBytes(actual,expected),t("m_2e3dae305d")+item.path+t("m_38b39b27d9"))}}
+async function sha256(bytes){const digest=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(digest)].map(v=>v.toString(16).padStart(2,'0')).join('')}
+async function removeFile(root,path){const parts=validPath(path).split('/');const name=parts.pop();const directory=parts.length?await getDirectory(root,parts.join('/')):root;await directory.removeEntry(name)}
+async function rollbackWritten(written){const failures=[];for(const item of [...written].reverse()){try{const current=await readBytes(state.root,item.path,true);if(item.before!==null&&current&&equalBytes(current,item.before))continue;assert(current&&equalBytes(current,item.after),t("m_4433152ff9"));if(item.before===null)await removeFile(state.root,item.path);else await writeBytes(state.root,item.path,item.before)}catch{failures.push(item.path)}}return failures}
+async function savePlan(){assert(state.root,t("m_3a5cb5d1ca"));const plan=state.pending;assert(plan&&plan.length,t("m_7b7e74672a"));if(state.root.requestPermission)assert(await state.root.requestPermission({mode:'readwrite'})==='granted',t("m_fc449ad2f2"));if(window.CS16Panel)await beginPanelEdit();setBusy(true);const written=[];let backup='';try{
+await checkSnapshots(plan);const stamp=new Date().toISOString().replace(/[:.]/g,'-');backup='_configurator/backups/'+stamp+'-'+crypto.randomUUID().slice(0,8);$('saveProgress').textContent=t("m_dc07fa1676");const records=[];for(const item of plan){if(item.before!==null){await writeBytes(state.root,backup+'/files/'+item.path,item.before);const check=await readBytes(state.root,backup+'/files/'+item.path);assert(equalBytes(check,item.before),t("m_236b7b64ad")+item.path)}records.push({path:item.path,existed:item.before!==null,beforeSHA256:item.before===null?null:await sha256(item.before),afterSHA256:await sha256(item.after)})}
+await writeBytes(state.root,backup+'/restore.json',new TextEncoder().encode(JSON.stringify({schemaVersion:1,createdAt:new Date().toISOString(),files:records},null,2)));await writeBytes(state.root,backup+'/README.txt',new TextEncoder().encode('CS 1.6 configuration backup. Stop the server before restoring.\nCopy files/ contents back to the same relative paths in the server folder.\nFor records with existed=false, remove that newly created file when restoring.\nThis backup may contain private server credentials. Keep it local.\n'));
+await checkSnapshots(plan);for(const item of plan){$('saveProgress').textContent=t("m_88e714caed")+item.path;await checkSnapshots([item]);written.push(item);await writeBytes(state.root,item.path,item.after);const check=await readBytes(state.root,item.path);assert(equalBytes(check,item.after),t("m_6712b0b16e")+item.path)}for(const item of plan)state.files.set(item.path,fileRecord(item.after));state.lastSave={backup,plan};state.model=readForm();state.base=clone(state.model);state.pending=null;renderForm();$('reviewDialog').close();notify(t("m_75a792d916")+backup+t("m_82e97d4f2f"),'success');
+}catch(error){const failures=await rollbackWritten(written);const extra=failures.length?t("m_8095814e26")+failures.join(', '):written.length?t("m_6f25fd932e"):'';$('saveProgress').textContent=error.message+extra+(backup?' Backup: '+backup:'');notify(t("m_ef6b84ab7f")+error.message+extra,'error')}finally{if(window.CS16Panel)await endPanelEdit();setBusy(false);if(window.CS16Panel)refreshPanelStatus()}}
+async function undoLast(){const saved=state.lastSave;if(!saved||!state.root)return;if(!confirm(t("m_59e2f4fa12")))return;try{if(state.root.requestPermission)assert(await state.root.requestPermission({mode:'readwrite'})==='granted',t("m_20b5de8306"));if(window.CS16Panel)await beginPanelEdit();await checkSnapshots(saved.plan,true);setBusy(true);for(const item of [...saved.plan].reverse()){await checkSnapshots([item],true);if(item.before===null){await removeFile(state.root,item.path);state.files.delete(item.path)}else{await writeBytes(state.root,item.path,item.before);state.files.set(item.path,fileRecord(item.before))}}state.model=modelFromFiles();state.base=clone(state.model);state.lastSave=null;state.pending=null;renderForm();notify(t("m_ad09d2c1e1"),'success')}catch(error){notify(t("m_af90feb105")+error.message+'. Backup: '+saved.backup,'error')}finally{if(window.CS16Panel)await endPanelEdit();setBusy(false);if(window.CS16Panel)refreshPanelStatus()}}
+function review(){try{state.model=readForm();const plan=makePlan(state.model);assert(plan.length>0,t("m_3bacb06aa0"));state.pending=plan;$('reviewIntro').textContent=plan.length+t("m_47f36b9011")+(plan.length===1?t("m_29c6aac949"):t("m_69ebd233db"))+t("m_76e65a70af");$('reviewFiles').innerHTML=plan.map(item=>'<li><strong class="path">'+esc(item.path)+'</strong><span>'+item.notes.map(esc).join(' · ')+'</span></li>').join('');$('reviewNotice').textContent=state.root?t("m_54a7b34825"):t("m_24d3fb13c6");$('saveChanges').disabled=!state.root||Boolean(state.serverStatus?.running);$('saveProgress').textContent='';$('reviewDialog').showModal()}catch(error){notify(error.message,'error')}}
+async function playSound(keyword){try{const sound=state.model.sounds.find(s=>s.keyword===keyword);assert(sound,t("m_04860c0997"));const path=validPath('cstrike/'+sound.path);let file;if(state.root)file=await(await getHandle(state.root,path)).getFile();else file=state.readOnlyFiles.get(path);assert(file,t("m_807b27b6c0"));if(state.audioURL)URL.revokeObjectURL(state.audioURL);state.audioURL=URL.createObjectURL(new Blob([await file.arrayBuffer()],{type:'audio/wav'}));const player=$('audioPlayer');player.src=state.audioURL;player.hidden=false;await player.play()}catch(error){notify(t("m_8806f5505c")+error.message,'error')}}
+function downloadProfile(){try{state.model=readForm();validate(state.model);const model=clone(state.model);const json=JSON.stringify({format:'CS16-Offline-Profile',version:1,settings:model},null,2);const url=URL.createObjectURL(new Blob([json],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download=t("m_9cf59919d9");link.click();setTimeout(()=>URL.revokeObjectURL(url),2000);notify(t("m_d9f23a6826"),'success')}catch(error){notify(error.message,'error')}}
+async function importProfile(file){assert(file&&file.size<1024*1024,t("m_626982a78f"));const doc=JSON.parse(await file.text());assert(doc.format==='CS16-Offline-Profile'&&doc.version===1&&doc.settings&&typeof doc.settings==='object',t("m_c951d2ba47"));const model=clone(state.model);for(const key of FIELDS)if(Object.hasOwn(doc.settings,key))model[key]=doc.settings[key];for(const key of ['cycle','voting'])if(Object.hasOwn(doc.settings,key))model[key]=doc.settings[key];if(Array.isArray(doc.settings.sounds)){const toggles=new Map(doc.settings.sounds.map(s=>[s.keyword,s.enabled]));for(const sound of model.sounds)if(toggles.has(sound.keyword))sound.enabled=toggles.get(sound.keyword)}validate(model);const installed=new Set(state.catalog.filter(m=>m.installed).map(m=>m.name));assert(model.cycle.every(name=>installed.has(name))&&model.voting.every(name=>installed.has(name))&&installed.has(model.startMap),t("m_b0a32a8931"));state.model=model;renderForm();notify(t("m_ec63f938c9"),'success')}
+function preset(kind){const available=state.catalog.filter(m=>m.installed).map(m=>m.name);const wanted=kind==='all'?available:kind==='fun'?['de_rats_2001','awp_map','fy_iceworld','fy_pool_day','fy_snow','fy_iceworld2k','aim_ak-colt','aim_map','awp_india','35hp','he_tennis','he_glass','de_rats']:['de_dust2','de_dust','de_inferno','de_nuke','de_train','cs_assault','cs_italy','cs_office'];const selected=wanted.filter(name=>available.includes(name));if(!selected.length){notify(t("m_3a8303238d"),'error');return}state.model.cycle=selected;state.model.voting=selected.slice();renderMaps();updateSummary()}
+function loadDemo(){state.root=null;state.readOnlyFiles=null;state.files=new Map(Object.entries(DEMO.files).map(([path,text])=>[path,fileRecord(new TextEncoder().encode(text))]));state.launcher='Start-CS16.sh';state.catalog=DEMO.maps.map(m=>({...m,installed:true}));state.model=modelFromFiles();state.base=clone(state.model);renderForm()}
+$('configForm').addEventListener('submit',event=>event.preventDefault());$('configForm').addEventListener('input',event=>{if(FIELDS.includes(event.target.id)){state.model=readForm();updateSummary()}});$('configForm').addEventListener('change',event=>{if(FIELDS.includes(event.target.id)){state.model=readForm();updateSummary()}});
+for(const button of document.querySelectorAll('[data-tab]'))button.addEventListener('click',()=>showTab(button.dataset.tab));for(const link of document.querySelectorAll('[data-go]'))link.addEventListener('click',event=>{event.preventDefault();showTab(link.dataset.go)});
+$('mapSearch').addEventListener('input',renderMaps);$('soundSearch').addEventListener('input',renderSounds);
+$('mapRows').addEventListener('click',event=>{const button=event.target.closest('button[data-map-action]');if(!button)return;const index=state.model.cycle.indexOf(button.dataset.name);const other=button.dataset.mapAction==='up'?index-1:index+1;if(index>=0&&other>=0&&other<state.model.cycle.length){[state.model.cycle[index],state.model.cycle[other]]=[state.model.cycle[other],state.model.cycle[index]];renderMaps();updateSummary()}});
+$('mapRows').addEventListener('change',event=>{const input=event.target;if(!input.matches('input[data-map-action]'))return;const key=input.dataset.mapAction;const list=state.model[key];if(input.checked&&!list.includes(input.dataset.name))list.push(input.dataset.name);if(!input.checked)state.model[key]=list.filter(name=>name!==input.dataset.name);renderMaps();updateSummary()});
+$('soundRows').addEventListener('change',event=>{const keyword=event.target.dataset.soundToggle;if(keyword){state.model.sounds.find(s=>s.keyword===keyword).enabled=event.target.checked;renderSounds()}});$('soundRows').addEventListener('click',event=>{const button=event.target.closest('[data-play]');if(button)playSound(button.dataset.play)});
+$('enableSounds').addEventListener('click',()=>{state.model.sounds.forEach(s=>s.enabled=true);renderSounds()});$('disableSounds').addEventListener('click',()=>{state.model.sounds.forEach(s=>s.enabled=false);renderSounds()});for(const [id,kind]of [['presetClassic','classic'],['presetFun','fun'],['presetAll','all']])$(id).addEventListener('click',()=>preset(kind));
+$('review').addEventListener('click',review);$('closeReview').addEventListener('click',()=>$('reviewDialog').close());$('reviewDialog').addEventListener('cancel',event=>{if(state.busy)event.preventDefault()});$('saveChanges').addEventListener('click',()=>savePlan().catch(error=>notify(error.message,'error')));$('undo').addEventListener('click',undoLast);$('exportProfile').addEventListener('click',downloadProfile);$('importProfile').addEventListener('click',()=>$('profileInput').click());$('profileInput').addEventListener('change',event=>{importProfile(event.target.files[0]).catch(error=>notify(t("m_9b6e6bdbbf")+error.message,'error'));event.target.value=''});
+$('openFolder').addEventListener('click',async()=>{if(hasEdits()&&!confirm(t("m_cc116b0f29")))return;if(window.CS16Panel){$('serverPath').value=state.panelInfo?.root||'';$('serverDialogMessage').textContent='';$('serverDialog').showModal()}else{$('folderInput').click()}});
+$('folderInput').addEventListener('change',event=>{const list=[...event.target.files];if(!list.length)return;const files=new Map(list.map(file=>[file.webkitRelativePath.split('/').slice(1).join('/'),file]));loadInstallation(null,files,list[0].webkitRelativePath.split('/')[0]).catch(error=>notify(t("m_ad4c425a22")+error.message,'error'));event.target.value=''});
+window.addEventListener('beforeunload',event=>{if(state.busy||hasEdits()){event.preventDefault();event.returnValue=''}});
+globalThis.CS16ConfigApp={loadInstallation,readForm,renderForm,renderMaps,renderSounds,savePlan,review,importProfile,checkSnapshots};
+async function beginPanelEdit(){const result=await panelRequest('/api/begin-edit',{generation:state.root.generation});state.panelLease=result.lease}
+async function endPanelEdit(){const lease=state.panelLease;state.panelLease=null;if(lease)try{await panelRequest('/api/end-edit',{lease})}catch{}}
+async function panelRequest(route,body){const response=await fetch(route,{method:body===undefined?'GET':'POST',headers:{'X-CS16-Token':window.CS16Panel.token,'Accept-Language':uiLanguage,...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store'});const result=await response.json();if(!response.ok)throw Error(result.error?localizeMessage(result.error):t("m_172ab089b6"));return result}
+function bytes64(bytes){let text='';for(let i=0;i<bytes.length;i+=8192)text+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(text)}
+function from64(value){return Uint8Array.from(atob(value),c=>c.charCodeAt(0))}
+function panelHandle(info,relative='',kind='directory'){
+ async function operation(op,path,data){return panelRequest('/api/fs',{op,path,generation:info.generation,lease:state.panelLease,...(data===undefined?{}:{data})})}
+ function child(name){assert(typeof name==='string'&&name!==''&&!name.includes('/')&&!name.includes('\\'),t("m_11f2410fea"));return relative?relative+'/'+name:name}
+ return {kind,name:relative?relative.split('/').at(-1):info.name,generation:info.generation,serverPath:info.root,
+  async requestPermission(){return 'granted'},
+  async getDirectoryHandle(name,{create=false}={}){const path=child(name);const item=await operation('kind',path);if(item.missing){if(!create)throw new DOMException(t("m_829baf1e2d")+path,'NotFoundError');await operation('mkdir',path)}else if(item.kind!=='directory')throw new DOMException(t("m_5ae54dd11e")+path,'TypeMismatchError');return panelHandle(info,path,'directory')},
+  async getFileHandle(name,{create=false}={}){const path=child(name);const item=await operation('kind',path);if(item.missing){if(!create)throw new DOMException(t("m_07fbdee2fc")+path,'NotFoundError');await operation('touch',path)}else if(item.kind!=='file')throw new DOMException(t("m_688f3a14eb")+path,'TypeMismatchError');return panelHandle(info,path,'file')},
+  async getFile(){const item=await operation('read',relative);if(item.missing)throw new DOMException(t("m_07fbdee2fc")+relative,'NotFoundError');return new File([from64(item.data)],relative.split('/').at(-1))},
+  async *entries(){const item=await operation('entries',relative);for(const [name,type]of item.entries)yield [name,panelHandle(info,child(name),type)]},
+  async createWritable(){let bytes=null;return {async write(value){bytes=new Uint8Array(value)},async close(){assert(bytes!==null,t("m_bc24abda8c"));await operation('write',relative,bytes64(bytes))},async abort(){bytes=null}}},
+  async removeEntry(name){await operation('remove',child(name))}
+ }
+}
+async function refreshPanelStatus(){if(!window.CS16Panel)return;try{const value=await panelRequest('/api/status');state.serverStatus=value;updateAdminControls();const running=value.running;$('processBadge').textContent=running?(value.responding?t("m_f85fd2bc56"):t("m_18e8956779")):t("m_7ebb8b213f");$('processStatus').textContent=value.details?value.details.map+' · '+value.details.players+'/'+value.details.maxPlayers+t("m_2e7f8add56")+value.endpoint:value.endpoint||t("m_ae1e47e650");$('startServer').disabled=state.busy||!state.root||running||value.editing;$('stopServer').disabled=state.busy||!state.root||!running;$('undo').disabled=state.busy||!state.lastSave||running;$('saveHint').textContent=running?t("m_5b25dfc720"):t("m_106ca6c2db");if($('reviewDialog').open)$('saveChanges').disabled=state.busy||!state.root||running}catch(error){$('processBadge').textContent=t("m_c749d031d7");$('processStatus').textContent=error.message;$('startServer').disabled=true;$('stopServer').disabled=true;$('saveChanges').disabled=true;state.serverStatus=null;updateAdminControls()}}
+async function attachPanel(info){state.panelInfo=info;if(info.root){await loadInstallation(panelHandle(info));$('modeLabel').textContent=t("m_0ae2edc7c7");$('folderLabel').textContent=info.root}else{$('serverPath').value='';$('serverDialog').showModal()}await refreshPanelStatus()}
+async function initPanel(){notify(t("m_9df702e07f"));try{await attachPanel(await panelRequest('/api/info'));setInterval(refreshPanelStatus,2000)}catch(error){notify(t("m_af213dec50")+error.message,'error')}}
+async function panelAction(action){if(!window.CS16Panel||!state.root){notify(t("m_d81e9bf4cf"),'error');return}if(action==='start'&&hasEdits()){notify(t("m_da399389c8"),'error');return}setBusy(true);$('startServer').disabled=true;$('stopServer').disabled=true;$('processBadge').textContent=action==='start'?t("m_f99e937414"):t("m_c8b041480a");try{await panelRequest('/api/'+action,{generation:state.root.generation});notify(action==='start'?t("m_065ee66556"):t("m_b471a04e63"),'success')}catch(error){notify(error.message,'error')}finally{setBusy(false);await refreshPanelStatus()}}
+$('startServer').addEventListener('click',()=>panelAction('start'));
+$('stopServer').addEventListener('click',()=>panelAction('stop'));
+$('closeServerDialog').addEventListener('click',()=>$('serverDialog').close());
+$('pickServerPath').addEventListener('click',async()=>{try{$('pickServerPath').disabled=true;$('serverDialogMessage').textContent=t("m_736565ae2a");const result=await panelRequest('/api/pick-folder',{});if(result.path)$('serverPath').value=result.path;$('serverDialogMessage').textContent=''}catch(error){$('serverDialogMessage').textContent=error.message}finally{$('pickServerPath').disabled=false}});
+$('loadServerPath').addEventListener('click',async()=>{try{$('loadServerPath').disabled=true;const info=await panelRequest('/api/open',{path:$('serverPath').value});await attachPanel(info);$('serverDialog').close()}catch(error){$('serverDialogMessage').textContent=error.message}finally{$('loadServerPath').disabled=false}});
+
+
+// Access drafts are deliberately separate from the portable game-settings model.
+const adminState={info:null,draft:null,loading:false,review:null,noticeKey:null};
+function resetAdmin(){adminState.info=null;adminState.draft=null;adminState.review=null;adminState.noticeKey=null;state.adminBackup=null;$('adminReviewDialog').close();renderAdmin()}
+function adminDirty(){const d=adminState.draft,i=adminState.info;return Boolean(d&&i&&(d.rconPassword||d.ybPassword||d.accounts.length!==i.accounts.length||d.accounts.some((a,n)=>a.name!==i.accounts[n]?.name||a.password)))}
+function adminNotice(message,type=''){const element=$('adminMessage');element.textContent=localizeMessage(message);element.className='notice'+(type?' '+type:'')}
+function updateAdminControls(){const blocked=state.busy||adminState.loading;const stopped=state.serverStatus&&!state.serverStatus.running&&!state.serverStatus.editing;
+ $('reloadAdmin').disabled=blocked||!window.CS16Panel||!state.root;
+ $('addAdmin').disabled=blocked;$('reviewAdmin').disabled=blocked||!adminState.info||!adminDirty();
+ $('saveAdmin').disabled=blocked||!stopped||!adminState.review;
+ $('undoAdmin').disabled=blocked||!stopped||!state.adminBackup;
+ $('closeAdminReview').disabled=state.busy;
+ $('adminSaveHint').textContent=t('admin.stopped');$('adminDirtyLabel').textContent=adminDirty()?t('admin.unsaved'):'';
+}
+function renderAdmin(){if(!window.CS16Panel||!state.root){$('adminFields').hidden=true;adminNotice(t('admin.helper'));updateAdminControls();return}
+ const i=adminState.info,d=adminState.draft;$('adminFields').hidden=!i;
+ if(!i){adminNotice(t(adminState.loading?'admin.loading':'admin.load'));updateAdminControls();return}
+ $('adminProtected').textContent=t('admin.protected')+i.protectedRules;
+ $('adminRows').innerHTML=d.accounts.map((a,n)=>'<div class="admin-account"><label class="field"><span>'+esc(t('admin.name'))+'</span><input data-admin-index="'+n+'" data-admin-field="name" autocomplete="off" maxlength="31" value="'+esc(a.name)+'"></label><label class="field" hidden><span>'+esc(t('admin.password'))+'</span><input type="password" data-admin-index="'+n+'" data-admin-field="password" disabled autocomplete="new-password" maxlength="31" value="'+esc(a.password)+'" placeholder="'+esc(t('admin.keep'))+'"></label><p class="hint admin-permissions">'+'<button type="button" class="small" data-remove-admin="'+n+'">'+esc(t('admin.remove'))+'</button> · '+esc(t('admin.rights'))+': <code>'+esc(a.id===null?'abcdefghijklmnopqrstu':i.accounts.find(v=>v.id===a.id).access)+'</code>'+'</p></div>').join('')||'<p class="hint">'+esc(t('admin.empty'))+'</p>';
+ $('adminRcon').value=d.rconPassword;$('adminYb').value=d.ybPassword;
+ $('adminRconState').textContent=t(i.rconSet?'admin.configured':'admin.unconfigured');$('adminYbState').textContent=t(i.ybSet?'admin.configured':'admin.unconfigured');
+ $('adminLogin').textContent='AMXX: Steam ID → amxmodmenu\nYaPB: setinfo '+i.ybKey+' "<password>"\nRCON: rcon_password "<password>"';
+ $('adminBackup').textContent=state.adminBackup||'';adminNotice(t('admin.loaded'));updateAdminControls();
+}
+async function loadAdmin(){if(!window.CS16Panel||!state.root){renderAdmin();return}adminState.loading=true;renderAdmin();const generation=state.root.generation;
+ try{const info=await panelRequest('/api/admin');assert(info.generation===generation&&state.root.generation===generation,t('admin.error.15'));adminState.info=info;adminState.draft={accounts:info.accounts.map(a=>({id:a.id,name:a.name,password:''})),rconPassword:'',ybPassword:''};adminState.review=null;renderAdmin()}finally{adminState.loading=false;updateAdminControls()}}
+function adminPayload(){const d=adminState.draft;assert(d&&adminState.info,t('admin.load'));const validName=v=>typeof v==='string'&&/^STEAM_0:[01]:[0-9]{1,10}$/.test(v);const validPassword=v=>typeof v==='string'&&v.length>=1&&v.length<=31&&!/[^\x21-\x7e]|[";\\]/.test(v);
+ for(const a of d.accounts){const old=adminState.info.accounts.find(v=>v.id===a.id);assert(old&&old.name===a.name||validName(a.name),t('admin.error.1'));assert(!a.password||validPassword(a.password),t('admin.error.0'));assert(!a.password,'Steam authentication does not use an AMXX password')}
+ assert(!d.rconPassword||validPassword(d.rconPassword),t('admin.error.0'));assert(!d.ybPassword||validPassword(d.ybPassword),t('admin.error.0'));
+ return {...clone(d),generation:adminState.info.generation,revision:adminState.info.revision};
+}
+function reviewAdmin(){try{assert(adminDirty(),t('admin.noChanges'));const payload=adminPayload(),notes=[];
+ for(const a of payload.accounts){const old=adminState.info.accounts.find(v=>v.id===a.id);if(!old)notes.push(t('admin.newAccount')+a.name);else{if(a.name!==old.name)notes.push(t('admin.changedName')+old.name+' → '+a.name);if(a.password)notes.push('AMX · '+a.name+': '+t('admin.changedPassword'))}}
+ if(payload.rconPassword)notes.push('RCON: '+t('admin.changedPassword'));if(payload.ybPassword)notes.push('YaPB: '+t('admin.changedPassword'));
+ adminState.review=payload;$('adminReviewList').replaceChildren(...notes.map(note=>{const li=document.createElement('li');li.textContent=note;return li}));$('adminProgress').textContent='';updateAdminControls();if(!$('adminReviewDialog').open)$('adminReviewDialog').showModal();
+ }catch(error){adminNotice(error.message,'error')}}
+async function synchronizeAccessFiles(paths){const draft=readForm();for(const path of paths)if(Object.values(PATHS).includes(path)){const bytes=await readBytes(state.root,path,true);if(bytes===null)state.files.delete(path);else state.files.set(path,fileRecord(bytes))}
+ state.base=modelFromFiles();state.model=draft;state.lastSave=null;state.pending=null;renderForm();await loadAdmin();updateSummary();
+}
+async function saveAdmin(){assert(adminState.review,t('admin.noChanges'));setBusy(true);const payload=adminState.review;let committed=false;
+ try{const result=await panelRequest('/api/admin/save',payload);committed=true;state.adminBackup=result.backup||state.adminBackup;adminState.draft=null;adminState.info=null;adminState.review=null;$('adminRows').replaceChildren();$('adminRcon').value='';$('adminYb').value='';await synchronizeAccessFiles(result.files);$('adminReviewDialog').close();adminNotice(t('admin.saved')+(result.backup||''),'success');notify(t('admin.saved')+(result.backup||''),'success')}
+ catch(error){$('adminProgress').textContent=error.message;adminNotice(error.message,'error');if(committed){state.lastSave=null;notify(t('admin.saved')+(state.adminBackup||'')+' · '+error.message,'error')}}finally{setBusy(false);await refreshPanelStatus()}
+}
+async function undoAdmin(){if(!state.adminBackup||!confirm(t('admin.undoConfirm')))return;if(adminDirty()&&!confirm(t('admin.reloadConfirm')))return;setBusy(true);
+ try{const result=await panelRequest('/api/admin/restore',{generation:state.root.generation,backup:state.adminBackup});state.adminBackup=null;await synchronizeAccessFiles(result.files);adminNotice(t('admin.restored'),'success');notify(t('admin.restored'),'success')}catch(error){adminNotice(error.message,'error')}finally{setBusy(false);await refreshPanelStatus()}}
+$('adminRows').addEventListener('input',event=>{const e=event.target;if(e.dataset.adminField){adminState.draft.accounts[Number(e.dataset.adminIndex)][e.dataset.adminField]=e.value;adminState.review=null;updateAdminControls()}});
+for(const [id,key] of [['adminRcon','rconPassword'],['adminYb','ybPassword']])$(id).addEventListener('input',()=>{adminState.draft[key]=$(id).value;adminState.review=null;updateAdminControls()});
+$('adminRows').addEventListener('click',event=>{const e=event.target.closest('[data-remove-admin]');if(e){adminState.draft.accounts.splice(Number(e.dataset.removeAdmin),1);adminState.review=null;renderAdmin()}});
+$('addAdmin').addEventListener('click',()=>{adminState.draft.accounts.push({id:null,name:'',password:''});adminState.review=null;renderAdmin();$('adminRows').lastElementChild.querySelector('input').focus()});
+$('reloadAdmin').addEventListener('click',()=>{if(!adminDirty()||confirm(t('admin.reloadConfirm')))loadAdmin().catch(error=>adminNotice(error.message,'error'))});
+$('reviewAdmin').addEventListener('click',reviewAdmin);$('closeAdminReview').addEventListener('click',()=>{$('adminReviewDialog').close();adminState.review=null;updateAdminControls()});$('adminReviewDialog').addEventListener('cancel',event=>{if(state.busy)event.preventDefault();else adminState.review=null});$('saveAdmin').addEventListener('click',()=>saveAdmin().catch(error=>adminNotice(error.message,'error')));$('undoAdmin').addEventListener('click',undoAdmin);
+
+let draggedMap=null;
+function clearMapDrop(){for(const row of $('mapRows').rows)row.classList.remove('drop-before','drop-after','dragging')}
+$('mapRows').addEventListener('dragstart',event=>{const handle=event.target.closest('[data-drag-map]');if(!handle){event.preventDefault();return}draggedMap=handle.dataset.dragMap;event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',draggedMap);handle.closest('tr').classList.add('dragging')});
+$('mapRows').addEventListener('dragover',event=>{const row=event.target.closest('tr[data-map-name]');if(!draggedMap||!row||row.dataset.mapName===draggedMap||!state.model.cycle.includes(row.dataset.mapName))return;event.preventDefault();event.dataTransfer.dropEffect='move';for(const r of $('mapRows').rows)r.classList.remove('drop-before','drop-after');const rect=row.getBoundingClientRect();row.classList.add(event.clientY<rect.top+rect.height/2?'drop-before':'drop-after')});
+$('mapRows').addEventListener('drop',event=>{const row=event.target.closest('tr[data-map-name]');const source=draggedMap;draggedMap=null;if(!source||!row||source===row.dataset.mapName||!state.model.cycle.includes(row.dataset.mapName)){clearMapDrop();return}event.preventDefault();const after=row.classList.contains('drop-after');const cycle=state.model.cycle.filter(name=>name!==source);cycle.splice(cycle.indexOf(row.dataset.mapName)+(after?1:0),0,source);state.model.cycle=cycle;clearMapDrop();renderMaps();updateSummary();notify(t('maps.moved')+source)});
+$('mapRows').addEventListener('dragend',()=>{draggedMap=null;clearMapDrop()});
+
+loadDemo();
+if(window.CS16Panel)initPanel();
+</script>
+</body></html>
