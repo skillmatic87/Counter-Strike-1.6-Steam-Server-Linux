@@ -1,6 +1,10 @@
 # Verification and remaining acceptance checks
 
-Preview 0.1.0 targets Linux Mint 22.x x86-64. Automated configuration/assembly checks on a Windows development machine do not establish native Linux execution or public reachability.
+Preview 0.1.1 targets Linux Mint 22.x x86-64. Automated configuration/assembly checks on a Windows development machine do not establish native Linux execution or public reachability.
+
+## Repository identity review — 2026-11-09
+
+The Steam package has its own repository, separate from CS 1.5 Non-Steam. Version 0.1.1 corrects the English/German panel repository label and the attribution link. All 26 Python tests and the Node configurator checks passed again on Windows. Package payload hashes were checked against the content manifest. This review adds no native Linux, Steam authentication or Internet gameplay evidence; the acceptance items below remain open.
 
 ## Development results — 2026-11-05
 

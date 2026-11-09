@@ -1,6 +1,6 @@
 # Sources, versions and notices
 
-This project adapts the operator's existing [CS 1.5 server installer and local panel](https://github.com/skillmatic87/Half-Life-Counter-Strike-1.5-Server). The original project and its operator data remain separate. This repository distributes installer code and selected content, not a repack of Valve's server binaries.
+This project adapts the operator's existing [CS 1.5 Non-Steam server installer and local panel](https://github.com/skillmatic87/HL-noSteam). The original project and its operator data remain separate. This repository distributes installer code and selected content, not a repack of Valve's server binaries.
 
 | Component | Source |
 | --- | --- |

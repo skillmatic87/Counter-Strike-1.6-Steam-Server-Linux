@@ -2,6 +2,12 @@
 
 The package uses semantic versions. Git tags use the `v` prefix; `VERSION` contains the numeric version. Until the native Mint and Internet acceptance checks pass, releases are marked as previews on GitHub.
 
+## 0.1.1 — 2026-11-09
+
+- Correct the English/German panel repository label to Counter-Strike 1.6 Steam.
+- Document separate Steam and Non-Steam repositories, platforms and compatibility.
+- Native Linux/Steam/Internet acceptance remains open as documented in `docs/TESTING.md`.
+
 ## 0.1.0 — 2026-11-05
 
 Initial Linux Mint 22.x preview:

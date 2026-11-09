@@ -2,9 +2,20 @@
 
 A standalone installer for a **32-slot public Steam server on Linux Mint 22.x x86-64**, with bots, chat sounds, custom maps, persistent StatsX ranking, nominations, map voting and a local English/German browser panel.
 
-**Preview 0.1.0.** Automated checks and real-component assembly are documented in [test results](docs/TESTING.md). Native Mint startup, Steam authentication, VAC status and external Internet access require the acceptance checks there. A successful installation alone does not establish Internet reachability.
+**Preview 0.1.1.** Automated checks and real-component assembly are documented in [test results](docs/TESTING.md). Native Mint startup, Steam authentication, VAC status and external Internet access require the acceptance checks there. A successful installation alone does not establish Internet reachability.
 
 The central package version is recorded in [VERSION](VERSION), with changes in [CHANGELOG.md](CHANGELOG.md). Download versioned previews from [GitHub Releases](https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux/releases). Each release uses a matching `v` tag and includes an installer ZIP plus a SHA-256 checksum. Future package changes must increment `VERSION` and update the changelog; existing releases are kept unchanged.
+
+## Separate Steam and Non-Steam repositories
+
+| Edition | Repository | Platforms and source branch |
+| --- | --- | --- |
+| Counter-Strike 1.5 Non-Steam | [HL-noSteam](https://github.com/skillmatic87/HL-noSteam) | Windows: `main`; Linux Mint: `linux-mint-server` |
+| Counter-Strike 1.6 Steam | [Counter-Strike-1.6-Steam-Server-Linux](https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux) | Linux Mint: `main` |
+
+These are separate server packages. CS 1.5 uses the historical WON/LAN server and compatible clients. CS 1.6 uses SteamCMD, Steam clients and Steam-ID administration. Install each in its own directory; their engines, administrators and ranking files are not interchangeable. The Steam package currently supplies a Linux installer only.
+
+The Non-Steam repository keeps its historical `HL-noSteam` URL and ZIP folder names to preserve the archive identity expected by Linux package updaters. Follow the package update instructions when upgrading older ZIPs.
 
 ## Install
 
