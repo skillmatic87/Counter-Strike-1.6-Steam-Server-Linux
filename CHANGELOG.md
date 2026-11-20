@@ -1,3 +1,8 @@
+## 0.2.2 — 2026-11-20
+
+- Chat AI recognizes the full bot name on its own, at the start of a message, or after a greeting such as `hi` or `hey`.
+- Directed replies appear privately in the requester's chat, including after the player or bot dies. Team-chat requests require a bot on the same team.
+
 ## 0.2.1 — 2026-11-20
 
 - Converted the English bot-chat phrases and reply topics to the YaPB 4.8 configuration format.

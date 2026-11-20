@@ -41,7 +41,8 @@ def check(server, mode):
     assert (server / 'cstrike/addons/amxmodx/modules/easy_http_amxx_i386.so').exists() == (mode != 'off')
     if mode != 'off':
         chat_source = (server / 'cstrike/addons/amxmodx/scripting/yapb_chat_ai.sma').read_text(encoding='utf-8')
-        assert 'remove_quotes (addressed);' in chat_source
+        assert 'remove_quotes (text);' in chat_source
+        assert 'client_print_color (sender, bot,' in chat_source
     chat = (server / 'cstrike/addons/yapb/conf/lang/en_chat.cfg').read_text(encoding='ascii')
     assert '; @version: 4.8\n' in chat and 'raw Killed {' in chat and '\nReplies {' in chat
     assert (server / '_setup/chat-ai/model.gguf').exists() == (mode == 'local')

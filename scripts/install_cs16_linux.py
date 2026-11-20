@@ -21,6 +21,7 @@ from install_common import (digest, download, extract, read_json, safe_path, ver
 from settings import DEFAULTS, get_settings, check_bind, prepare_ranking
 from project_version import VERSION
 from chat_ai_runtime import CONFIG as CHAT_AI_CONFIG, KEY as CHAT_AI_KEY
+from yapb_chat_ai import patch_chat_ai_source
 
 ROOT = Path(__file__).resolve().parents[1]
 CLASSIC_SOUNDS = ('dominating doublekill firstblood godlike headshot humiliation '
@@ -177,21 +178,6 @@ def enable_entry(path, entry):
         path.write_bytes((original.rstrip() + '\n' + entry + '\n').lstrip('\n').encode('latin1'))
 
 
-def normalize_chat_ai_say_source(path):
-    source = path.read_text(encoding='utf-8')
-    lookup = '    if (get_pcvar_num (g_addressed)) {\n      bot = find_addressed_bot (sender, message,'
-    if source.count(lookup) != 1:
-        raise ValueError('The pinned YaPB Chat AI address lookup has changed.')
-    normalized = ('    if (get_pcvar_num (g_addressed)) {\n'
-                  '      // The engine forwards the raw say argument, including enclosing quotes.\n'
-                  '      new addressed[CHAT_TEXT_SIZE];\n'
-                  '      copy (addressed, charsmax (addressed), message);\n'
-                  '      trim (addressed);\n'
-                  '      remove_quotes (addressed);\n'
-                  '      bot = find_addressed_bot (sender, addressed,')
-    path.write_text(source.replace(lookup, normalized), encoding='utf-8', newline='\n')
-
-
 def install_chat_ai(server, work, archives, settings, api_key='', compiler=None, check_native=True):
     mode = settings.get('ChatAIMode', 'off')
     if mode == 'off':
@@ -212,7 +198,7 @@ def install_chat_ai(server, work, archives, settings, api_key='', compiler=None,
         check_libraries(server, ('cstrike/addons/amxmodx/modules/yapb_amxx_i386.so',
                                 'cstrike/addons/amxmodx/modules/easy_http_amxx_i386.so'))
     chat_source = amxx / 'scripting/yapb_chat_ai.sma'
-    normalize_chat_ai_say_source(chat_source)
+    patch_chat_ai_source(chat_source)
     compile_one(compiler or amxx / 'scripting/amxxpc', chat_source,
                 amxx / 'plugins/yapb_chat_ai.amxx', [amxx / 'scripting/include'], work / 'yapb-chat-ai-compile.txt')
     enable_entry(amxx / 'configs/modules.ini', 'easy_http')
