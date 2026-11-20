@@ -1,5 +1,10 @@
 # Verification and remaining acceptance checks
 
+## Preview 0.2.2
+
+- A Steam client connected to the LAN test server sent `hi Drag, quick sound check?`. Drag was already dead, and the player died during generation. The local model returned HTTP 200, AMX Mod X recorded one direct delivery, and the same English line appeared once in the client's console.
+- The Mint unit suite and installer assemblies for Chat AI off and API mode passed.
+
 ## Preview 0.2.1
 
 - The converted English chat loaded in YaPB 4.8.1432 on `de_dust2`, after a change to `de_rats_2001`, and after restart. The console reported no chat configuration errors.

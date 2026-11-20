@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "package": "cs16",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "scope": "Distribution payload only; installed game/server/state/backups are excluded",
   "previous_manifests": [
     {
@@ -15,6 +15,10 @@
     {
       "path": "package-files.json",
       "sha256": "87f95cae6a8269bc0913ef2e0195a8ed8eea5e52c163747ca16aa9e235b55e26"
+    },
+    {
+      "path": "package-files.json",
+      "sha256": "143279cde519a0c2a859988d119100522487e63c0bd54d16d3e14f3493545677"
     }
   ],
   "files": [
@@ -46,7 +50,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0b1fa7a922d132cc0e71445664040b1ee8e32e5a965d8f497386161efbaa50b7",
+      "sha256": "6fb5fc1243242759a3ea47ef024fc70499795319ca226d5f38c3b6dded174806",
       "previous": [
         {
           "path": "CHANGELOG.md",
@@ -70,6 +74,10 @@
         {
           "path": "CHANGELOG.md",
           "sha256": "6d7a5d7f990ca8e6f2a72ca4609a43937967073e2faea136843449bf9dd7d733"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "0b1fa7a922d132cc0e71445664040b1ee8e32e5a965d8f497386161efbaa50b7"
         }
       ],
       "new": false
@@ -148,7 +156,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
+      "sha256": "998f6b887ed7a6ef44e84210d0237b715bed42ea7254f48dc418afec0a484103",
       "previous": [
         {
           "path": "VERSION",
@@ -165,6 +173,10 @@
         {
           "path": "VERSION",
           "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6"
         }
       ],
       "new": false
@@ -1602,7 +1614,7 @@
     },
     {
       "path": "docs/INSTALL.md",
-      "sha256": "4d68befc61d8a59037dc81f75de7f0bf004918dcfb275e90f7eb79bbc0ccc851",
+      "sha256": "1886e2c2e1dbd18b5d01be3133a951edfe77abf161b44d5361dbb8b3ebb127c0",
       "previous": [
         {
           "path": "docs/INSTALL.md",
@@ -1617,6 +1629,10 @@
         {
           "path": "docs/INSTALL.md",
           "sha256": "a6b308d5d43674392a600425a6b38a054f72bfedc420c86717c339e0f08123f1"
+        },
+        {
+          "path": "docs/INSTALL.md",
+          "sha256": "4d68befc61d8a59037dc81f75de7f0bf004918dcfb275e90f7eb79bbc0ccc851"
         }
       ],
       "new": false
@@ -1639,7 +1655,7 @@
     },
     {
       "path": "docs/TESTING.md",
-      "sha256": "ec6fc97a56a4dcf93db372d753cad52be06b15b25a7270bde08b729480521788",
+      "sha256": "04f1769f4ba3a860767f63d2ab601428d3c5e153a85848260cdacd7ac3f89938",
       "previous": [
         {
           "path": "docs/TESTING.md",
@@ -1658,6 +1674,10 @@
         {
           "path": "docs/TESTING.md",
           "sha256": "8be5f57699e140157cfa7594ee6f76ced24344ae06a60cd89a4c2180b2ff4fd7"
+        },
+        {
+          "path": "docs/TESTING.md",
+          "sha256": "ec6fc97a56a4dcf93db372d753cad52be06b15b25a7270bde08b729480521788"
         }
       ],
       "new": false
@@ -1710,7 +1730,7 @@
     },
     {
       "path": "scripts/check_assembly.py",
-      "sha256": "988ac113a16a39bcb84e677dbd9f132702136ef9ea9450419de0091ee0215e62",
+      "sha256": "291bdc19472796b5ddbfb2b7e1828519a79ba998ef5004c55cdbf6683c2f8a3b",
       "previous": [
         {
           "path": "scripts/check_assembly.py",
@@ -1724,6 +1744,10 @@
         {
           "path": "scripts/check_assembly.py",
           "sha256": "07d37f022148b53f7ec9fb610e1b6aae1da84764017878721a653663f79a02ab"
+        },
+        {
+          "path": "scripts/check_assembly.py",
+          "sha256": "988ac113a16a39bcb84e677dbd9f132702136ef9ea9450419de0091ee0215e62"
         }
       ],
       "new": false
@@ -1779,7 +1803,7 @@
     },
     {
       "path": "scripts/install_cs16_linux.py",
-      "sha256": "51ae95c7ca6f25c245db6e795084d5c99869476c8aa0f2f466df5751a53f15e1",
+      "sha256": "6da1be1c42b80e096122e6cf7b7958f2299b712fe45991d563d406bdf9678f20",
       "previous": [
         {
           "path": "scripts/install_cs16_linux.py",
@@ -1798,6 +1822,10 @@
         {
           "path": "scripts/install_cs16_linux.py",
           "sha256": "03d4f39d53a69c33573da5d6c9c7f51edc16f3b2ecebbe5c7f04f6b22f1df7a5"
+        },
+        {
+          "path": "scripts/install_cs16_linux.py",
+          "sha256": "51ae95c7ca6f25c245db6e795084d5c99869476c8aa0f2f466df5751a53f15e1"
         }
       ],
       "new": false
@@ -2064,6 +2092,12 @@
         }
       ],
       "new": false
+    },
+    {
+      "path": "scripts/yapb_chat_ai.py",
+      "sha256": "7fdf897ea9ba08cc8a50b15078314fa46fd311b6aaa8199a33cd759c640bb6dd",
+      "previous": [],
+      "new": true
     },
     {
       "path": "setup-linux.sh",

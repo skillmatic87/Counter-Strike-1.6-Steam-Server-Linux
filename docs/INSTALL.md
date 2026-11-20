@@ -51,7 +51,7 @@ For unattended API setup set `"ChatAIMode": "api"`, `"ChatAIEndpoint": "https://
 
 Both enabled modes listen only on the configured local TCP port. Choose a distinct `ChatAIPort` for each installation on the same computer. Starting or stopping the server through the shell or panel also starts or stops its backend. In local mode the built-in Llama Chat UI is available at `http://127.0.0.1:18081/` on the server computer while the game is running.
 
-Use the exact name of a living bot in public chat while you are alive, for example `BotName, where should we go?`. AI replies request one short English sentence and are limited to one request per player every six seconds. Keep the configured TCP port local. The game connection uses the separate UDP port.
+Use the bot's full name in public chat. For example, type `BotName`, `Hi BotName`, or `BotName, where should we go?`. In team chat, address a bot on your team. The reply appears privately in your chat even if you or the bot die. AI replies request one short English sentence and are limited to one request per player every six seconds. Keep the configured TCP port local. The game connection uses the separate UDP port.
 
 ## Installation failures
 
