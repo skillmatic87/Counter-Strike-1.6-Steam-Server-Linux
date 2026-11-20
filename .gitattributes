@@ -23,3 +23,5 @@ VERSION text eol=lf
 
 # Publishing requests belong to the repository, not the downloadable server package.
 /.github export-ignore
+/vendor/*.tar.xz binary
+/vendor/YAPB-GRAPH-CREDITS.md whitespace=-blank-at-eol

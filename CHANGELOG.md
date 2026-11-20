@@ -1,4 +1,23 @@
+## 0.2.0 — 2026-11-19
+
+- YaPB 4.8.1432 on ReGameDLL 5.30.0.814. The distribution includes the checksum-pinned YaPB archive.
+- Opt-in English Chat AI with on-device Qwen or an OpenAI-compatible endpoint. Both are restricted to direct bot mentions.
+- Console and panel starts manage the loopback Chat AI backend for the game session.
+
+## 0.1.3 — 2026-11-10
+
+- English-first bilingual browser panel with assigned game endpoints and copyable connection commands.
+- Lowercase public launchers, independent source-package manifest and explicit offline migration with validated rollback.
+- Visible server terminals retained; direct Sven Steam starter and cross-platform launch/migration coordination added.
+- Configuration, credentials, rankings and third-party engine interfaces are preserved.
+
 # Changelog
+
+## 0.1.2 — 2026-11-09
+
+- Panel starts the server in its own named interactive GNOME Terminal instead of redirecting the whole console into a background file.
+- Separate private session recordings and terminal-loss/parent-death protection reuse the tested CS 1.5 recorder as an independent package component.
+- Steam authentication, server configuration and ranking files are retained.
 
 The package uses semantic versions. Git tags use the `v` prefix; `VERSION` contains the numeric version. Until the native Mint and Internet acceptance checks pass, releases are marked as previews on GitHub.
 

@@ -3,12 +3,15 @@ COUNTER-STRIKE 1.6 STEAM SERVER / LINUX MINT 22.x
 Read README.md for the one-time prerequisite commands.
 Open a terminal in this extracted directory, then run as your regular user:
 
-  bash Setup-Linux.sh
-  bash Start-Server.sh
+  bash setup-linux.sh
+  bash start-server.sh
+
+At the Chat AI prompt, choose off (default), local Qwen, or your own
+OpenAI-compatible API. See docs/INSTALL.md for the setup fields.
 
 For the local English/German control panel:
 
-  bash Start-Panel.sh
+  bash start-panel.sh
 
 Your server is installed into CS16Server-Linux.
 Keep ADMIN.local.txt and generated server data private.

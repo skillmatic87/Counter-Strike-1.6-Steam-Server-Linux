@@ -1,6 +1,10 @@
 # Verification and remaining acceptance checks
 
-Preview 0.1.1 targets Linux Mint 22.x x86-64. Automated configuration/assembly checks on a Windows development machine do not establish native Linux execution or public reachability.
+## Preview 0.2.0
+
+- Mint 22.3, x86-64. Fresh SteamCMD installation with local Chat AI started with six bots on `de_dust2`, switched to `de_rats_2001` and restarted on `de_dust2`. The local model stopped with the game on each shutdown.
+- A simulated addressed chat event produced one English Chat AI reply. A general message produced no model request. The Steam-client chat display remains a manual acceptance check.
+- Installer fixtures cover off and API modes. The API test checks model forwarding, bearer authentication and an upstream error against a local test provider. The native local-mode run uses the pinned GGUF and llama.cpp distribution.
 
 ## Repository identity review — 2026-11-09
 
@@ -22,7 +26,7 @@ The Steam package has its own repository, separate from CS 1.5 Non-Steam. Versio
 ```bash
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
 node scripts/test_configurator.cjs
-bash -n Setup-Linux.sh Start-Server.sh Start-Panel.sh
+bash -n setup-linux.sh start-server.sh start-panel.sh
 ```
 
 The optional real-component assembly test uses verified cached Linux archives and the matching upstream AMXX compiler:
@@ -47,4 +51,4 @@ It supplies a **synthetic Valve directory** because Valve installation and execu
 - Panel can save/review/restore settings, change administrators and rotate credentials while stopped.
 - Follow the Internet guide: direct join and custom downloads from another Internet connection; server-browser listing tested separately.
 
-Native Mint execution, actual Steam/VAC authentication, external connectivity, two-human audio and a 32-client load test remain **open** until recorded here with actual observations.
+External connectivity, two-human audio and a 32-client load test remain open. A LAN test and a Steam/VAC status probe cover server readiness for separate acceptance checks.

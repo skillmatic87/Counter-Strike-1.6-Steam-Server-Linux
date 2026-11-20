@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Install a fresh native Counter-Strike 1.6 Steam server for Linux Mint 22.x."""
+from package_guard import exclusive_command
 import argparse
+import getpass
 import hashlib
 import json
 import os
@@ -12,11 +14,13 @@ import shutil
 import struct
 import subprocess
 import sys
+from urllib.parse import urlsplit
 
-from install_common import (download, extract, read_json, safe_path, verified_bytes,
+from install_common import (digest, download, extract, read_json, safe_path, verified_bytes,
                             write_text)
 from settings import DEFAULTS, get_settings, check_bind, prepare_ranking
 from project_version import VERSION
+from chat_ai_runtime import CONFIG as CHAT_AI_CONFIG, KEY as CHAT_AI_KEY
 
 ROOT = Path(__file__).resolve().parents[1]
 CLASSIC_SOUNDS = ('dominating doublekill firstblood godlike headshot humiliation '
@@ -41,7 +45,8 @@ def replace_cvars(path, values):
         text, count = re.subn(pattern, lambda _: key + ' ' + value, text)
         if not count:
             text += '\n' + key + ' ' + value + '\n'
-    write_text(path, text.replace('\r\n', '\n'))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(text.replace('\r\n', '\n').encode('latin1'))
 
 
 def single_root(path):
@@ -121,6 +126,112 @@ def compile_plugins(server, compiler=None):
         source = work / f'ranking/{score}.sma'
         write_text(source, '#include <amxmodx>\npublic get_score(stats[11], body[MAX_BODYHITS]) { return ' + expression + '; }\n')
         compile_one(compiler, source, source.with_suffix('.amxx'), includes, source.with_suffix('.log'))
+
+
+def component_archive(entry, cache):
+    if 'bundledPath' not in entry:
+        return download(entry, cache)
+    archive = safe_path(ROOT, entry['bundledPath'])
+    if not archive.is_file() or digest(archive) != entry['sha256']:
+        raise ValueError(f"Missing or corrupt bundled component: {entry['file']}")
+    return archive
+
+
+def read_api_key(settings, path=None, interactive=False):
+    if settings['ChatAIMode'] != 'api':
+        if path:
+            raise ValueError('--chat-ai-key-file requires ChatAIMode api.')
+        return ''
+    if interactive:
+        print('API mode sends addressed messages and game context to the configured provider.')
+    key = path.expanduser().read_text(encoding='ascii').strip() if path else (
+        getpass.getpass('Provider API key (blank for an unauthenticated endpoint): ') if interactive else '')
+    if key and not re.fullmatch(r'[\x21-\x7e]{1,4096}', key):
+        raise ValueError('The provider key must be one line of printable ASCII.')
+    url = urlsplit(settings['ChatAIEndpoint'])
+    if key and url.scheme != 'https' and url.hostname not in ('localhost', '127.0.0.1', '::1'):
+        raise ValueError('Use HTTPS for an authenticated API outside the computer.')
+    return key
+
+
+def install_regamedll(server, work):
+    source = work / 'regamedll/bin/linux32/cstrike'
+    game = server / 'cstrike'
+    for name in ('dlls/cs.so', 'game.cfg', 'game_init.cfg', 'delta.lst'):
+        shutil.copyfile(source / name, game / name)
+
+
+def ensure_bot_directories(root):
+    # Upstream stores some empty YaPB data directories as zero-byte archive members.
+    for name in ('graph', 'logs', 'pwf', 'train'):
+        path = safe_path(root, 'data/' + name)
+        if path.is_file() and path.stat().st_size == 0:
+            path.unlink()
+        path.mkdir(parents=True, exist_ok=True)
+
+
+def enable_entry(path, entry):
+    original = path.read_text(encoding='latin1') if path.exists() else ''
+    if not any(line.split(';', 1)[0].strip().lower() == entry.lower() for line in original.splitlines()):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes((original.rstrip() + '\n' + entry + '\n').lstrip('\n').encode('latin1'))
+
+
+def install_chat_ai(server, work, archives, settings, api_key='', compiler=None, check_native=True):
+    mode = settings.get('ChatAIMode', 'off')
+    if mode == 'off':
+        return
+    amxx = server / 'cstrike/addons/amxmodx'
+    bots_amxx = work / 'bots/addons/amxmodx'
+    easyhttp = work / 'easyhttp/addons/amxmodx'
+    for source, target in (
+        (bots_amxx, 'modules/yapb_amxx_i386.so'),
+        (bots_amxx, 'scripting/include/yapb.inc'),
+        (bots_amxx, 'scripting/yapb_chat_ai.sma'),
+        (easyhttp, 'modules/easy_http_amxx_i386.so'),
+        (easyhttp, 'scripting/include/easy_http.inc'),
+        (easyhttp, 'scripting/include/easy_http_json.inc'),
+    ):
+        shutil.copyfile(source / target, amxx / target)
+    if check_native and sys.platform == 'linux':
+        check_libraries(server, ('cstrike/addons/amxmodx/modules/yapb_amxx_i386.so',
+                                'cstrike/addons/amxmodx/modules/easy_http_amxx_i386.so'))
+    compile_one(compiler or amxx / 'scripting/amxxpc', amxx / 'scripting/yapb_chat_ai.sma',
+                amxx / 'plugins/yapb_chat_ai.amxx', [amxx / 'scripting/include'], work / 'yapb-chat-ai-compile.txt')
+    enable_entry(amxx / 'configs/modules.ini', 'easy_http')
+    enable_entry(amxx / 'configs/modules.ini', 'yapb_amxx')
+    enable_entry(amxx / 'configs/plugins.ini', 'yapb_chat_ai.amxx')
+    port = settings.get('ChatAIPort', DEFAULTS['ChatAIPort'])
+    config = dict(mode=mode, port=port)
+    if mode == 'api':
+        config.update(endpoint=settings['ChatAIEndpoint'], model=settings['ChatAIModel'])
+        if api_key:
+            write_text(server / CHAT_AI_KEY, api_key + '\n')
+    else:
+        unpacked = work / 'chat-ai/llama'
+        extract(archives['llama'], unpacked, library_aliases=True)
+        bundle = single_root(unpacked)
+        bundle.rename(work / 'chat-ai/runtime')
+        unpacked.rmdir()
+        (work / 'chat-ai/runtime').rename(unpacked)
+        shutil.copyfile(archives['model'], work / 'chat-ai/model.gguf')
+    write_text(server / CHAT_AI_CONFIG, json.dumps(config, indent=2) + '\n')
+    write_text(amxx / 'configs/plugins/yapb_chat_ai.cfg', f'''yb_chat_ai_enabled 1
+yb_chat_ai_debug 0
+yb_chat_ai_override_human 1
+yb_chat_ai_override_bot 0
+yb_chat_ai_override_dead 0
+yb_chat_ai_bot_talk 0
+yb_chat_ai_addressed 1
+yb_chat_ai_strict 0
+yb_chat_ai_temperature 0.5
+yb_chat_ai_max_tokens 48
+yb_chat_ai_reply_chars 120
+yb_chat_ai_cooldown 6.0
+yb_chat_ai_url "http://127.0.0.1:{port}/v1/chat/completions"
+yb_chat_ai_model "yapb-local"
+yb_chat_ai_prompt_human "You are a CS 1.6 bot. Answer the player's message in casual English, one short sentence. Use the match context. Do not echo the question or include speaker names."
+''')
 
 
 def bsp_capacity(path):
@@ -211,7 +322,7 @@ log on
     write_text(amxx / 'configs/stats.ini', 'KillerChat\nShowAttackers\nShowVictims\nSayHP\nSayStatsMe\nSayRankStats\nSayMe\nSayRank\nSayTop15\nSayStatsAll\n')
     replace_cvars(server / 'cstrike/addons/yapb/conf/yapb.cfg', {
         'yb_quota':str(settings['BotTarget']), 'yb_quota_mode':'"fill"',
-        'yb_difficulty':str(settings['BotDifficulty']), 'yb_autovacate':'1',
+        'yb_difficulty':str(settings['BotDifficulty']), 'yb_autovacate':'1', 'yb_language':'"en"',
         'yb_password':f'"{bot_password}"', 'yb_password_key':'"_ybpw"'})
     write_text(amxx / 'configs/SND-LIST.CFG', f'SND_MAX; {settings["SoundQuota"]}\nSND_MAX_DUR; 180.0\n'
                f'SND_WARN; {max(1, settings["SoundQuota"]-3)}\nSND_JOIN;\nSND_EXIT;\n'
@@ -229,6 +340,31 @@ Panel changes may replace credentials; see its Administration tab.
 ''')
 
 
+def install_runtime(server, settings):
+    (server / '_setup/tools').mkdir(exist_ok=True)
+    for name in ('settings.py', 'install_common.py', 'project_version.py', 'chat_ai_runtime.py'):
+        shutil.copyfile(ROOT / 'scripts' / name, server / '_setup/tools' / name)
+    command = (f'./hlds_linux -game cstrike -port {settings["Port"]} +ip {settings["BindAddress"]} '
+               '+sv_lan 0 +maxplayers 32 +map de_dust2 "$@"')
+    write_text(server / 'Start-CS16.sh', '#!/usr/bin/env bash\nset -euo pipefail\n'
+               'cd -- "$(dirname -- "${BASH_SOURCE[0]}")"\n'
+               'if [[ -e .install-incomplete ]]; then echo "Installation is incomplete." >&2; exit 1; fi\n'
+               'if (( EUID == 0 )); then echo "Run as a regular user." >&2; exit 1; fi\n'
+               'python3 _setup/tools/settings.py "$PWD"\n'
+               'export LD_LIBRARY_PATH="$PWD${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"\n'
+               'if [[ -f _setup/chat-ai/config.json ]]; then\n'
+               f'    exec python3 _setup/tools/chat_ai_runtime.py "$PWD" {command}\n'
+               'fi\n'
+               f'exec {command}\n', 0o700)
+
+
+def write_component_report(server, entries):
+    write_text(server / 'COMPONENTS-linux.json', json.dumps(dict(schemaVersion=1, packageVersion=VERSION, components=list(entries.values())), indent=2)+'\n')
+    shutil.copyfile(ROOT / 'docs/THIRD-PARTY.md', server / 'THIRD-PARTY.md')
+    for name in ('YAPB-UNLICENSE.txt',):
+        shutil.copyfile(ROOT / 'vendor' / name, server / '_setup' / name)
+
+
 def finalize(server, settings, entries, native_base=True):
     game = server / 'cstrike'
     graphs = single_root(server / '_setup/graphs') / 'graph'
@@ -244,20 +380,9 @@ def finalize(server, settings, entries, native_base=True):
     write_text(game / 'mapcycle.txt', ''.join(f'{m["name"]} "\\minplayers\\0\\maxplayers\\{m["maxPlayers"]}"\n' for m in capacities))
     write_text(game / 'addons/amxmodx/configs/maps.ini', ''.join(f'{m["name"]} 0 {m["maxPlayers"]}\n' for m in capacities))
     write_text(server / '_setup/maps.json', json.dumps(capacities, indent=2)+'\n')
-    (server / '_setup/tools').mkdir(exist_ok=True)
-    for name in ('settings.py', 'install_common.py', 'project_version.py'):
-        shutil.copyfile(ROOT / 'scripts' / name, server / '_setup/tools' / name)
+    install_runtime(server, settings)
     prepare_ranking(server)
-    write_text(server / 'Start-CS16.sh', '#!/usr/bin/env bash\nset -euo pipefail\n'
-               'cd -- "$(dirname -- "${BASH_SOURCE[0]}")"\n'
-               'if [[ -e .install-incomplete ]]; then echo "Installation is incomplete." >&2; exit 1; fi\n'
-               'if (( EUID == 0 )); then echo "Run as a regular user." >&2; exit 1; fi\n'
-               'python3 _setup/tools/settings.py "$PWD"\n'
-               'export LD_LIBRARY_PATH="$PWD${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"\n'
-               f'exec ./hlds_linux -game cstrike -port {settings["Port"]} +ip {settings["BindAddress"]} '
-               '+sv_lan 0 +maxplayers 32 +map de_dust2 "$@"\n', 0o700)
-    write_text(server / 'COMPONENTS-linux.json', json.dumps(dict(schemaVersion=1, packageVersion=VERSION, components=list(entries.values())), indent=2)+'\n')
-    shutil.copyfile(ROOT / 'docs/THIRD-PARTY.md', server / 'THIRD-PARTY.md')
+    write_component_report(server, entries)
     (server / 'hlds_linux').chmod(0o755)
     # Steam's SDK uses this per-user location; preserve existing client installations.
     if sys.platform == 'linux' and native_base:
@@ -269,23 +394,38 @@ def finalize(server, settings, entries, native_base=True):
     (server / '.install-incomplete').unlink()
 
 
-def assemble(server, cache, settings, compiler=None, valve_installer=install_valve, native_base=True):
+def selected_components(settings):
+    excluded = {
+        'off': {'easyhttp', 'llama', 'model'},
+        'api': {'llama', 'model'},
+        'local': set(),
+    }[settings.get('ChatAIMode', 'off')]
+    return {key: entry for key, entry in components().items() if key not in excluded}
+
+
+def assemble(server, cache, settings, compiler=None, valve_installer=install_valve, native_base=True, api_key=''):
     if server.exists() or server.is_symlink():
         raise ValueError('Destination already exists. Choose a new directory.')
-    entries = components()
-    archives = {key:download(entry, cache) for key,entry in entries.items()}
+    entries = selected_components(settings)
+    archives = {key:component_archive(entry, cache) for key,entry in entries.items()}
     server.mkdir(mode=0o700, parents=True, exist_ok=False)
     write_text(server / '.install-incomplete', 'Setup is incomplete. Do not start.\n')
     work = server / '_setup'
     work.mkdir(exist_ok=True)
-    for key in ('steamcmd', 'rehlds', 'metamod', 'amxx', 'cstrike', 'bots', 'sounds', 'sank', 'mapmanager', 'graphs'):
+    for key in ('steamcmd', 'rehlds', 'regamedll', 'metamod', 'amxx', 'cstrike', 'bots',
+                'sounds', 'sank', 'mapmanager', 'graphs', 'easyhttp'):
+        if key not in archives:
+            continue
         extract(archives[key], work / key)
     if sys.platform == 'linux':
         check_libraries(work / 'steamcmd', ['linux32/steamcmd'])
     valve_installer(server, work / 'steamcmd')
     shutil.copytree(work / 'rehlds/bin/linux32', server, dirs_exist_ok=True)
-    for key in ('metamod', 'amxx', 'cstrike', 'bots'):
+    install_regamedll(server, work)
+    for key in ('metamod', 'amxx', 'cstrike'):
         shutil.copytree(work / key / 'addons', server / 'cstrike/addons', dirs_exist_ok=True)
+    shutil.copytree(work / 'bots/addons/yapb', server / 'cstrike/addons/yapb', dirs_exist_ok=True)
+    ensure_bot_directories(server / 'cstrike/addons/yapb')
     shutil.copytree(work / 'sounds/sound', server / 'cstrike/sound', dirs_exist_ok=True)
     required = ('hlds_linux', 'engine_i486.so', 'cstrike/dlls/cs.so',
                 'cstrike/addons/metamod/metamod_i386.so',
@@ -301,6 +441,7 @@ def assemble(server, cache, settings, compiler=None, valve_installer=install_val
     compile_plugins(server, compiler)
     amxx = server / 'cstrike/addons/amxmodx'
     write_text(amxx / 'configs/plugins.ini', ''.join(name+'.amxx\n' for name in PLUGINS))
+    install_chat_ai(server, work, archives, settings, api_key, compiler, check_native=native_base)
     write_text(server / 'cstrike/addons/metamod/plugins.ini', 'linux addons/amxmodx/dlls/amxmodx_mm_i386.so\nlinux addons/yapb/bin/yapb.so\n')
     liblist = server / 'cstrike/liblist.gam'
     text, count = re.subn(r'(?m)^gamedll_linux\s+"[^"]+"', 'gamedll_linux "addons/metamod/metamod_i386.so"', liblist.read_text(encoding='ascii'))
@@ -329,6 +470,7 @@ def preflight():
         raise ValueError('Bash is required.')
 
 
+@exclusive_command(lambda: Path(__file__).resolve().parents[1])
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--version', action='version', version='Counter-Strike-1.6-Steam-Server-Linux ' + VERSION)
@@ -337,6 +479,7 @@ def main():
     parser.add_argument('--settings', type=Path, help='Private JSON; AdminSteamID is required, other values have defaults')
     parser.add_argument('--bind-address')
     parser.add_argument('--port', type=int)
+    parser.add_argument('--chat-ai-key-file', type=Path, help='Private bearer token file for ChatAIMode api')
     parser.add_argument('--check', action='store_true', help='Only check platform and prerequisites')
     args = parser.parse_args()
     preflight()
@@ -353,9 +496,12 @@ def main():
     if shutil.disk_usage(ancestor).free < 4 * 1024**3:
         raise ValueError('At least 4 GiB free space is required for setup and cached downloads.')
     settings = get_settings(args.settings, {k:v for k,v in dict(BindAddress=args.bind_address, Port=args.port).items() if v is not None})
+    api_key = read_api_key(settings, args.chat_ai_key_file, interactive=args.settings is None)
+    if settings['ChatAIMode'] == 'local' and shutil.disk_usage(ancestor).free < 7 * 1024**3:
+        raise ValueError('At least 7 GiB free space is required when installing the local model.')
     check_bind(settings['BindAddress'], settings['Port'])
     print('Installing a 32-slot public Steam server with these settings:\n'+json.dumps(settings, indent=2), flush=True)
-    assemble(destination, args.cache_directory.expanduser().absolute(), settings)
+    assemble(destination, args.cache_directory.expanduser().absolute(), settings, api_key=api_key)
     print(f'Installed: {destination}\nStart: bash "{destination / "Start-CS16.sh"}"\n'
           f'Local query: python3 scripts/server_query.py 127.0.0.1 --port {settings["Port"]}\n'
           'Internet access still requires router/firewall setup and an external-client test. See docs/INTERNET.md.\n'

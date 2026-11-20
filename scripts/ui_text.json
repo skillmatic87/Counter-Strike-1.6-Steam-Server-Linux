@@ -1,0 +1,14 @@
+{
+  "cs15": {
+    "en": "Choose CS 1.5 server folder",
+    "de": "CS 1.5 Serverordner auswählen"
+  },
+  "cs16": {
+    "en": "Choose CS 1.6 server folder",
+    "de": "CS 1.6 Serverordner auswählen"
+  },
+  "dod": {
+    "en": "Choose DoD 1.0 server folder",
+    "de": "DoD 1.0 Serverordner auswählen"
+  }
+}

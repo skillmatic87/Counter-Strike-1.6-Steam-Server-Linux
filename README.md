@@ -1,8 +1,10 @@
 # Counter-Strike 1.6 Steam Server for Linux Mint
 
+**Visible console update (0.1.2):** Starting from the panel opens a dedicated interactive **Counter-Strike 1.6 Steam Server** terminal. Install `gnome-terminal` and `util-linux` and open the panel from the Mint desktop. Each session is recorded in a private `logs/console/` file. The console recorder forwards terminal loss and protects its owned server process from an abandoned recording session.
+
 A standalone installer for a **32-slot public Steam server on Linux Mint 22.x x86-64**, with bots, chat sounds, custom maps, persistent StatsX ranking, nominations, map voting and a local English/German browser panel.
 
-**Preview 0.1.1.** Automated checks and real-component assembly are documented in [test results](docs/TESTING.md). Native Mint startup, Steam authentication, VAC status and external Internet access require the acceptance checks there. A successful installation alone does not establish Internet reachability.
+**Preview 0.2.0.** Automated checks, native Mint verification and the separate Internet acceptance test are described in [test results](docs/TESTING.md).
 
 The central package version is recorded in [VERSION](VERSION), with changes in [CHANGELOG.md](CHANGELOG.md). Download versioned previews from [GitHub Releases](https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux/releases). Each release uses a matching `v` tag and includes an installer ZIP plus a SHA-256 checksum. Future package changes must increment `VERSION` and update the changelog; existing releases are kept unchanged.
 
@@ -31,13 +33,15 @@ sudo apt install python3 ca-certificates iproute2 libc6:i386 libgcc-s1:i386 libs
 3. As your regular user, run:
 
 ```bash
-bash Setup-Linux.sh
-bash Start-Server.sh
+bash setup-linux.sh
+bash start-server.sh
 ```
 
 Setup asks for the administrator's **STEAM_0:X:Y** ID and displays editable defaults. Use `status` while connected to a Counter-Strike Steam server to find this ID. Initial installation downloads Valve server files through SteamCMD and checksum-pinned third-party components. Allow at least 4 GiB free space. Keep the repository files together.
 
-Run `bash Start-Panel.sh` to configure and start/stop the server in your browser. The panel is local to the laptop; it is not a public administration website. `Configure-Server.html` opened directly offers a read-only preview and portable game profiles.
+At the Chat AI prompt, choose **off** (default), **local** for English replies generated on the server's CPU, or **api** for an OpenAI-compatible provider. Local mode requires 7 GiB of free disk space during setup. [Chat AI setup](docs/INSTALL.md#optional-chat-ai)
+
+Run `bash start-panel.sh` to configure and start/stop the server in your browser. The panel is local to the laptop; it is not a public administration website. `Configure-Server.html` opened directly offers a read-only preview and portable game profiles.
 
 The server installs into a new `CS16Server-Linux` directory. Existing directories are never overwritten. Setup does not install a game client, change your router/firewall, or add a system service.
 
@@ -49,12 +53,14 @@ Players use regular Steam Counter-Strike 1.6. No shared game password is configu
 
 ## Included
 
-- ReHLDS 3.15.0.896 on Valve HLDS `steam_legacy`; original CS 1.6 GameDLL.
+- ReHLDS 3.15.0.896 on Valve HLDS `steam_legacy` with ReGameDLL 5.30.0.814.
 - Metamod-R 1.3.0.149 and AMXX 1.10-5487 with the Counter-Strike addon.
-- YaPB 4.4.957, Map Manager 2.5.61 and Sank Sounds 1.9.1.
+- YaPB 4.8.1432, optional YaPB Chat AI 2.2.0, Map Manager 2.5.61 and Sank Sounds 1.9.1.
 - The existing nostalgia pack: 13 custom maps, 122 chat-sound commands, join sound and selectable English botchat.
 - Steam-ID administrator access and ranking; map vote five minutes before map end.
 
 Custom-map spawn counts constrain rotation/voting. A 32-slot server does not imply that every map has 32 spawn points. Bot graphs are supplied; navigation quality still requires gameplay checks.
 
 See [installation and panel operation](docs/INSTALL.md), [Internet setup](docs/INTERNET.md), [third-party sources](docs/THIRD-PARTY.md) and [verification](docs/TESTING.md).
+
+See [consistent operation and offline migration](docs/UNIFORM-OPERATION.md) for English/German controls, game addresses, visible terminals and upgrading uppercase launchers.

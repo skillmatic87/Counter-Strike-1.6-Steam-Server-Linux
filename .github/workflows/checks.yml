@@ -3,6 +3,11 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: Publish a preview after checks
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -18,7 +23,7 @@ jobs:
           node-version: '22'
       - run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
       - run: node scripts/test_configurator.cjs
-      - run: bash -n Setup-Linux.sh Start-Server.sh Start-Panel.sh
+      - run: bash -n setup-linux.sh start-server.sh start-panel.sh
   linux-assembly:
     runs-on: ubuntu-24.04
     steps:
@@ -32,8 +37,9 @@ jobs:
           path: downloads
           key: cs16-components-${{ hashFiles('scripts/components.json', 'content/pack.json') }}
       - run: python3 scripts/check_assembly.py --cache-directory downloads
+      - run: python3 scripts/check_assembly.py --cache-directory downloads --chat-ai api
   release:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' && inputs.publish_release
     needs: [unit, linux-assembly]
     runs-on: ubuntu-24.04
     permissions:
