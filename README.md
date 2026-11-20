@@ -4,7 +4,7 @@
 
 A standalone installer for a **32-slot public Steam server on Linux Mint 22.x x86-64**, with bots, chat sounds, custom maps, persistent StatsX ranking, nominations, map voting and a local English/German browser panel.
 
-**Preview 0.2.0.** Automated checks, native Mint verification and the separate Internet acceptance test are described in [test results](docs/TESTING.md).
+**Preview 0.2.1.** Automated checks, native Mint verification and the separate Internet acceptance test are described in [test results](docs/TESTING.md).
 
 The central package version is recorded in [VERSION](VERSION), with changes in [CHANGELOG.md](CHANGELOG.md). Download versioned previews from [GitHub Releases](https://github.com/skillmatic87/Counter-Strike-1.6-Steam-Server-Linux/releases). Each release uses a matching `v` tag and includes an installer ZIP plus a SHA-256 checksum. Future package changes must increment `VERSION` and update the changelog; existing releases are kept unchanged.
 

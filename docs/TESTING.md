@@ -1,5 +1,10 @@
 # Verification and remaining acceptance checks
 
+## Preview 0.2.1
+
+- The converted English chat loaded in YaPB 4.8.1432 on `de_dust2`, after a change to `de_rats_2001`, and after restart. The console reported no chat configuration errors.
+- A simulated human chat event using GoldSrc's quoted `say` argument queued exactly one request and received an English completion. An unaddressed message queued no request.
+
 ## Preview 0.2.0
 
 - Mint 22.3, x86-64. Fresh SteamCMD installation with local Chat AI started with six bots on `de_dust2`, switched to `de_rats_2001` and restarted on `de_dust2`. The local model stopped with the game on each shutdown.

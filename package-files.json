@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "package": "cs16",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scope": "Distribution payload only; installed game/server/state/backups are excluded",
   "previous_manifests": [
     {
@@ -11,6 +11,10 @@
     {
       "path": "package-files.json",
       "sha256": "f6a1cce80a8d2ab4b9a517b90948be486113d8199ab4be554414e37fd9d97bca"
+    },
+    {
+      "path": "package-files.json",
+      "sha256": "87f95cae6a8269bc0913ef2e0195a8ed8eea5e52c163747ca16aa9e235b55e26"
     }
   ],
   "files": [
@@ -42,7 +46,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "6d7a5d7f990ca8e6f2a72ca4609a43937967073e2faea136843449bf9dd7d733",
+      "sha256": "0b1fa7a922d132cc0e71445664040b1ee8e32e5a965d8f497386161efbaa50b7",
       "previous": [
         {
           "path": "CHANGELOG.md",
@@ -62,6 +66,10 @@
           "path": "CHANGELOG.md",
           "sha256": "00483c4628f636f0afc66d6556f333b29efea2484cad7f1f86f466fe115a8843",
           "normalized_sha256": "00483c4628f636f0afc66d6556f333b29efea2484cad7f1f86f466fe115a8843"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "6d7a5d7f990ca8e6f2a72ca4609a43937967073e2faea136843449bf9dd7d733"
         }
       ],
       "new": false
@@ -89,7 +97,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9bd8da3f9fb0e6e8d6c48c9ebf32f3adbee3ebe90c259e684436bb4c31eb4e24",
+      "sha256": "0f5b4a2b316caccedc5dc6da518605ca76998b2d977a3d92e7f99e41056f1170",
       "previous": [
         {
           "path": "README.md",
@@ -109,6 +117,10 @@
           "path": "README.md",
           "sha256": "c9d7b4c552e329a5429880c3b5336bb13789363afa9f479bf03201378ec78af4",
           "normalized_sha256": "c9d7b4c552e329a5429880c3b5336bb13789363afa9f479bf03201378ec78af4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "9bd8da3f9fb0e6e8d6c48c9ebf32f3adbee3ebe90c259e684436bb4c31eb4e24"
         }
       ],
       "new": false
@@ -136,7 +148,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9",
+      "sha256": "71015c979ccb0fc8a0be7ca0ae83046ab045cdc2c8faa09fb2f0f7e440f9b4a6",
       "previous": [
         {
           "path": "VERSION",
@@ -149,6 +161,10 @@
         {
           "path": "VERSION",
           "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
         }
       ],
       "new": false
@@ -187,7 +203,7 @@
     },
     {
       "path": "content/files/cstrike/addons/yapb/conf/lang/en_chat.cfg",
-      "sha256": "352ab24e51fb8ecad3f57cec9ce53b6d03478a8a5a0b895bf9c61e6a98fea098",
+      "sha256": "810f8ec1a88b3d02ce286aa68c1e6e829b0a3dc956cce918ed2099d672a820ea",
       "previous": [
         {
           "path": "content/files/cstrike/addons/yapb/conf/lang/en_chat.cfg",
@@ -1561,7 +1577,7 @@
     },
     {
       "path": "content/pack.json",
-      "sha256": "ec0de2a68d4205112185bcbbcb577e7eac168bfa8499f960a35a4dfe273125c2",
+      "sha256": "7624982640df198af1343c65f35cb76aac2167fb9c3731167e881d717eb9f237",
       "previous": [
         {
           "path": "content/pack.json",
@@ -1576,6 +1592,10 @@
         {
           "path": "content/pack.json",
           "sha256": "1e65c362607751cf28b8fe9ef3cddebe8ea7e79d5b52061346b9426208fa9f7a"
+        },
+        {
+          "path": "content/pack.json",
+          "sha256": "ec0de2a68d4205112185bcbbcb577e7eac168bfa8499f960a35a4dfe273125c2"
         }
       ],
       "new": false
@@ -1619,7 +1639,7 @@
     },
     {
       "path": "docs/TESTING.md",
-      "sha256": "8be5f57699e140157cfa7594ee6f76ced24344ae06a60cd89a4c2180b2ff4fd7",
+      "sha256": "ec6fc97a56a4dcf93db372d753cad52be06b15b25a7270bde08b729480521788",
       "previous": [
         {
           "path": "docs/TESTING.md",
@@ -1634,6 +1654,10 @@
         {
           "path": "docs/TESTING.md",
           "sha256": "cf0976fb5434b7426fea866859db0c02fe1b285da0a5ac7538c749198d53e86d"
+        },
+        {
+          "path": "docs/TESTING.md",
+          "sha256": "8be5f57699e140157cfa7594ee6f76ced24344ae06a60cd89a4c2180b2ff4fd7"
         }
       ],
       "new": false
@@ -1686,7 +1710,7 @@
     },
     {
       "path": "scripts/check_assembly.py",
-      "sha256": "07d37f022148b53f7ec9fb610e1b6aae1da84764017878721a653663f79a02ab",
+      "sha256": "988ac113a16a39bcb84e677dbd9f132702136ef9ea9450419de0091ee0215e62",
       "previous": [
         {
           "path": "scripts/check_assembly.py",
@@ -1696,6 +1720,10 @@
         {
           "path": "scripts/check_assembly.py",
           "sha256": "1a37bcabbc190c667cf711d29bc1a52beb0cb47d432e0ecdca5013ff4f007c3a"
+        },
+        {
+          "path": "scripts/check_assembly.py",
+          "sha256": "07d37f022148b53f7ec9fb610e1b6aae1da84764017878721a653663f79a02ab"
         }
       ],
       "new": false
@@ -1751,7 +1779,7 @@
     },
     {
       "path": "scripts/install_cs16_linux.py",
-      "sha256": "03d4f39d53a69c33573da5d6c9c7f51edc16f3b2ecebbe5c7f04f6b22f1df7a5",
+      "sha256": "51ae95c7ca6f25c245db6e795084d5c99869476c8aa0f2f466df5751a53f15e1",
       "previous": [
         {
           "path": "scripts/install_cs16_linux.py",
@@ -1766,6 +1794,10 @@
         {
           "path": "scripts/install_cs16_linux.py",
           "sha256": "b627ce63e94b4e0c4b3b319bd18b66238d7566b6cf910160d4f6dd900c55082f"
+        },
+        {
+          "path": "scripts/install_cs16_linux.py",
+          "sha256": "03d4f39d53a69c33573da5d6c9c7f51edc16f3b2ecebbe5c7f04f6b22f1df7a5"
         }
       ],
       "new": false

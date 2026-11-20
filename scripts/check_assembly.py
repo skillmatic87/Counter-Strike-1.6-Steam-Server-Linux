@@ -39,6 +39,11 @@ def check(server, mode):
     assert ('yapb_chat_ai.amxx' in plugins) == (mode != 'off')
     assert (server / '_setup/chat-ai/config.json').exists() == (mode != 'off')
     assert (server / 'cstrike/addons/amxmodx/modules/easy_http_amxx_i386.so').exists() == (mode != 'off')
+    if mode != 'off':
+        chat_source = (server / 'cstrike/addons/amxmodx/scripting/yapb_chat_ai.sma').read_text(encoding='utf-8')
+        assert 'remove_quotes (addressed);' in chat_source
+    chat = (server / 'cstrike/addons/yapb/conf/lang/en_chat.cfg').read_text(encoding='ascii')
+    assert '; @version: 4.8\n' in chat and 'raw Killed {' in chat and '\nReplies {' in chat
     assert (server / '_setup/chat-ai/model.gguf').exists() == (mode == 'local')
     assert (server / 'cstrike/dlls/cs.so').stat().st_size > 1024
     assert 'mapmanager_cs15' not in (server / 'cstrike/addons/amxmodx/scripting/mapmanager.sma').read_text(encoding='utf-8-sig')
