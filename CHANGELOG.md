@@ -1,3 +1,8 @@
+## 0.2.1 — 2026-11-20
+
+- Converted the English bot-chat phrases and reply topics to the YaPB 4.8 configuration format.
+- Fixed Chat AI handling of the surrounding quotes in normal GoldSrc player chat.
+
 ## 0.2.0 — 2026-11-19
 
 - YaPB 4.8.1432 on ReGameDLL 5.30.0.814. The distribution includes the checksum-pinned YaPB archive.
