@@ -97,8 +97,8 @@ def download(entry, cache):
     return target
 
 
-def extract(archive_path, destination):
-    """Extract regular files/directories only; keep executable bits, never ownership."""
+def extract(archive_path, destination, *, library_aliases=False):
+    """Extract regular files and optionally materialize same-directory library aliases."""
     destination.mkdir(parents=True, exist_ok=True)
     if zipfile.is_zipfile(archive_path):
         with zipfile.ZipFile(archive_path) as archive:
@@ -115,6 +115,7 @@ def extract(archive_path, destination):
                         shutil.copyfileobj(source, output)
                     target.chmod(0o755 if mode & 0o111 else 0o644)
     else:
+        aliases = {}
         with tarfile.open(archive_path) as archive:
             for member in archive:
                 target = safe_path(destination, member.name)
@@ -125,5 +126,17 @@ def extract(archive_path, destination):
                     with archive.extractfile(member) as source, target.open('wb') as output:
                         shutil.copyfileobj(source, output)
                     target.chmod(0o755 if member.mode & 0o111 else 0o644)
+                elif library_aliases and member.issym():
+                    name = member.linkname
+                    if (not re.fullmatch(r'lib[\w.-]+\.so(?:\.\d+)*', target.name)
+                            or not re.fullmatch(r'lib[\w.-]+\.so(?:\.\d+)*', name)):
+                        raise ValueError(f'Invalid library alias: {member.name}')
+                    aliases[target] = target.with_name(name)
                 else:
                     raise ValueError(f'Archive link/device rejected: {member.name}')
+        while aliases:
+            ready = [target for target, source in aliases.items() if source.is_file() and not source.is_symlink()]
+            if not ready:
+                raise ValueError('Unresolved library aliases in archive.')
+            for target in ready:
+                os.link(aliases.pop(target), target)

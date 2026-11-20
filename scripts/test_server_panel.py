@@ -34,6 +34,7 @@ class PanelTests(unittest.TestCase):
         self.url='http://127.0.0.1:'+str(self.http.server_port)
 
     def tearDown(self):
+        if getattr(self.panel,'_package_operation',None):self.panel._package_operation.close();self.panel._package_operation=None
         self.http.shutdown();self.http.server_close();self.thread.join();self.query.stop();self.temp.cleanup()
 
     def request(self,path,body=None,token=True,headers=None):
@@ -117,13 +118,13 @@ class PanelTests(unittest.TestCase):
 
     def test_start_prepares_ranking_and_starts_linux_binary(self):
         process=Mock(pid=12345)
-        with patch.object(module,'prepare_ranking') as prepare, patch.object(module,'check_bind') as bind, patch.object(module.subprocess,'Popen',return_value=process) as popen:
+        with patch.object(module,'prepare_ranking') as prepare, patch.object(module,'check_bind') as bind, patch.object(module,'start_linux_console',return_value=process) as console:
             result=self.panel.start()
             self.assertEqual(result['pid'],12345)
             prepare.assert_called_once_with(self.root)
             bind.assert_called_once_with('127.0.0.1',27987)
-            self.assertEqual(popen.call_args.args[0][0],str(self.root/'hlds_linux'))
-            self.assertEqual(popen.call_args.kwargs['cwd'],self.root)
+            self.assertEqual(console.call_args.args[0][0],str(self.root/'hlds_linux'))
+            self.assertEqual(console.call_args.args[1],self.root)
         self.panel.process=None
 
     def test_stop_uses_goldsrc_challenge_and_quit(self):

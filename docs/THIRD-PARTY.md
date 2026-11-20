@@ -8,7 +8,11 @@ This project adapts the operator's existing [CS 1.5 Non-Steam server installer a
 | ReHLDS 3.15.0.896 | [Release and source](https://github.com/rehlds/ReHLDS/tree/3.15.0.896), MIT |
 | Metamod-R 1.3.0.149 | [Release and source](https://github.com/rehlds/Metamod-R/tree/1.3.0.149); retain upstream license notices |
 | AMXX 1.10-5487 | [Release](https://github.com/alliedmodders/amxmodx/releases/tag/1.10.0.5487), GPLv3 with upstream exceptions; base package includes GPL text and Pawn source |
-| YaPB 4.4.957 | [Release and source](https://github.com/yapb/yapb/tree/4.4.957); use this version's bundled license notices |
+| ReGameDLL 5.30.0.814 | [Release and corresponding source](https://github.com/rehlds/ReGameDLL_CS/tree/5.30.0.814) |
+| YaPB 4.8.1432 and Chat AI 2.2.0 | [Corresponding source and submodule pins](https://github.com/yapb/yapb/tree/ba0859654e4e5b35b07873f61373858a4bd28909), Unlicense. The distribution includes the original Linux continuous-build archive downloaded on 2026-11-19. |
+| AmxxEasyHttp 1.5.0 | [Release and source](https://github.com/Next21Team/AmxxEasyHttp/tree/1.5.0), MIT |
+| llama.cpp b12541 | [Release and source](https://github.com/ggml-org/llama.cpp/tree/b12541), MIT |
+| Qwen2.5-1.5B-Instruct GGUF Q4_K_M | [Pinned Qwen model](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/tree/91cad51170dc346986eccefdc2dd33a9da36ead9), Apache 2.0 |
 | YaPB navigation data | [Pinned graph database](https://github.com/yapb/graph/tree/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214), CC BY-SA 4.0; credits/license retained under `_setup` |
 | Map Manager 2.5.61 | [Pinned author source](https://github.com/Mistrick/MapManager/tree/ed09e4d78ab5c6cb617b2e37c06a08df2cea7648); compiled without the CS 1.5 adaptation |
 | Sank Sounds 1.9.1 | [Pinned author source](https://github.com/ZTHawk/HL1_SankSounds/tree/ed02c30bed512994b98e208c644c1e366b5209e3) |

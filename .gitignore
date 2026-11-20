@@ -19,3 +19,12 @@
 **/*.amxx
 **/*.dem
 **/*.dat
+
+.package-operation.lock
+.package-migration-*
+
+!/package-files.json
+!/migrate-package.sh
+!/migrate-package.cmd
+!/start-server.sh
+!/vendor/yapb-4.8.1432-linux.tar.xz

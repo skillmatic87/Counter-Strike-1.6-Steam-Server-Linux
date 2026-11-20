@@ -4,21 +4,21 @@
 
 Linux Mint 22.x, x86-64, Python 3.10+, Bash and 32-bit compatibility libraries. Other Linux distributions, ARM and Windows are outside this release. The engine is 32-bit even on a 64-bit laptop.
 
-Install the prerequisite packages listed in the README, then run `bash Setup-Linux.sh` as a normal user. `bash Setup-Linux.sh --check` only checks platform and prerequisites. The installer downloads Valve's official SteamCMD bootstrap, lets it self-update, and installs app 90 with mod `cstrike` on `steam_legacy` using anonymous server login. No personal Steam password is collected by setup.
+Install the prerequisite packages listed in the README, then run `bash setup-linux.sh` as a normal user. `bash setup-linux.sh --check` only checks platform and prerequisites. The installer downloads Valve's official SteamCMD bootstrap, lets it self-update, and installs app 90 with mod `cstrike` on `steam_legacy` using anonymous server login. No personal Steam password is collected by setup.
 
 The bootstrap and third-party archives are checksum-pinned. SteamCMD's self-updated runtime and Valve depots are validated by SteamCMD rather than project SHA-256 pins. Installed app manifests and installation logs are retained under `_setup`.
 
 ## Setup options
 
 ```bash
-bash Setup-Linux.sh --destination "$HOME/CS16Server" --port 27015 --bind-address 0.0.0.0
-bash Start-Server.sh "$HOME/CS16Server"
-bash Start-Panel.sh "$HOME/CS16Server"
+bash setup-linux.sh --destination "$HOME/CS16Server" --port 27015 --bind-address 0.0.0.0
+bash start-server.sh "$HOME/CS16Server"
+bash start-panel.sh "$HOME/CS16Server"
 ```
 
 Use `0.0.0.0` to listen on all local IPv4 interfaces. An explicit address must be assigned to the laptop, not the router's public IPv4 address. If CS 1.5 already uses UDP 27015 on the same laptop, select another port, such as 27016, and forward that port instead.
 
-For unattended setup, create a private JSON file and run `bash Setup-Linux.sh --settings /path/to/settings.local.json`. Only `AdminSteamID` is mandatory; omitted values use these defaults:
+For unattended setup, create a private JSON file and run `bash setup-linux.sh --settings /path/to/settings.local.json`. Only `AdminSteamID` is mandatory; omitted values use these defaults:
 
 ```json
 {
@@ -33,17 +33,31 @@ For unattended setup, create a private JSON file and run `bash Setup-Linux.sh --
   "SoundCooldown": 3,
   "SoundQuota": 100,
   "RankBots": 0,
-  "RankScore": "KillsMinusDeaths"
+  "RankScore": "KillsMinusDeaths",
+  "ChatAIMode": "off",
+  "ChatAIPort": 18081
 }
 ```
 
 Replace the example Steam ID. Boolean settings use 0/1 in JSON. `RankScore` accepts `Kills` or `KillsMinusDeaths`. Ranking starts fresh, persists locally by Steam authentication ID, and does not automatically reset. Enabling bot ranking uses CSX's handling of bots; keep it off for a human-only leaderboard.
 
+## Optional Chat AI
+
+- **off** installs YaPB 4.8 with the existing English bot chat. This is the default.
+- **local** runs the packaged version of llama.cpp with Qwen2.5‑1.5B‑Instruct Q4_K_M on the server CPU. Allow 7 GiB of free disk space during setup, including the 1.1 GB cached model and installed copy.
+- **api** uses the full chat completions URL and provider model entered at setup. Only direct bot mentions trigger requests, which include the message, map and player/bot context. Tell players before enabling a third-party provider.
+
+For unattended API setup set `"ChatAIMode": "api"`, `"ChatAIEndpoint": "https://provider.example/v1/chat/completions"`, and `"ChatAIModel": "your-model"`. Pass `--chat-ai-key-file /private/path/to/key` for a bearer token. An authenticated endpoint outside this computer requires HTTPS. Interactive setup reads the key with hidden input. The installer keeps the key in a private runtime file and the panel does not expose it.
+
+Both enabled modes listen only on the configured local TCP port. Choose a distinct `ChatAIPort` for each installation on the same computer. Starting or stopping the server through the shell or panel also starts or stops its backend. In local mode the built-in Llama Chat UI is available at `http://127.0.0.1:18081/` on the server computer while the game is running.
+
+Use the exact name of a living bot in public chat while you are alive, for example `BotName, where should we go?`. AI replies request one short English sentence and are limited to one request per player every six seconds. Keep the configured TCP port local. The game connection uses the separate UDP port.
+
 ## Installation failures
 
 Setup refuses an existing destination. A failed installation retains `.install-incomplete` and diagnostic logs. Preserve it, correct the reported problem and choose a **new** destination on retry. The download cache is reusable. Corrupt cached files are reported instead of silently trusted; move the named file aside and retry. App 90 is retried at most three times if SteamCMD fails or required files are absent.
 
-Do not copy the old CS 1.5 engine or GameDLL into this server. Do not run a generic SteamCMD validation over a configured server: it can replace Metamod/ReHLDS files. Automatic upgrades and content-update/rollback tooling are not included in this first Mint release. Test a fresh installation when upgrading the component manifest.
+Keep the CS 1.5 and CS 1.6 installations separate. Run SteamCMD validation only in a staging directory because it can replace the configured GameDLL and other server files. Setup builds a fresh installation. Back up a stopped existing installation before migrating its settings, maps, and ranking data.
 
 ## Panel and administration
 

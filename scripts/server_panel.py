@@ -4,6 +4,10 @@ from server_query import query_info
 from project_version import VERSION
 from settings import prepare_ranking, validate_setting, check_bind
 
+from ui_messages import error_payload, picker_title
+from package_guard import managed_start, managed_poll
+from server_addresses import endpoints
+from console_title import describe_console
 import argparse
 import base64
 import hashlib
@@ -26,6 +30,28 @@ import webbrowser
 from datetime import datetime, timezone
 
 PROJECT = Path(__file__).resolve().parents[1]
+from run_logged_server import new_log_file
+from chat_ai_runtime import wrap as wrap_chat_ai
+
+
+def start_linux_console(command, root, log):
+    import shutil
+    terminal = shutil.which('gnome-terminal')
+    if not terminal:
+        fail('A visible server console requires: sudo apt install gnome-terminal util-linux')
+    if not (os.environ.get('DISPLAY') or os.environ.get('WAYLAND_DISPLAY')):
+        fail('Open start-panel.sh from the Linux desktop to display the server console.')
+    if not shutil.which('script'):
+        fail('Console recording requires: sudo apt install util-linux')
+    child = [sys.executable, str(PROJECT / 'scripts/run_logged_server.py'), '--require-terminal',
+             '--server', str(root), '--log-file', str(log), '--', *wrap_chat_ai(root, command)]
+    arguments = [terminal, '--window', '--wait', '--title=' + describe_console(command, root, 'Counter-Strike 1.6 Steam Server'),
+                 '--working-directory=' + str(root), '--', *child]
+    environment = os.environ.copy()
+    environment.pop('LD_LIBRARY_PATH', None)
+    with log.open('ab') as output:
+        return subprocess.Popen(arguments, cwd=root, env=environment, stdin=subprocess.DEVNULL,
+                                stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
 FILES = {
     'cstrike/server.cfg', 'cstrike/addons/yapb/conf/yapb.cfg',
     'cstrike/addons/amxmodx/configs/SND-LIST.CFG',
@@ -139,20 +165,20 @@ class Panel:
 
     def path(self, relative):
         if self.root is None:
-            fail('Zuerst einen installierten Serverordner auswählen.')
+            fail('Select an installed server folder first.')
         if not isinstance(relative, str) or len(relative) > 300 or '\\' in relative or re.search(r'[<>:"|?*\x00-\x1f]', relative):
-            fail('Ungültiger relativer Dateipfad.')
+            fail('Invalid relative file path.')
         parts = relative.split('/') if relative else []
         if any(part in ('', '.', '..') for part in parts) or PurePosixPath(relative).is_absolute():
-            fail('Der Dateipfad verlässt den Serverordner.')
+            fail('The file path escapes the server folder.')
         candidate = self.root.joinpath(*parts)
         for ancestor in [candidate, *candidate.parents]:
             if ancestor == self.root.parent:
                 break
             if ancestor.is_symlink() or getattr(ancestor, 'is_junction', lambda: False)():
-                fail('Verknüpfte Dateipfade werden nicht bearbeitet.')
+                fail('Linked file paths may not be edited.')
         if not candidate.resolve().is_relative_to(self.root):
-            fail('Der Dateipfad verlässt den Serverordner.')
+            fail('The file path escapes the server folder.')
         return candidate
 
     def allowed(self, relative, write=False):
@@ -167,17 +193,17 @@ class Panel:
     def open(self, directory):
         with self.lock:
             if self.editing():
-                fail('Eine Konfiguration wird gerade gespeichert. Danach den Ordner wechseln.', 409)
+                fail('Configuration is being saved. Wait before changing folders.', 409)
             if self.process and self.process.poll() is None:
-                fail('Zuerst den vom Panel gestarteten Server beenden.', 409)
+                fail('First stop the server started by this panel.', 409)
             root = Path(directory).expanduser().resolve()
             if not root.is_dir() or not (root / 'cstrike/server.cfg').is_file():
-                fail('Wähle den installierten Serverordner mit cstrike/server.cfg.')
+                fail('Select the installed server folder containing cstrike/server.cfg.')
             launchers = [name for name in ('Start-CS16.sh',) if (root / name).is_file()]
             if len(launchers) != 1 or not any((root / name).is_file() for name in ('hlds_linux',)):
-                fail('Im Serverordner fehlen eine eindeutige Startdatei oder HLDS.')
+                fail('The server folder is missing a unique launcher or HLDS.')
             if (root / '.install-incomplete').exists():
-                fail('Die Serverinstallation ist noch nicht abgeschlossen.')
+                fail('The server installation is incomplete.')
             self.root = root
             self.generation = secrets.token_hex(16)
             return self.info()
@@ -189,16 +215,16 @@ class Panel:
     def arguments(self):
         launcher = self.path('Start-CS16.sh')
         if not launcher.is_file():
-            fail('Die Startdatei passt nicht zum Betriebssystem dieses PCs.')
+            fail('The launcher does not match this operating system.')
         text = launcher.read_text(encoding='utf-8-sig')
         pattern = r'^\s*exec\s+\./hlds_linux\s+.*$'
         lines = re.findall(pattern, text, re.M | re.I)
         if len(lines) != 1:
-            fail('Die Startdatei braucht genau eine unterstützte HLDS-Startzeile.')
+            fail('The launcher requires exactly one supported HLDS command.')
         arguments = shlex.split(lines[0].strip())[1:]
         arguments = [argument for argument in arguments if argument != '$@']
         if '-game' not in arguments or arguments[arguments.index('-game') + 1:arguments.index('-game') + 2] != ['cstrike']:
-            fail('Die Startdatei muss -game cstrike verwenden.')
+            fail('The launcher must use -game cstrike.')
         return [str(self.path('hlds_linux')), *arguments[1:]]
 
     def endpoint(self):
@@ -212,12 +238,12 @@ class Panel:
             ip = ipaddress.IPv4Address(address)
             local = {item[4][0] for item in socket.getaddrinfo(socket.gethostname(), None, socket.AF_INET)}
             if not ip.is_loopback and address not in local:
-                fail('Die Startdatei verweist nicht auf eine IPv4-Adresse dieses PCs.')
+                fail('The launcher does not reference an assigned IPv4 address on this computer.')
             port = int(value('-port', '27015'))
             if not 1 <= port <= 65535:
                 raise ValueError()
         except ValueError:
-            fail('Ungültige lokale Serveradresse oder Portnummer in der Startdatei.')
+            fail('Invalid local server address or port in the launcher.')
         return address, port
 
     def probe(self):
@@ -228,18 +254,26 @@ class Panel:
         except (OSError, ValueError):
             return None
 
+    def game_addresses(self):
+        if not self.root:return []
+        arguments=self.arguments()
+        bind=arguments[arguments.index('+ip')+1] if '+ip' in arguments else '0.0.0.0'
+        return endpoints(self.endpoint()[1],bind)
+
+    @managed_poll
     def status(self):
         with self.lock:
             managed = bool(self.process and self.process.poll() is None)
             details = self.probe()
+            addresses = self.game_addresses()
             return dict(running=managed or details is not None, managed=managed, responding=details is not None,
                         editing=self.editing(),
-                        details=details, endpoint='%s:%s' % self.endpoint() if self.root else '',
+                        details=details, server_addresses=addresses, endpoint=(str(addresses[0]['address'])+':'+str(addresses[0]['port'])) if addresses else '',
                         exitCode=self.process.poll() if self.process else None)
 
     def ensure_stopped(self):
         if self.process and self.process.poll() is None or self.probe() is not None:
-            fail('Der Server läuft. Vor dem Speichern zuerst im Panel beenden.', 409)
+            fail('The server is running. Stop it in the panel before saving.', 409)
 
     def _admin_snapshot(self):
         for name in (*ADMIN_FILES, ADMIN_AMXX):
@@ -439,7 +473,7 @@ class Panel:
     def begin_edit(self, generation):
         with self.lock:
             if generation != self.generation or self.editing():
-                fail('Serverauswahl geändert oder eine andere Speicherung läuft.', 409)
+                fail('The selected server changed or another save is in progress.', 409)
             self.ensure_stopped()
             self.lease = secrets.token_hex(16)
             self.lease_until = time.monotonic() + 120
@@ -454,7 +488,7 @@ class Panel:
     def fs(self, op, relative, generation, data=None, lease=None):
         with self.lock:
             if generation != self.generation:
-                fail('Der ausgewählte Serverordner hat sich geändert. Seite neu laden.', 409)
+                fail('The selected server folder changed. Reload the page.', 409)
             path = self.path(relative)
             if op == 'kind':
                 if not path.exists():
@@ -462,15 +496,15 @@ class Panel:
                 return dict(kind='directory' if path.is_dir() else 'file')
             if op == 'entries':
                 if relative != 'cstrike/maps':
-                    fail('Nur das installierte Map-Verzeichnis wird aufgelistet.')
+                    fail('Only the installed maps directory may be listed.')
                 return dict(entries=[[p.name, 'file'] for p in path.iterdir() if p.is_file() and p.suffix.lower() == '.bsp'])
             if op == 'read':
                 if not self.allowed(relative):
-                    fail('Diese Datei gehört nicht zum Konfigurator.', 403)
+                    fail('This file is not managed by the configurator.', 403)
                 if not path.is_file():
                     return dict(missing=True)
                 if path.stat().st_size > 16 * 1024 * 1024:
-                    fail('Die Datei ist zu groß.')
+                    fail('The file is too large.')
                 return dict(data=base64.b64encode(path.read_bytes()).decode('ascii'))
             self.ensure_stopped()
             if self.editing():
@@ -485,11 +519,11 @@ class Panel:
                         ('_configurator/backups/' + relative.split('/')[2] + '/files/' + name).startswith(prefix)
                         for name in FILES)
                     if not allowed_parent:
-                        fail('Nicht freigegebenes Backup-Verzeichnis.', 403)
+                        fail('The backup directory is not allowed.', 403)
                 path.mkdir(exist_ok=True)
                 return dict(ok=True)
             if op not in ('touch', 'write', 'remove') or not self.allowed(relative, write=True):
-                fail('Diese Datei darf vom Panel nicht geändert werden.', 403)
+                fail('The panel may not modify this file.', 403)
             if op == 'touch':
                 if not path.exists():
                     path.touch(exist_ok=False)
@@ -499,31 +533,27 @@ class Panel:
                 try:
                     payload = base64.b64decode(data, validate=True)
                 except (ValueError, TypeError):
-                    fail('Ungültige Dateidaten.')
+                    fail('Invalid file data.')
                 if len(payload) > 2 * 1024 * 1024:
-                    fail('Die Konfigurationsdatei ist zu groß.')
+                    fail('The configuration file is too large.')
                 atomic_write(path, payload)
             return dict(ok=True)
 
+    @managed_start(PROJECT)
     def start(self):
         with self.lock:
             if self.editing():
-                fail('Zuerst die laufende Speicherung abschließen.', 409)
+                fail('Finish the current save operation first.', 409)
             self.ensure_stopped()
             prepare_ranking(self.root)
             command = self.arguments()
             check_bind(*self.endpoint())
             self.endpoint()  # Never start an incorrectly bound local server.
-            log = self.path('_configurator/server-console.log')
-            log.parent.mkdir(exist_ok=True)
-            environment = os.environ.copy()
-            if os.name != 'nt':
-                environment['LD_LIBRARY_PATH'] = str(self.root) + (':' + environment['LD_LIBRARY_PATH'] if environment.get('LD_LIBRARY_PATH') else '')
-            with log.open('ab') as output:
-                self.process = subprocess.Popen(command, cwd=self.root, env=environment, stdin=subprocess.DEVNULL,
-                                                stdout=output, stderr=subprocess.STDOUT)
+            log = new_log_file(self.root)
+            self.process = start_linux_console(command, self.root, log)
             return dict(started=True, pid=self.process.pid)
 
+    @managed_poll
     def stop(self):
         with self.lock:
             if not self.status()['running']:
@@ -531,7 +561,7 @@ class Panel:
             config = self.path('cstrike/server.cfg').read_text(encoding='utf-8-sig')
             passwords = re.findall(r'^[ \t]*rcon_password[ \t]+"([^"\r\n]+)"[ \t]*(?://[^\r\n]*)?\r?$', config, re.M)
             if len(passwords) != 1 or re.search(r'[^\x20-\x7e]', passwords[0]):
-                fail('Für reguläres Beenden wird ein eindeutiges lokales RCON-Passwort benötigt.')
+                fail('A unique local RCON password is required for a normal shutdown.')
             try:
                 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp:
                     udp.settimeout(1.2)
@@ -540,21 +570,21 @@ class Panel:
                     reply = udp.recv(8192)
                     match = re.search(rb'challenge rcon ([0-9]+)', reply)
                     if not match:
-                        fail('Der Server hat keine gültige RCON-Challenge geliefert.')
+                        fail('The server did not return a valid RCON challenge.')
                     udp.send(b'\xff\xff\xff\xffrcon ' + match[1] + b' "' + passwords[0].encode('ascii') + b'" quit\0')
                     try:
                         answer = udp.recv(8192)
                         if b'Bad rcon_password' in answer or b'Bad challenge' in answer:
-                            fail('Der Server hat die lokalen RCON-Daten abgelehnt.')
+                            fail('The server rejected the local RCON credentials.')
                     except socket.timeout:
                         pass  # Shutdown can close the endpoint before replying.
             except OSError:
-                fail('Der Server antwortet noch nicht auf RCON. Gleich erneut versuchen.', 409)
+                fail('The server is not responding to RCON yet. Try again shortly.', 409)
             for _ in range(40):
                 if not self.status()['running']:
                     return dict(stopped=True)
                 time.sleep(.15)
-            fail('Der Server läuft noch. Es wurde kein Prozess zwangsweise beendet.', 409)
+            fail('The server is still running. No process was forcibly terminated.', 409)
 
 
 class PanelHTTPServer(ThreadingHTTPServer):
@@ -569,6 +599,7 @@ class Handler(BaseHTTPRequestHandler):
         pass  # No credentials, paths or API payloads in access logs.
 
     def send(self, value, status=200, content_type='application/json; charset=utf-8'):
+        if isinstance(value, dict) and 'error' in value: value = dict(value, **error_payload(value['error']))
         payload = value if isinstance(value, bytes) else json.dumps(value, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header('Content-Type', content_type)
@@ -586,7 +617,7 @@ class Handler(BaseHTTPRequestHandler):
         if self.headers.get('Host') != host or self.headers.get('Origin', 'http://' + host) != 'http://' + host:
             fail('Dieses Panel akzeptiert nur seinen lokalen Ursprung.', 403)
         if authenticated and not hmac.compare_digest(self.headers.get('X-CS16-Token', ''), self.server.panel.token):
-            fail('Panel-Sitzung ungültig. Seite über den lokalen Starter neu öffnen.', 403)
+            fail('Invalid panel session. Reopen the page using the local launcher.', 403)
 
     def do_GET(self):
         try:
@@ -605,20 +636,20 @@ class Handler(BaseHTTPRequestHandler):
             elif self.path == '/api/admin':
                 self.send(panel.admin_info())
             else:
-                self.send({'error': 'Nicht gefunden.'}, 404)
+                self.send({'error': 'Not found.'}, 404)
         except PanelError as error:
             self.send({'error': str(error)}, error.status)
         except Exception:
-            self.send({'error': 'Der lokale Status konnte nicht gelesen werden.'}, 500)
+            self.send({'error': 'The local status could not be read.'}, 500)
 
     def do_POST(self):
         try:
             self.guard()
             if self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
-                fail('JSON-Anfrage erforderlich.', 415)
+                fail('A JSON request is required.', 415)
             length = int(self.headers.get('Content-Length', '0'))
             if not 0 < length <= 4 * 1024 * 1024:
-                fail('Ungültige Anfragegröße.', 413)
+                fail('Invalid request size.', 413)
             data = json.loads(self.rfile.read(length))
             panel = self.server.panel
             if self.path == '/api/open':
@@ -635,30 +666,30 @@ class Handler(BaseHTTPRequestHandler):
                 self.send(panel.restore_admin(data))
             elif self.path in ('/api/start', '/api/stop'):
                 if data.get('generation') != panel.generation:
-                    fail('Serverauswahl geändert. Seite neu laden.', 409)
+                    fail('The selected server changed. Reload the page.', 409)
                 self.send(panel.start() if self.path.endswith('start') else panel.stop())
             elif self.path == '/api/pick-folder':
                 environment = os.environ.copy()
                 environment['CS16_PICKER_INITIAL'] = str(panel.root or PROJECT)
                 environment['PYTHONIOENCODING'] = 'utf-8'
                 language = self.headers.get('Accept-Language', 'en').split(',')[0].split('-')[0]
-                environment['CS16_PICKER_TITLE'] = 'CS 1.6 Serverordner auswählen' if language == 'de' else 'Choose CS 1.6 server folder'
+                environment['CS16_PICKER_TITLE'] = picker_title('cs16', language)
                 code = 'import os,tkinter as t;from tkinter import filedialog;r=t.Tk();r.withdraw();r.attributes("-topmost",True);p=filedialog.askdirectory(title=os.environ["CS16_PICKER_TITLE"],initialdir=os.environ["CS16_PICKER_INITIAL"]);print(p);r.destroy()'
                 result = subprocess.run([sys.executable, '-c', code], env=environment, capture_output=True, encoding='utf-8',
                                         creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
                 if result.returncode:
-                    fail('Ordnerauswahl nicht verfügbar. Den vollständigen Pfad im Panel eintragen.')
+                    fail('Folder selection is unavailable. Enter the full path in the panel.')
                 self.send(dict(path=result.stdout.strip()))
             else:
-                self.send({'error': 'Nicht gefunden.'}, 404)
+                self.send({'error': 'Not found.'}, 404)
         except PanelError as error:
             self.send({'error': str(error)}, error.status)
         except (ValueError, KeyError, TypeError):
-            self.send({'error': 'Ungültige Panel-Anfrage.'}, 400)
+            self.send({'error': 'Invalid panel request.'}, 400)
         except OSError:
-            self.send({'error': 'Dateizugriff fehlgeschlagen. Pfad, Schreibrechte und freie Speicherkapazität prüfen.'}, 409)
+            self.send({'error': 'File access failed. Check the path, write permissions and free disk space.'}, 409)
         except Exception:
-            self.send({'error': 'Der lokale Vorgang ist fehlgeschlagen.'}, 500)
+            self.send({'error': 'The local operation failed.'}, 500)
 
 
 def main():

@@ -15,9 +15,12 @@
     },
     {
       "id": "bots",
-      "file": "yapb-4.4.957-linux.tar.xz",
-      "url": "https://github.com/yapb/yapb/releases/download/4.4.957/yapb-4.4.957-linux.tar.xz",
-      "sha256": "8c095ac89b9b2ccc70a66a71d608e1a570b5268c57c6083ced8c06161533a4b1"
+      "file": "yapb-4.8.1432-linux.tar.xz",
+      "url": "https://github.com/yapb/yapb/releases/download/continuous/yapb-4.8.1432-linux.tar.xz",
+      "sha256": "643ea6950352b28816ed87eb5c9d67976a0adfd24b07b2dc81bca6e505401945",
+      "bundledPath": "vendor/yapb-4.8.1432-linux.tar.xz",
+      "version": "4.8.1432",
+      "sourceCommit": "ba0859654e4e5b35b07873f61373858a4bd28909"
     },
     {
       "id": "sounds",
@@ -83,6 +86,34 @@
       "url": "https://codeload.github.com/yapb/graph/zip/50524d2fd16ffa4c85b1d77fa8d58f6ee410c214",
       "version": "50524d2fd16ffa4c85b1d77fa8d58f6ee410c214",
       "sha256": "7cf90e57e44cd8c04c377b626e014ae4221a6857dda5cd9ea2ff4648f4c79597"
+    },
+    {
+      "id": "regamedll",
+      "file": "regamedll-bin-5.30.0.814.zip",
+      "version": "5.30.0.814",
+      "url": "https://github.com/rehlds/ReGameDLL_CS/releases/download/5.30.0.814/regamedll-bin-5.30.0.814.zip",
+      "sha256": "457f5c96a4d10280fcad47f106cbd5be86363a47df1ccab91c514e9d1bc6fd18"
+    },
+    {
+      "id": "easyhttp",
+      "file": "AmxxEasyHttp-1.5.0-linux-i386.zip",
+      "version": "1.5.0",
+      "url": "https://github.com/Next21Team/AmxxEasyHttp/releases/download/1.5.0/AmxxEasyHttp-1.5.0-linux-i386.zip",
+      "sha256": "be2cbcf41c61d1efc6edda8f16f093a7c990e53e079f1754a05e18a90015339a"
+    },
+    {
+      "id": "llama",
+      "file": "llama-b12541-bin-ubuntu-x64.tar.gz",
+      "version": "b12541",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12541/llama-b12541-bin-ubuntu-x64.tar.gz",
+      "sha256": "ea4121995eccd067070b8fbf9a4f7c3b1a56bfb2a1a357cbd5c05592ce69d3ba"
+    },
+    {
+      "id": "model",
+      "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "version": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
     }
   ]
 }

@@ -4,17 +4,35 @@ import json
 from pathlib import Path
 import re
 import socket
+from urllib.parse import urlsplit
 
 DEFAULTS = dict(ServerName='CS 1.6 Steam Server', MapMinutes=30, FriendlyFire=0,
                 BotTarget=16, BotDifficulty=2, SoundCooldown=3, SoundQuota=100,
                 RankBots=0, RankScore='KillsMinusDeaths', Port=27015,
-                BindAddress='0.0.0.0')
+                BindAddress='0.0.0.0', ChatAIMode='off', ChatAIPort=18081)
 RANGES = dict(MapMinutes=(6, 180), FriendlyFire=(0, 1), BotTarget=(0, 32),
               BotDifficulty=(0, 4), SoundCooldown=(0, 300), SoundQuota=(1, 1000),
-              RankBots=(0, 1), Port=(1, 65535))
+              RankBots=(0, 1), Port=(1, 65535), ChatAIPort=(1024, 65535))
 
 
 def validate_setting(name, value):
+    if name == 'ChatAIMode':
+        if value not in ('off', 'local', 'api'):
+            raise ValueError('ChatAIMode: choose off, local or api.')
+        return value
+    if name == 'ChatAIEndpoint':
+        if not isinstance(value, str) or not re.fullmatch(r'[^\s\x00-\x1f]{1,2048}', value):
+            raise ValueError('ChatAIEndpoint: enter the full chat completions URL.')
+        url = urlsplit(value)
+        if (url.scheme not in ('http', 'https') or not url.hostname or url.username is not None
+                or url.fragment or not url.path or url.path == '/'):
+            raise ValueError('ChatAIEndpoint: use an HTTP(S) endpoint without embedded credentials or a fragment.')
+        _ = url.port
+        return value
+    if name == 'ChatAIModel':
+        if not isinstance(value, str) or not re.fullmatch(r'[\x21-\x7e]{1,256}', value):
+            raise ValueError('ChatAIModel: enter a nonempty provider model identifier.')
+        return value
     if name == 'AdminSteamID':
         if not isinstance(value, str) or not re.fullmatch(r'STEAM_0:[01]:[0-9]{1,10}', value):
             raise ValueError('AdminSteamID: use the STEAM_0:X:Y identifier shown by status in the game console.')
@@ -49,18 +67,20 @@ def get_settings(path=None, overrides=None):
                    FriendlyFire='Friendly Fire (yes/no)', BotTarget='Fill with bots to this total player count (0 disables bots)',
                    BotDifficulty='Bot difficulty (0 new, 1 easy, 2 medium, 3 hard, 4 expert)',
                    SoundCooldown='Seconds between chat sounds', SoundQuota='Sound triggers per player per map',
-                   RankBots='Include bots in ranking (yes/no)', RankScore='Ranking score (Kills or KillsMinusDeaths)')
+                   RankBots='Include bots in ranking (yes/no)', RankScore='Ranking score (Kills or KillsMinusDeaths)',
+                   ChatAIMode='Bot Chat AI (off / local / api)')
     supplied = json.loads(Path(path).read_text(encoding='utf-8-sig')) if path else {}
     if not isinstance(supplied, dict):
         raise ValueError('Settings JSON must be an object.')
-    if set(supplied) - set(prompts):
-        raise ValueError('Unknown JSON setting(s): ' + ', '.join(sorted(set(supplied) - set(prompts))))
+    api_prompts = dict(ChatAIEndpoint='Full OpenAI-compatible chat completions URL', ChatAIModel='Provider model')
+    accepted = set(prompts) | set(api_prompts) | {'ChatAIPort'}
+    if set(supplied) - accepted:
+        raise ValueError('Unknown JSON setting(s): ' + ', '.join(sorted(set(supplied) - accepted)))
     supplied.update(overrides or {})
     result = {}
-    for name, prompt in prompts.items():
+    def read_setting(name, prompt):
         if path:
-            result[name] = validate_setting(name, supplied.get(name, DEFAULTS.get(name)))
-            continue
+            return validate_setting(name, supplied.get(name, DEFAULTS.get(name)))
         while True:
             default = supplied.get(name, DEFAULTS.get(name))
             shown = ('yes' if default else 'no') if name in ('FriendlyFire', 'RankBots') else default
@@ -70,10 +90,17 @@ def get_settings(path=None, overrides=None):
             elif name in ('FriendlyFire', 'RankBots'):
                 value = {'yes': 1, 'y': 1, 'no': 0, 'n': 0}.get(str(value).lower(), value)
             try:
-                result[name] = validate_setting(name, value)
-                break
+                return validate_setting(name, value)
             except ValueError as error:
                 print(error)
+    for name, prompt in prompts.items():
+        result[name] = read_setting(name, prompt)
+    result['ChatAIPort'] = validate_setting('ChatAIPort', supplied.get('ChatAIPort', DEFAULTS['ChatAIPort']))
+    if result['ChatAIMode'] == 'api':
+        for name, prompt in api_prompts.items():
+            result[name] = read_setting(name, prompt)
+    elif set(supplied) & set(api_prompts):
+        raise ValueError('ChatAIEndpoint and ChatAIModel require ChatAIMode api.')
     return result
 
 

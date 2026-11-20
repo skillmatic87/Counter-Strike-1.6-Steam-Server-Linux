@@ -30,12 +30,17 @@ def fixture_valve(server, steamcmd):
     write_text(server / '_setup/valve-build.json', '{"fixture":true,"steamcmdExecuted":false}\n')
 
 
-def check(server):
+def check(server, mode):
     plugins = (server / 'cstrike/addons/amxmodx/configs/plugins.ini').read_text()
     for name in ('statsx', 'mapmanager', 'sank_sounds'):
         assert name+'.amxx' in plugins
         assert (server / f'cstrike/addons/amxmodx/plugins/{name}.amxx').stat().st_size > 100
     assert 'mapchooser.amxx' not in plugins
+    assert ('yapb_chat_ai.amxx' in plugins) == (mode != 'off')
+    assert (server / '_setup/chat-ai/config.json').exists() == (mode != 'off')
+    assert (server / 'cstrike/addons/amxmodx/modules/easy_http_amxx_i386.so').exists() == (mode != 'off')
+    assert (server / '_setup/chat-ai/model.gguf').exists() == (mode == 'local')
+    assert (server / 'cstrike/dlls/cs.so').stat().st_size > 1024
     assert 'mapmanager_cs15' not in (server / 'cstrike/addons/amxmodx/scripting/mapmanager.sma').read_text(encoding='utf-8-sig')
     launch = (server / 'Start-CS16.sh').read_text()
     assert '+sv_lan 0' in launch and '+maxplayers 32' in launch
@@ -53,6 +58,8 @@ def check(server):
     for bsp in maps:
         assert (server / f'cstrike/addons/yapb/data/graph/{bsp.stem}.graph').is_file()
         assert 2 <= installer.bsp_capacity(bsp) <= 32
+    for name in ('graph', 'logs', 'pwf', 'train'):
+        assert (server / 'cstrike/addons/yapb/data' / name).is_dir()
     for name in ('Kills', 'KillsMinusDeaths'):
         assert (server / f'_setup/ranking/{name}.amxx').stat().st_size > 100
     assert 'Steam ID' in (server / 'ADMIN.local.txt').read_text()
@@ -66,13 +73,14 @@ def check(server):
     installer.prepare_ranking(server)
     assert first != (server / 'cstrike/addons/amxmodx/data/csstats.amxx').read_bytes()
     assert data.read_bytes() == b'persisted-ranking-fixture'
-    print(f'Assembly passed: {len(maps)} maps, 122 sound commands, Steam-ID access, four plugin compilations. Valve base is synthetic; no HLDS or Steam runtime test.')
+    print(f'Assembly passed: {len(maps)} maps, 122 sounds, Steam-ID access, Chat AI mode {mode}. Valve base is synthetic.')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cache-directory', type=Path, default=installer.ROOT / 'downloads')
     parser.add_argument('--destination', type=Path)
+    parser.add_argument('--chat-ai', choices=('off', 'api'), default='off')
     args = parser.parse_args()
     cache = args.cache_directory.absolute()
     compiler = None
@@ -85,9 +93,11 @@ def main():
             extract(archive, work)
         compiler = work / 'addons/amxmodx/scripting/amxxpc.exe'
     target = (args.destination or installer.ROOT / ('runtime/assembly-' + str(time.time_ns()))).absolute()
-    settings = dict(DEFAULTS, AdminSteamID='STEAM_0:1:123456')
+    settings = dict(DEFAULTS, AdminSteamID='STEAM_0:1:123456', ChatAIMode=args.chat_ai)
+    if args.chat_ai == 'api':
+        settings.update(ChatAIEndpoint='http://127.0.0.1:18765/v1/chat/completions', ChatAIModel='fixture')
     installer.assemble(target, cache, settings, compiler=compiler, valve_installer=fixture_valve, native_base=False)
-    check(target)
+    check(target, args.chat_ai)
     print('Fixture installation: '+str(target))
 
 
