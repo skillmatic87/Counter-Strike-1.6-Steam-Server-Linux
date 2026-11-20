@@ -1,0 +1,23 @@
+name: Request CS 1.6 preview v0.2.0
+on:
+  push:
+    branches: ['codex/publish-cs16-v0.2.0']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  dispatch:
+    if: github.repository == 'skillmatic87/Counter-Strike-1.6-Steam-Server-Linux'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Verify main and dispatch the existing guarded release workflow
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_MAIN: 770af7ce1798eb2776814ddb15ea3a37e37256a9
+        run: |
+          set -euo pipefail
+          [[ "$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq ".object.sha")" == "$EXPECTED_MAIN" ]]
+          [[ "$(gh api "repos/$GITHUB_REPOSITORY/contents/VERSION?ref=$EXPECTED_MAIN" --jq ".content" | base64 --decode)" == "0.2.0" ]]
+          gh workflow run checks.yml --repo "$GITHUB_REPOSITORY" --ref main -f publish_release=true
